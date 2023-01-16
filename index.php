@@ -1,4 +1,6 @@
-</section>
+<head>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
 <div class="container" id="container">
     <div class="form-container identifier-container">
         
@@ -6,8 +8,8 @@
             <h1>Identifiez vous</h1>
             <div class="form-title">Éspace Crypto - Skylord</div>
             <div class="providerLinkingFeedback"></div>
-            <input class="class-input" type="email" name="username" placeholder="{$LANG.enteremail}" />
-            <input class="class-input" type="password" name="password" placeholder="{$LANG.clientareapassword}" />
+            <input class="class-input" type="text" name="username" placeholder="Votre pseudo Minecraft" />
+            <input class="class-input" type="password" name="password" placeholder="votre code de sécurité" />
             <!--<label for="chkbox"><input id="chkbox" type="checkbox" class="accepttos" name="rememberme" />Se souvenir de moi</label>-->
             <!--
             <div class="text-center margin-bottom">
@@ -15,7 +17,7 @@
             </div>
             -->
             <button id="login" type="submit">Se connecter</button>
-            <a href="https://crypto.skylord.fr/connexion/mot-de-passe/oublie" class="btn btn-link">J'ai oublié mon mot de passe</a>
+            <a href="https://crypto.skylord.fr/connexion/mot-de-passe/oublie" class="btn btn-link">J'ai oublié mon code de sécurité</a>
             <a href="https://skylord.fr" class="btn btn-link"><i class="fas fa-arrow-left"></i>Retour à l'accueil</a>
         </form>
     </div>
