@@ -22,10 +22,16 @@ Ce site web est pour Skylord afin de créer une interface de visualisation par A
 
 ## Fonctionnement
 ### Page d'authentification 
+#### But de la page
+#### Comment avoir un code d'authentification
 ### Page d'accueil 
+#### But de la page 
 ### Page Wallet
+#### But de la page 
 ### Page Trading
+#### But de la page 
 #### Investir en crypto
+#### But de la page 
 #### Retirer de la crypto
 ### Page statistiques
 ### Page Technicien informatique
