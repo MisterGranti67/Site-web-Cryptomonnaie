@@ -8,3 +8,19 @@ Ce site web est pour Skylord afin de créer une interface de visualisation par A
     <li>III. Auteurs</li>
 </ul>
 
+## Prérequis
+### PHP
+//
+### HTML
+//
+### CSS
+//
+### MySQL
+//
+### JavaScript
+//
+
+## Fonctionnement
+
+## Auteurs
+[Gauthier Corion](https://github.com/MisterGranti67)
