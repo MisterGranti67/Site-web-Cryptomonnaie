@@ -21,6 +21,18 @@ Ce site web est pour Skylord afin de créer une interface de visualisation par A
 //
 
 ## Fonctionnement
+### Page d'authentification 
+### Page d'accueil 
+### Page Wallet
+### Page Trading
+#### Investir en crypto
+#### Retirer de la crypto
+### Page statistiques
+### Page Technicien informatique
+### Gestion des rigs
+### Gestion du parc éolien
+### Gestion du parc solaire 
+
 
 ## Auteurs
 [Gauthier Corion](https://github.com/MisterGranti67)
