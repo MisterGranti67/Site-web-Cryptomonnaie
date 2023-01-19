@@ -99,6 +99,18 @@
                 }
             }
 
+            .container {
+                max-width: 1024px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .informations {
+                height: 160px;
+                width: 100%;
+                background-color: #FAFAFA;
+            }
+
         </style>
     </head>
     <body>
@@ -119,5 +131,10 @@
                 </span>  
             </div>
         </div>
+        <section class="informations">
+            <div class="container">
+
+            </div>
+        </section>
     </body>
 </html>
