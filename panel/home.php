@@ -3,6 +3,10 @@
     <head>
         <title>Mon éspace joueur - Crypto Skylord</title>
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+            * {
+                font-family: 'Roboto';
+            }
             body {
                 margin: 0;
                 font-family: sans-serif;
@@ -29,7 +33,7 @@
             .navbar {
                 display: flex;
                 justify-content: center;
-                max-width: 1024px;
+                max-width: 1440px;
                 margin: 0 auto;
                 font-size: 12px;
                 height: 64px;
@@ -106,9 +110,63 @@
             }
 
             .informations {
-                height: 160px;
+                margin-top: 64px;
+                padding-top: 44px;
+                padding-bottom: 44px;
                 width: 100%;
                 background-color: #FAFAFA;
+            }
+
+            .informations .details {
+                height: 72px;
+                margin-left: 32px;
+            }
+            .informations .details img {
+                font-size: 16px;
+                margin-left: 14px;
+                float: left;
+                border-radius: 50px;
+            }
+            .informations .more_details {
+                font-size: 16px;
+                margin-left: 14px;
+                display: inline-block;
+                float: left;
+            }
+
+            .informations .more_details h1 {
+                font-size: 16px;
+                margin-block-start: 0px;
+                margin-block-end: 0px;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            .informations .sous_details {
+                margin-top: 4px;
+            }
+            .informations .sous_details .coordonnes {
+                display: inline-block;
+                margin-right: 24px;
+            }
+            .informations .sous_details .coordonnes h2 {
+                color: #6D6D6D;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+            }
+
+            .informations .sous_details .coordonnes p {
+                color: #000;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
             }
 
         </style>
@@ -131,10 +189,25 @@
                 </span>  
             </div>
         </div>
-        <section class="informations">
+        <div class="informations">
             <div class="container">
-
+                <div class="details">
+                    <img src="https://minotar.net/avatar/mrbaguette07" width="72px">
+                    <div class="more_details">
+                        <h1 class="titre">MrBaguette07</h1>
+                        <div class="sous_details">
+                            <div class="coordonnes">
+                                <h2>Type d'utilisateur</h2>
+                                <p>Joueur</p>
+                            </div>
+                            <div class="coordonnes">
+                                <h2>Date et heure de la dernière connexion</h2>
+                                <p>2023-01-18  20:20:19(192.168.1.1)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
     </body>
 </html>
