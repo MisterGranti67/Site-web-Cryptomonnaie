@@ -123,7 +123,6 @@
             }
             .informations .details img {
                 font-size: 16px;
-                margin-left: 14px;
                 float: left;
                 border-radius: 50px;
             }
@@ -169,6 +168,130 @@
                 line-height: 14px;
             }
 
+            .flex-container {
+                margin-top: 24px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: stretch;
+                align-content: stretch;
+            }
+            
+            .flex-items {
+                flex-grow: 0;
+                flex-shrink: 1;
+                flex-basis: auto;
+            }
+            .content .crypto {
+                width: 650px;
+                height: 496px;
+                margin-left: 32px;
+            }
+
+            .content .notification {
+                width: 374px;
+                height: 496px;
+                background-color: #FAFAFA;
+                border-radius: 10px;
+            }
+
+            .content .mon_solde h1 {
+                color: #000;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;  
+            }
+
+            .content .mon_solde span {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 14px;
+                color: #000;
+            }
+            .notification h1 {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                color: #000000;
+                margin-top: 24px;
+                margin-bottom: 24px;
+                text-align: center;
+            }
+            .notification .notification_recu a {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                color: #000000;
+                text-align: left;
+                text-decoration: none;
+            }
+
+            .notification .notification_recu a:hover {
+                color: #6D6D6D;
+            }
+
+            .notification .notification_recu {
+                margin-bottom: 12px;
+                margin-left: 16px;
+            }
+
+            ..tableau_crypto {
+                margin-right: 106px;
+                width: 100%;
+            }
+            .tableau_crypto h1 {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 800;
+                font-size: 12px;
+                line-height: 14px;
+                color: #000000;
+
+                display: inline-block;
+            }
+
+            .tableau_crypto h2 {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 800;
+                font-size: 12px;
+                line-height: 14px;
+                color: #6D6D6D;
+                display: inline-block;
+            }
+            .tableau_crypto .perte {
+                color: red;
+            }
+
+            .tableau_crypto .gain {
+                color: green;
+            }
+
+            .tableau_crypto a {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                color: #D3B467;
+
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .tableau_crypto img {
+                width: 32px;
+                display: inline-block;
+            }
         </style>
     </head>
     <body>
@@ -189,6 +312,7 @@
                 </span>  
             </div>
         </div>
+
         <div class="informations">
             <div class="container">
                 <div class="details">
@@ -205,6 +329,85 @@
                                 <p>2023-01-18  20:20:19(192.168.1.1)</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <div class="flex-container">
+                    <div class="flex-items crypto">
+                        <div class="mon_solde">
+                            <h1>Solde estimé</h1>
+                            <span>0.00 BTC</span><span>≈ 0.00000000$</span>
+                        </div>
+
+                        <div class="tableau_crypto">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="../img/crypto/btclogo.png"> 
+                                            <h1>BTC</h1>
+                                            <h2>Bitcoin</h2>
+                                        </td>
+                                        <td>
+                                            <h1>19 000$</h1>
+                                        </td>
+                                        <td>
+                                            <h1 class="perte">-3,10%<h1>
+                                        </td>
+                                        <td>
+                                            <a href="">Trader</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="flex-items notification">
+                        <h1>Les dernières notifications</h1>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        <div class="notification_recu">
+                            <a href="">2023-01-18 - Votre groupe électrogène #1 n’a plus d’essence</a>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
