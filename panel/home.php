@@ -2,7 +2,17 @@
 <html>
     <head>
         <title>Mon éspace joueur - Crypto Skylord</title>
-        <link href="./css/style-panel.css" rel="stylesheet">
+        <link href="../css/style-panel.css" rel="stylesheet">
+        <script>
+            fetch('https://api.binance.com/api/v1/ticker/24hr', {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(response => console.log(JSON.stringify(response)))
+        </script>
     </head>
     <body>
         <div class="top">
