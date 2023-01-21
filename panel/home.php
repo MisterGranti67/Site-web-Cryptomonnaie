@@ -3,31 +3,23 @@
     <head>
         <title>Mon éspace joueur - Crypto Skylord</title>
         <link href="../css/style-panel.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.js"></script>
         <script>
-            class API_Binance {
-                constructor() {
-                    fetch('https://api.binance.com/api/v1/ticker/24hr', {
-                        method: 'GET',
-                        headers: {
-                            'Accept': 'application/json',
-                        },
-                    })
-                    .then(response => response.json())
-                    // .then(response => console.log(JSON.stringify(response))) # Afficher le JSON dans la console
-                    .then(response => this.valeurs = response)
-                }
-
-                get getETHUSDT() {
-                    for (let i = 0; i < 10; i++) {
-                        if (this.valeurs[i].symbol == "ETHUSDT"){
-                            return this.valeurs;
-                        }
+            $(document).ready(async function(){
+                const response = await fetch('https://api.binance.com/api/v1/ticker/24hr');
+                const data = await response.json();
+                var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
+                for (let i = 2000; i > 0; i--) {
+                    if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
+                        const nom_crypto = data[i].symbol.split('USDT');
+                        var str = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto[0] + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>1</h1></td><td data-label=\"Valeur\"><h1>19 000$</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\"perte\"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
+                        $(str).prependTo("#tableau_crypto");
                     }
-                    return "";
                 }
-            }
+            });
 
-            const instance = new API_Binance();
+
+            
         </script>
     </head>
     <body>
@@ -90,178 +82,8 @@
                                         <th scope="col"> </th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td data-label="Nom" class="nom">
-                                            <img src="../img/crypto/btclogo.png"> 
-                                            <h1>BTC</h1>
-                                            <h2>Bitcoin</h2>
-                                        </td>
-                                        <td data-label="Montant">
-                                            <h1>1</h1>
-                                        </td>
-                                        <td data-label="Valeur">
-                                            <h1>19 000$</h1>
-                                        </td>
-                                        <td data-label="Variation sur 24h">
-                                            <h1 class="perte">-3,10%<h1>
-                                        </td>
-                                        <td data-label=" ">
-                                            <a href="">Trader</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="Nom" class="nom">
-                                            <img src="../img/crypto/ethlogo.png"> 
-                                            <h1>BTC</h1>
-                                            <h2>Bitcoin</h2>
-                                        </td>
-                                        <td data-label="Montant">
-                                            <h1>1</h1>
-                                        </td>
-                                        <td data-label="Valeur">
-                                            <h1>19 000$</h1>
-                                        </td>
-                                        <td data-label="Variation sur 24h">
-                                            <h1 class="perte">-3,10%<h1>
-                                        </td>
-                                        <td data-label=" ">
-                                            <a href="">Trader</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="Nom" class="nom">
-                                            <img src="../img/crypto/adalogo.png"> 
-                                            <h1>BTC</h1>
-                                            <h2>Bitcoin</h2>
-                                        </td>
-                                        <td data-label="Montant">
-                                            <h1>1</h1>
-                                        </td>
-                                        <td data-label="Valeur">
-                                            <h1>19 000$</h1>
-                                        </td>
-                                        <td data-label="Variation sur 24h">
-                                            <h1 class="perte">-3,10%<h1>
-                                        </td>
-                                        <td data-label=" ">
-                                            <a href="">Trader</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="Nom" class="nom">
-                                            <img src="../img/crypto/dogelogo.png"> 
-                                            <h1>BTC</h1>
-                                            <h2>Bitcoin</h2>
-                                        </td>
-                                        <td data-label="Montant">
-                                            <h1>1</h1>
-                                        </td>
-                                        <td data-label="Valeur">
-                                            <h1>19 000$</h1>
-                                        </td>
-                                        <td data-label="Variation sur 24h">
-                                            <h1 class="perte">-3,10%<h1>
-                                        </td>
-                                        <td data-label=" ">
-                                            <a href="">Trader</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="Nom" class="nom">
-                                            <img src="../img/crypto/dotlogo.png"> 
-                                            <h1>BTC</h1>
-                                            <h2>Bitcoin</h2>
-                                        </td>
-                                        <td data-label="Montant">
-                                            <h1>1</h1>
-                                        </td>
-                                        <td data-label="Valeur">
-                                            <h1>19 000$</h1>
-                                        </td>
-                                        <td data-label="Variation sur 24h">
-                                            <h1 class="perte">-3,10%<h1>
-                                        </td>
-                                        <td data-label=" ">
-                                            <a href="">Trader</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="Nom" class="nom">
-                                            <img src="../img/crypto/bnblogo.png"> 
-                                            <h1>BTC</h1>
-                                            <h2>Bitcoin</h2>
-                                        </td>
-                                        <td data-label="Montant">
-                                            <h1>1</h1>
-                                        </td>
-                                        <td data-label="Valeur">
-                                            <h1>19 000$</h1>
-                                        </td>
-                                        <td data-label="Variation sur 24h">
-                                            <h1 class="perte">-3,10%<h1>
-                                        </td>
-                                        <td data-label=" ">
-                                            <a href="">Trader</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="Nom" class="nom">
-                                            <img src="../img/crypto/ltclogo.png"> 
-                                            <h1>BTC</h1>
-                                            <h2>Bitcoin</h2>
-                                        </td>
-                                        <td data-label="Montant">
-                                            <h1>1</h1>
-                                        </td>
-                                        <td data-label="Valeur">
-                                            <h1>19 000$</h1>
-                                        </td>
-                                        <td data-label="Variation sur 24h">
-                                            <h1 class="perte">-3,10%<h1>
-                                        </td>
-                                        <td data-label=" ">
-                                            <a href="">Trader</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="Nom" class="nom">
-                                            <img src="../img/crypto/xrplogo.png"> 
-                                            <h1>BTC</h1>
-                                            <h2>Bitcoin</h2>
-                                        </td>
-                                        <td data-label="Montant">
-                                            <h1>1</h1>
-                                        </td>
-                                        <td data-label="Valeur">
-                                            <h1>19 000$</h1>
-                                        </td>
-                                        <td data-label="Variation sur 24h">
-                                            <h1 class="perte">-3,10%<h1>
-                                        </td>
-                                        <td data-label=" ">
-                                            <a href="">Trader</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="Nom" class="nom">
-                                            <img src="../img/crypto/shibalogo.png"> 
-                                            <h1>BTC</h1>
-                                            <h2>Bitcoin</h2>
-                                        </td>
-                                        <td data-label="Montant">
-                                            <h1>1</h1>
-                                        </td>
-                                        <td data-label="Valeur">
-                                            <h1>19 000$</h1>
-                                        </td>
-                                        <td data-label="Variation sur 24h">
-                                            <h1 class="perte">-3,10%<h1>
-                                        </td>
-                                        <td data-label=" ">
-                                            <a href="">Trader</a>
-                                        </td>
-                                    </tr>
+                                <tbody id="tableau_crypto">
+                                    
                                 </tbody>
                             </table>
                         </div>
