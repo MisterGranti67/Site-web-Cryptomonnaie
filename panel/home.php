@@ -4,14 +4,30 @@
         <title>Mon éspace joueur - Crypto Skylord</title>
         <link href="../css/style-panel.css" rel="stylesheet">
         <script>
-            fetch('https://api.binance.com/api/v1/ticker/24hr', {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/json',
-                },
-            })
-            .then(response => response.json())
-            .then(response => console.log(JSON.stringify(response)))
+            class API_Binance {
+                constructor() {
+                    fetch('https://api.binance.com/api/v1/ticker/24hr', {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                        },
+                    })
+                    .then(response => response.json())
+                    // .then(response => console.log(JSON.stringify(response))) # Afficher le JSON dans la console
+                    .then(response => this.valeurs = response)
+                }
+
+                get getETHUSDT() {
+                    for (let i = 0; i < 10; i++) {
+                        if (this.valeurs[i].symbol == "ETHUSDT"){
+                            return this.valeurs;
+                        }
+                    }
+                    return "";
+                }
+            }
+
+            const instance = new API_Binance();
         </script>
     </head>
     <body>
