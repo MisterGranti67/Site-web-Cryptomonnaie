@@ -504,7 +504,62 @@ footer {
 }
 
 
-.bas-footer {
-    background-color: rgba(0,0,0,0.4);
-    border-top: rgba(0,0,0,0.8);
+
+
+
+.bas-footer{
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 128px;
+    width: 100%;
+}
+
+.bas-footer .total-bas-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.bas-footer .gauche img {
+    width: 128px;
+}
+
+.bas-footer .gauche{
+    width: 128px;
+}
+
+.bas-footer .droite {
+    position: relative;
+    width:859px;
+    margin-top: 50px;
+    margin-left: 37px;
+
+}
+
+.bas-footer .droite .menu {
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: auto;
+}
+
+.bas-footer .droite .menu li {
+    margin-right: auto;
+    margin-left: 32px;
+    float: left;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+    color: #FFFFFF;
+    transition: color 300ms;
+}
+
+.bas-footer .droite .menu li:hover {
+    color: #A7A7A7;
+    cursor: pointer;
+    transition: color 300ms;
 }

@@ -5,6 +5,7 @@
         <title>Mon éspace joueur - Crypto Skylord</title>
         <link href="../css/style-panel.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>
+        <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
         <script>
             $(document).ready(async function(){
                 const queryString = window.location.search;
@@ -192,14 +193,23 @@
         </div>
         <div class="bas-footer">
             <div class="container">
-                <div class="gauche">
-                    <h3>Skylord</h3>
-                    <p>©(Copyright) 2022. Tous les droits réservés</p>
-                </div>
-                <div class="droite">
-                <!-- ICONE TWITTER -->
-                <!-- ICONE TIKTOK -->
-                <!-- ICONE DISCORD -->
+                <div class="total-bas-footer">
+                    <div class="gauche">
+                        <h1>Skylord</h1>
+                        <p>©(Copyright) 2022. Tous les droits réservés</p>
+                    </div>
+                    <div class="droite">
+                    <!-- ICONE TWITTER -->
+                    <!-- ICONE TIKTOK -->
+                    <!-- ICONE DISCORD -->
+                        <ul class="menu">
+                            <li>Nos CGU</li>
+                            <li>Nos CGV</li>
+                            <li>Mentions légales</li>
+                            <li>Vote et Gagne</li>
+                            <li>Boutique</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
