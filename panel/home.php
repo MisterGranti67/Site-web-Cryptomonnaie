@@ -15,11 +15,7 @@
                 if (urlParams.get('pseudo') != null) {
                     if (urlParams.get('code') != null) {
                         var pseudo = 'http://apiv1.skylord.fr:24466/api/money?joueur=' + urlParams.get('pseudo');
-                        const api_crypto = await fetch(pseudo, {    
-                            method : "GET",
-                            mode: 'cors',
-                            headers: {}
-                            });
+                        const api_crypto = await fetch(pseudo);
                         const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
                         const data = await api_binance.json();
                         const data_crypto = await api_crypto.json();
