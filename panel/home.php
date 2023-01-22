@@ -4,7 +4,7 @@
         <title>Mon éspace joueur - Crypto Skylord</title>
         <link href="../css/style-panel.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>
-        <!-- <meta http-equiv="Content-Security-Policy" /> -->
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <script>
             $(document).ready(async function(){
                 const queryString = window.location.search;
