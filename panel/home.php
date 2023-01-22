@@ -6,14 +6,27 @@
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script>
             $(document).ready(async function(){
-                const response = await fetch('https://api.binance.com/api/v1/ticker/24hr');
-                const data = await response.json();
-                var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
-                for (let i = 2000; i > 0; i--) {
-                    if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
-                        const nom_crypto = data[i].symbol.split('USDT');
-                        var str = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto[0] + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>1</h1></td><td data-label=\"Valeur\"><h1>19 000$</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\"perte\"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
-                        $(str).prependTo("#tableau_crypto");
+                const queryString = window.location.search;
+                console.log(queryString);
+
+                const urlParams = new URLSearchParams(queryString);
+                console.log(urlParams.get('pseudo'));
+                if (urlParams.get('pseudo') != null) {
+                    if (urlParams.get('code') != null) {
+                        var pseudo = 'http://apiv1.skylord.fr:24466/api/money?joueur=' + urlParams.get('pseudo');
+                        const api_crypto = await fetch(pseudo);
+                        const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
+                        const data = await api_binance.json();
+                        const data_crypto = await api_crypto.json();
+                        console.log(data_crypto)
+                        var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
+                        for (let i = 2000; i > 0; i--) {
+                            if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
+                                const nom_crypto = data[i].symbol.split('USDT');
+                                var str = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto[0] + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>1</h1></td><td data-label=\"Valeur\"><h1>19 000$</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\"perte\"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
+                                $(str).prependTo("#tableau_crypto");
+                            }
+                        }
                     }
                 }
             });
