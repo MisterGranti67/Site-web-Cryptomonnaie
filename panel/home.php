@@ -199,15 +199,10 @@
                         <p>©(Copyright) 2022. Tous les droits réservés</p>
                     </div>
                     <div class="droite">
-                    <!-- ICONE TWITTER -->
-                    <!-- ICONE TIKTOK -->
-                    <!-- ICONE DISCORD -->
                         <ul class="menu">
-                            <li>Nos CGU</li>
-                            <li>Nos CGV</li>
-                            <li>Mentions légales</li>
-                            <li>Vote et Gagne</li>
-                            <li>Boutique</li>
+                            <li><a href="https://www.tiktok.com/@play.skylord.fr"><i class="fa-brands fa-tiktok"></i></a></li>
+                            <li><a href="https://twitter.com/SkylordFR"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="https://discord.gg/skylord"><i class="fa-brands fa-discord"></i></a></li>
                         </ul>
                     </div>
                 </div>
