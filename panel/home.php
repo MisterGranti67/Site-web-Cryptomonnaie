@@ -45,6 +45,7 @@
                     <a class="item lien" href="">Trader</a>
                     <a class="item lien" href="">Accès aux rigs</a>
                     <a class="item lien" href="">Production d'énergie</a>
+                    <a class="item lien" href="">Technicien informatique</a>
                 </div>
                 <a class="item mon_wallet" href="">Mon Wallet</a>
                 <span class="hamburger hamburger--collapse item" id="js-navbar-toggle">
@@ -155,7 +156,7 @@
                         <img src="../img/wumpus.png">
                     </div>
                     <div class="droite">
-                        <h1>Rejoins-nous ! Et créons un lien unique !</h1>
+                        <h1>Rejoins-nous, et créons un lien unique !</h1>
                         <h2>Rejoignez une communauté de plusieurs milliers de personnes</h2>
                         <div class="margin"></div>
                         <p>Skylord est une communauté regroupant plusieurs milliers d’utilisateurs à travers toute la France.</p>
