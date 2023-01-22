@@ -25,8 +25,8 @@
         <div class="overlay">
             <div class="overlay-panel overlay-right">
                 <h1>Bienvenue !</h1>
-                <p>Enregistrez-vous et commencez à construire vos projets sur nos services professionnel et performant</p>
-                <a href="https://crypto.skylord.fr/register"><button class="ghost">S'enregistrer</button></a>
+                <p>Enregistrez-vous et accèdez à votre compte crypto-monnaie en jeu, mais depuis le web !</p>
+                <a><button class="ghost">/code [mot de passe] en jeu !</button></a>
             </div>
         </div>
     </div>
