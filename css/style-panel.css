@@ -229,6 +229,10 @@ body {
     margin-bottom: 24px;
     text-align: center;
 }
+.notification .notification_recu {
+    transform: scale(1);
+    transition: transform 300ms;
+}
 .notification .notification_recu a {
     font-family: 'Roboto';
     font-style: normal;
@@ -238,12 +242,17 @@ body {
     color: #000000;
     text-align: left;
     text-decoration: none;
+    transition: color 300ms;
 }
 
 .notification .notification_recu a:hover {
     color: #6D6D6D;
+    transition: color 300ms;
 }
-
+.notification .notification_recu:hover {
+    transform: scale(1.05);
+    transition: transform 300ms;
+}
 .notification .notification_recu {
     margin-bottom: 12px;
     margin-left: 16px;
