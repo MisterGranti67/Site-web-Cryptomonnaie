@@ -14,12 +14,12 @@
                 console.log(urlParams.get('pseudo'));
                 if (urlParams.get('pseudo') != null) {
                     if (urlParams.get('code') != null) {
-                        var pseudo = 'http://apiv1.skylord.fr:24466/api/money?joueur=' + urlParams.get('pseudo');
-                        const api_crypto = await fetch(pseudo);
+                        // var pseudo = 'http://apiv1.skylord.fr:24466/api/money?joueur=' + urlParams.get('pseudo');
+                        // const api_crypto = await fetch(pseudo);
                         const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
                         const data = await api_binance.json();
-                        const data_crypto = await api_crypto.json();
-                        console.log(data_crypto)
+                        // const data_crypto = await api_crypto.json();
+                        // console.log(data_crypto)
                         var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
                         for (let i = 2000; i > 0; i--) {
                             if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
@@ -148,5 +148,58 @@
                 </div>
             </div>
         </div>
+        <section class="discord">
+            <div class="container">
+                <div class="acces-discord">
+                    <div class="gauche">
+                        <img src="../img/wumpus.png">
+                    </div>
+                    <div class="droite">
+                        <h1>Rejoins-nous ! Et créons un lien unique !</h1>
+                        <h2>Rejoignez une communauté de plusieurs milliers de personnes</h2>
+                        <div class="margin"></div>
+                        <p>Skylord est une communauté regroupant plusieurs milliers d’utilisateurs à travers toute la France.</p>
+                        <p>C’est notre pôle principale, ce discord nous sert à annoncer les prochaines mises à jours, évènements sondages et même des concours exclusifs !</p>
+                        <div class="bouton">
+                            <a class="bouton">Rejoindre le discord</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
+    <footer>
+        <div class="footer-menu">
+            <div class="container">
+                <div class="gauche">
+                <a href="https://skylord.fr">
+                    <img src="https://skylord.fr/logo.png">
+                </a>
+                </div>
+                <div class="droite">
+                <ul class="menu">
+                    <li>Nos CGU</li>
+                    <li>Nos CGV</li>
+                    <li>Mentions légales</li>
+                    <li>Vote et Gagne</li>
+                    <li>Boutique</li>
+                </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="bas-footer">
+            <div class="container">
+                <div class="gauche">
+                <h3>Skylord</h3>
+                <p>©(Copyright) 2022. Tous les droits réservés</p>
+                </div>
+                <div class="droite">
+                <!-- ICONE TWITTER -->
+                <!-- ICONE TIKTOK -->
+                <!-- ICONE DISCORD -->
+                </div>
+            </div>
+        </div>
+    </footer>
 </html>

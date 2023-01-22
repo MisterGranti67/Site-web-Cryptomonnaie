@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
     font-family: 'Roboto';
+    margin-block-start: 0px;
+    margin-block-end: 0px;
 }
 body {
     margin: 0;
@@ -334,4 +336,125 @@ body {
 
 .tableau_crypto .nom {
     display: flex;
+}
+
+.discord {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    background: #EFEFEF;
+    margin-top: 24px;
+}
+
+.discord .gauche img {
+    margin-top: 44px;
+    margin-bottom: 65px;
+    margin-left: 50px;
+}
+.discord .acces-discord{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.discord .gauche{
+    width: 263px;
+}
+
+.discord .droite {
+    position: relative;
+    width:648px;
+    margin-top: 73px;
+    margin-left: 113px;
+}
+.discord .margin {
+    border-top: #000 solid 1px;
+    height: 1px;
+    margin-top: 24px;
+    margin-bottom: 26px;
+}
+
+.discord .droite h1 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+}
+
+.discord .droite h2 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+.discord .droite p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: justify;
+    color: #000000;
+}
+
+.discord a.bouton {
+    background: #FFD97D;
+    border-radius: 10px;
+    padding: 16px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+    margin-top: 42px;
+}
+
+.discord div.bouton {
+    margin-top: 57px;
+    position: relative;
+    display: block;
+}
+
+footer {
+    height: 207px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.footer-menu{
+    background-color: rgba(0,0,0,0.4);
+    border: rgba(0,0,0,0.8);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+footer .gauche{
+    left: 0;
+    align-items: left;
+}
+
+footer .droite {
+    align-items: right;
+}
+
+.bas-footer {
+    background-color: rgba(0,0,0,0.4);
+    border-top: rgba(0,0,0,0.8);
+}
+.global {
+    width:1440px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
