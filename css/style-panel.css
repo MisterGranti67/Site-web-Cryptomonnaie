@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
     font-family: 'Roboto';
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-inline-start: 0px;
 }
 body {
     margin: 0;
@@ -77,6 +80,14 @@ body {
         width: 82px;
         text-align: center;
         border-radius: 5px;
+        color: #000;
+        transition: background 300ms;
+    }
+
+    .mon_wallet:hover{
+        background: #ffe5a7;
+        transition: background 300ms;
+        cursor: pointer;
     }
 
     .navbar_menu .lien:last-child {
@@ -125,7 +136,6 @@ body {
     font-size: 16px;
     margin-left: 14px;
     display: inline-block;
-    float: left;
 }
 
 .informations .more_details h1 {
@@ -219,6 +229,10 @@ body {
     margin-bottom: 24px;
     text-align: center;
 }
+.notification .notification_recu {
+    transform: scale(1);
+    transition: transform 300ms;
+}
 .notification .notification_recu a {
     font-family: 'Roboto';
     font-style: normal;
@@ -228,12 +242,17 @@ body {
     color: #000000;
     text-align: left;
     text-decoration: none;
+    transition: color 300ms;
 }
 
 .notification .notification_recu a:hover {
     color: #6D6D6D;
+    transition: color 300ms;
 }
-
+.notification .notification_recu:hover {
+    transform: scale(1.05);
+    transition: transform 300ms;
+}
 .notification .notification_recu {
     margin-bottom: 12px;
     margin-left: 16px;
@@ -334,4 +353,258 @@ body {
 
 .tableau_crypto .nom {
     display: flex;
+}
+.tableau_crypto tbody tr {
+    transform: scale(1);
+    transition: transform 300ms;
+}
+.tableau_crypto tbody td {
+    margin-bottom: 7px;
+}
+.tableau_crypto tbody tr:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 300ms;
+}
+
+.discord {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    background: #EFEFEF;
+    margin-top: 24px;
+}
+
+.discord .acces-discord{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.discord .gauche img {
+    margin-top: 44px;
+    margin-bottom: 65px;
+    margin-left: 50px;
+}
+
+.discord .gauche{
+    width: 263px;
+}
+
+.discord .droite {
+    position: relative;
+    width:648px;
+    margin-top: 73px;
+    margin-left: 113px;
+}
+.discord .margin {
+    border-top: #000 solid 1px;
+    height: 1px;
+    margin-top: 24px;
+    margin-bottom: 26px;
+}
+
+.discord .droite h1 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+}
+
+.discord .droite h2 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+.discord .droite p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: justify;
+    color: #000000;
+}
+
+.discord a.bouton {
+    background: #FFD97D;
+    border-radius: 10px;
+    padding: 16px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+    margin-top: 42px;
+    transition: background 300ms;
+}
+
+.discord a.bouton:hover {
+    background: #ffe5a7;
+    transition: background 300ms;
+    cursor: pointer;
+}
+
+.discord div.bouton {
+    margin-top: 57px;
+    position: relative;
+    display: block;
+}
+
+footer {
+    height: 207px;
+}
+.footer-menu{
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 128px;
+    width: 100%;
+    border-bottom: rgba(0, 0, 0, 0.3) solid 1px;
+}
+
+.footer-menu .total-haut-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.footer-menu .gauche img {
+    width: 128px;
+}
+
+.footer-menu .gauche{
+    width: 128px;
+}
+
+.footer-menu .droite {
+    position: relative;
+    width:859px;
+    margin-top: 50px;
+    margin-left: 37px;
+
+}
+
+.footer-menu .droite .menu {
+    margin-left: 69px;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: auto;
+}
+
+.footer-menu .droite .menu li {
+    margin-left: 32px;
+    float: left;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    text-align: right;
+    transition: color 300ms;
+}
+
+.footer-menu .droite .menu li:hover {
+    color: #A7A7A7;
+    cursor: pointer;
+    transition: color 300ms;
+}
+
+
+
+
+
+.bas-footer{
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 80px;
+    width: 100%;
+}
+
+.bas-footer .total-bas-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+
+}
+
+
+.bas-footer .gauche{
+    height: 48px;
+    width: 316px;
+    margin-top: 16px;
+}
+.bas-footer .gauche h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.bas-footer .gauche p{
+    margin-top: 1px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.bas-footer .droite {
+    position: relative;
+    width: 164px;
+    margin-top: 24px;
+    margin-left: 512px;
+
+}
+
+.bas-footer .droite .menu {
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: auto;
+}
+
+.bas-footer .droite .menu li {
+    margin-right: auto;
+    margin-left: 32px;
+    float: left;
+    text-decoration: none;
+    list-style-type: none;
+    height: 32px;
+    transition: color 300ms;
+}
+
+.bas-footer .droite .menu a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.bas-footer .droite .menu li i {
+    font-size: 32px;
+}
+
+.bas-footer .droite .menu a:hover {
+    color: #A7A7A7;
+    cursor: pointer;
+    transition: color 300ms;
 }
