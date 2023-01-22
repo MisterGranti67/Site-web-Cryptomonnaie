@@ -345,6 +345,18 @@ body {
 .tableau_crypto .nom {
     display: flex;
 }
+.tableau_crypto tbody tr {
+    transform: scale(1);
+    transition: transform 300ms;
+}
+.tableau_crypto tbody td {
+    margin-bottom: 7px;
+}
+.tableau_crypto tbody tr:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 300ms;
+}
 
 .discord {
     display: flex;
