@@ -570,16 +570,19 @@ footer {
     float: left;
     text-decoration: none;
     list-style-type: none;
-    color: #FFFFFF;
     height: 32px;
     transition: color 300ms;
 }
 
+.bas-footer .droite .menu a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
 .bas-footer .droite .menu li i {
     font-size: 32px;
 }
 
-.bas-footer .droite .menu li:hover {
+.bas-footer .droite .menu a:hover {
     color: #A7A7A7;
     cursor: pointer;
     transition: color 300ms;

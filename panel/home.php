@@ -196,7 +196,7 @@
                 <div class="total-bas-footer">
                     <div class="gauche">
                         <h1>Skylord</h1>
-                        <p>©(Copyright) 2022. Tous les droits réservés</p>
+                        <p>©(Copyright) 2023. Tous les droits réservés</p>
                     </div>
                     <div class="droite">
                         <ul class="menu">
