@@ -79,6 +79,14 @@ body {
         width: 82px;
         text-align: center;
         border-radius: 5px;
+        color: #000;
+        transition: background 300ms;
+    }
+
+    .mon_wallet:hover{
+        background: #ffe5a7;
+        transition: background 300ms;
+        cursor: pointer;
     }
 
     .navbar_menu .lien:last-child {
@@ -127,7 +135,6 @@ body {
     font-size: 16px;
     margin-left: 14px;
     display: inline-block;
-    float: left;
 }
 
 .informations .more_details h1 {
@@ -346,16 +353,18 @@ body {
     margin-top: 24px;
 }
 
-.discord .gauche img {
-    margin-top: 44px;
-    margin-bottom: 65px;
-    margin-left: 50px;
-}
 .discord .acces-discord{
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
 }
+
+.discord .gauche img {
+    margin-top: 44px;
+    margin-bottom: 65px;
+    margin-left: 50px;
+}
+
 .discord .gauche{
     width: 263px;
 }
@@ -419,6 +428,13 @@ body {
     text-align: center;
     color: #000000;
     margin-top: 42px;
+    transition: background 300ms;
+}
+
+.discord a.bouton:hover {
+    background: #ffe5a7;
+    transition: background 300ms;
+    cursor: pointer;
 }
 
 .discord div.bouton {
@@ -429,32 +445,66 @@ body {
 
 footer {
     height: 207px;
+}
+.footer-menu{
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 128px;
+    width: 100%;
+}
+
+.footer-menu .total-haut-footer {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
 }
-.footer-menu{
-    background-color: rgba(0,0,0,0.4);
-    border: rgba(0,0,0,0.8);
-    padding-top: 16px;
-    padding-bottom: 16px;
+
+.footer-menu .gauche img {
+    width: 128px;
 }
 
-footer .gauche{
-    left: 0;
-    align-items: left;
+.footer-menu .gauche{
+    width: 128px;
 }
 
-footer .droite {
-    align-items: right;
+.footer-menu .droite {
+    position: relative;
+    width:859px;
+    margin-top: 50px;
+    margin-left: 37px;
+
 }
+
+.footer-menu .droite .menu {
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: auto;
+}
+
+.footer-menu .droite .menu li {
+    margin-right: auto;
+    margin-left: 32px;
+    float: left;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+    color: #FFFFFF;
+    transition: color 300ms;
+}
+
+.footer-menu .droite .menu li:hover {
+    color: #A7A7A7;
+    cursor: pointer;
+    transition: color 300ms;
+}
+
 
 .bas-footer {
     background-color: rgba(0,0,0,0.4);
     border-top: rgba(0,0,0,0.8);
-}
-.global {
-    width:1440px;
-    padding-left: 16px;
-    padding-right: 16px;
 }

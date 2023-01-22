@@ -172,28 +172,29 @@
     <footer>
         <div class="footer-menu">
             <div class="container">
-                <div class="gauche">
-                <a href="https://skylord.fr">
-                    <img src="https://skylord.fr/logo.png">
-                </a>
+                <div class="total-haut-footer">
+                    <div class="gauche">
+                        <a href="https://skylord.fr">
+                            <img src="https://skylord.fr/logo.png">
+                        </a>
+                    </div>
+                    <div class="droite">
+                        <ul class="menu">
+                            <li>Nos CGU</li>
+                            <li>Nos CGV</li>
+                            <li>Mentions légales</li>
+                            <li>Vote et Gagne</li>
+                            <li>Boutique</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="droite">
-                <ul class="menu">
-                    <li>Nos CGU</li>
-                    <li>Nos CGV</li>
-                    <li>Mentions légales</li>
-                    <li>Vote et Gagne</li>
-                    <li>Boutique</li>
-                </ul>
-                </div>
-
             </div>
         </div>
         <div class="bas-footer">
             <div class="container">
                 <div class="gauche">
-                <h3>Skylord</h3>
-                <p>©(Copyright) 2022. Tous les droits réservés</p>
+                    <h3>Skylord</h3>
+                    <p>©(Copyright) 2022. Tous les droits réservés</p>
                 </div>
                 <div class="droite">
                 <!-- ICONE TWITTER -->
