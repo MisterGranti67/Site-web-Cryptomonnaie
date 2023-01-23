@@ -1,0 +1,302 @@
+.zone_eolienne { 
+	width: 156px;
+	height: 256px;
+	position: absolute;
+	left: 124.6077880859375px;
+	top: 80px;
+}
+.zone_eolienne_images { 
+	width: 124px;
+	height: 256px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.zone_eolienne_image { 
+	width: 124px;
+	height: 128px;
+	background-image: url(../img/energie/wind_turbine_top.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.zone_eolienne_text { 
+	width: 32px;
+	height: 152px;
+	position: absolute;
+	left: 110px;
+}
+.zone_eolienne_placement_text { 
+	background-color: rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width: 32px;
+	height: 24px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.zone_eolienne_placement_text_text { 
+	color: rgba(55, 213, 0, 1);
+	width: 32px;
+	height: 24px;
+	font-family: Roboto;
+	text-align: center;
+	font-size: 12px;
+	letter-spacing: 0;
+    padding-top: 5px;
+}
+.zone_eolienne_placement { 
+	width: 32px;
+	height: 24px;
+	left: 0px;
+	margin-top: 104px;
+}
+
+.zone_eolienne_text .first { 
+	width: 32px;
+	height: 24px;
+	left: 0px;
+	margin-top: 64px;
+}
+
+
+
+
+.zone_groupe { 
+	width: 164px;
+	height: 258px;
+	position: absolute;
+	left: 522px;
+	top: 80px;
+}
+.groupe_text { 
+	width: 32px;
+	height: 152px;
+	position: absolute;
+	left: 132px;
+}
+.placement_groupe { 
+	width: 32px;
+	height: 24px;
+	left: 0px;
+	margin-top: 104px;
+}
+.groupe_text .first { 
+	width: 32px;
+	height: 24px;
+	left: 0px;
+	margin-top: 64px;
+}
+.placement_groupe_text { 
+	background-color: rgba(217, 217, 217, 1);
+	width: 32px;
+	height: 24px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.placement_groupe_text_text { 
+	color: rgba(55, 213, 0, 1);
+	width: 32px;
+	height: 24px;
+	font-family: Roboto;
+	text-align: center;
+	font-size: 12px;
+	letter-spacing: 0;
+    padding-top: 5px;
+}
+.groupes_images { 
+	width: 132px;
+	height: 258px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.groupe_image { 
+	height: 128px;
+    margin-top:  0px;
+	background-image: url(../img/energie/generator.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.placement_groupe_text_text .off {
+    color:  rgba(213, 0, 0, 1);
+}
+
+
+
+
+
+
+
+
+.zone_panneaux_solaires { 
+	width: 98px;
+	height: 384px;
+	position: absolute;
+	left: 352.6077880859375px;
+	top: 80px;
+}
+.panneaux_solaires_images { 
+	width: 66px;
+	height: 384px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.panneaux_solaire_image { 
+	width: 66px;
+	height: 64px;
+    margin-top:  0px;
+	background-image: url(../img/energie/solar_panel.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.panneaux_solaires_text { 
+	width: 32px;
+	height: 344px;
+	position: absolute;
+	left: 66px;
+}
+.placement_panneaux_solaire { 
+	width: 32px;
+	height: 24px;
+	margin-top:  40px;
+}
+.panneaux_solaires_text .first { 
+	width: 32px;
+	height: 24px;
+	margin-top:  20px;
+}
+.zone_panneau_solaire { 
+	background-color: rgba(217, 217, 217, 1);
+	width: 32px;
+	height: 24px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.zone_panneau_solaire_text { 
+	color: rgba(55, 213, 0, 1);
+	width: 32px;
+	height: 24px;
+	font-family: Roboto;
+	text-align: center;
+	font-size: 12px;
+	letter-spacing: 0;
+    padding-top: 5px;
+}
+.zone_panneau_solaire .off {
+    color:  rgba(213, 0, 0, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.zone_rigs { 
+	width: 115px;
+	height: 640px;
+	position: absolute;
+	left: 825.6077880859375px;
+	top: 80px;
+}
+.zone_rigs_images { 
+	width: 82.5px;
+	height: 640px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.zone_container {
+    position:  relative;
+}
+.zone_rigs_images_image { 
+	width: 82.5px;
+	height: 80px;
+	margin-top:  0px;
+	background-image: url(../img/energie/crypto_rig.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.zone_rigs_text { 
+	width: 32px;
+	height: 584px;
+	position: absolute;
+	left: 83px;
+}
+.placement_rigs { 
+	width: 32px;
+	height: 24px;
+	margin-top: 56px;
+}
+.zone_rigs_text .first { 
+	width: 32px;
+	height: 24px;
+	margin-top: 28px;
+}
+.placement_rigs_text { 
+	background-color: rgba(217, 217, 217, 1);
+	width: 32px;
+	height: 24px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+    position: relative;
+    display: block;
+}
+.placement_rigs_text_text { 
+	color: rgba(55, 213, 0, 1);
+	width: 32px;
+	height: 24px;
+	font-family: Roboto;
+	text-align: center;
+	font-size: 12px;
+	letter-spacing: 0;
+    padding-top: 5px;
+}
+.zone_rigs .off {
+    color:  rgba(213, 0, 0, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+.zone_network_wallet { 
+	width: 144px;
+	height: 128px;
+	position: absolute;
+	left: 240.6077880859375px;
+	top: 561px;
+}
+.zone_network_wallet_image { 
+	background-image: url(../img/energie/network_wallet.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 144px;
+	height: 128.01773071289062px;
+	position: absolute;
+	left: 0px;
+	top: -0.01773345097899437px;
+}

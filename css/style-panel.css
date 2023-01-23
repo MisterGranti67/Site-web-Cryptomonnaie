@@ -38,6 +38,11 @@ body {
     padding: 0 15px;
 }
 
+.navbar_menu .active {
+    color: #000;
+    text-decoration: underline;
+}
+
 
 .item {
     color: #6A6A6A;
@@ -607,4 +612,17 @@ footer {
     color: #A7A7A7;
     cursor: pointer;
     transition: color 300ms;
+}
+
+
+
+
+.energie_content .zone {
+    background: #FAFAFA;
+    border-radius: 10px;
+    width: 100%;
+    height: 800px;
+    margin-top: 144px;
+    margin-bottom: 80px;
+    position: relative;
 }
