@@ -64,19 +64,19 @@
                     <div class="zone_eolienne">
                         <div class="zone_eolienne_images">
                             <div class="zone_container">
-                                <div class="zone_eolienne_image"></div>
-                                <div class="zone_eolienne_image"></div>
+                                <div class="zone_eolienne_image off" id="ei1"></div>
+                                <div class="zone_eolienne_image" id="ei2"></div>
                             </div>
                         </div>
                         <div class="zone_eolienne_text">
                             <div class="zone_eolienne_placement first">
-                                <div class="zone_eolienne_placement_text">
-                                    <p class="zone_eolienne_placement_text_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text off" id="et1">OFF</p>
                                 </div>
                             </div>
                             <div class="zone_eolienne_placement">
-                                <div class="zone_eolienne_placement_text">
-                                    <p class="zone_eolienne_placement_text_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="et2">ON</p>
                                 </div>
                             </div>
                         </div>
@@ -84,19 +84,19 @@
                     <div class="zone_groupe">
                         <div class="groupes_images">
                             <div class="zone_container">
-                                <div class="groupe_image"></div>
-                                <div class="groupe_image"></div>
+                                <div class="groupe_image off" id="gi1"></div>
+                                <div class="groupe_image off" id="gi2"></div>
                             </div>
                         </div>
                         <div class="groupe_text">
                             <div class="placement_groupe first">
-                                <div class="placement_groupe_text">
-                                    <p class="placement_groupe_text_text off">OFF</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text off" id="gt1">OFF</p>
                                 </div>
                             </div>
                             <div class="placement_groupe">
-                                <div class="placement_groupe_text">
-                                    <p class="placement_groupe_text_text off">OFF</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text off" id="gt2">OFF</p>
                                 </div>
                             </div>
                         </div>
@@ -104,43 +104,43 @@
                     <div class="zone_panneaux_solaires">
                         <div class="panneaux_solaires_images">
                             <div class="zone_container">
-                                <div class="panneaux_solaire_image"></div>
-                                <div class="panneaux_solaire_image"></div>
-                                <div class="panneaux_solaire_image"></div>
-                                <div class="panneaux_solaire_image"></div>
-                                <div class="panneaux_solaire_image"></div>
-                                <div class="panneaux_solaire_image"></div>
+                                <div class="panneaux_solaire_image" id="psi1"></div>
+                                <div class="panneaux_solaire_image" id="psi2"></div>
+                                <div class="panneaux_solaire_image" id="psi3"></div>
+                                <div class="panneaux_solaire_image" id="psi4"></div>
+                                <div class="panneaux_solaire_image" id="psi5"></div>
+                                <div class="panneaux_solaire_image off" id="psi6"></div>
                             </div>
                         </div>
                         <div class="panneaux_solaires_text">
                             <div class="placement_panneaux_solaire first">
-                                <div class="zone_panneau_solaire">
-                                    <p class="zone_panneau_solaire_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="pst1">ON</p>
                                 </div>
                             </div>
                             <div class="placement_panneaux_solaire">
-                                <div class="zone_panneau_solaire">
-                                    <p class="zone_panneau_solaire_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="pst2">ON</p>
                                 </div>
                             </div>
                             <div class="placement_panneaux_solaire">
-                                <div class="zone_panneau_solaire">
-                                    <p class="zone_panneau_solaire_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="pst3">ON</p>
                                 </div>
                             </div>
                             <div class="placement_panneaux_solaire">
-                                <div class="zone_panneau_solaire">
-                                    <p class="zone_panneau_solaire_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="pst4">ON</p>
                                 </div>
                             </div>
                             <div class="placement_panneaux_solaire">
-                                <div class="zone_panneau_solaire">
-                                    <p class="zone_panneau_solaire_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="pst5">ON</p>
                                 </div>
                             </div>
                             <div class="placement_panneaux_solaire">
-                                <div class="zone_panneau_solaire">
-                                    <p class="zone_panneau_solaire_text off">OFF</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text off" id="pst6">OFF</p>
                                 </div>
                             </div>
                         </div>
@@ -148,55 +148,55 @@
                     <div class="zone_rigs">
                         <div class="zone_rigs_images">
                             <div class="zone_container">
-                                <div class="zone_rigs_images_image"></div>
-                                <div class="zone_rigs_images_image"></div>
-                                <div class="zone_rigs_images_image"></div>
-                                <div class="zone_rigs_images_image"></div>
-                                <div class="zone_rigs_images_image"></div>
-                                <div class="zone_rigs_images_image"></div>
-                                <div class="zone_rigs_images_image"></div>
-                                <div class="zone_rigs_images_image"></div>
+                                <div class="zone_rigs_images_image off" id="ri1"></div>
+                                <div class="zone_rigs_images_image off" id="ri2"></div>
+                                <div class="zone_rigs_images_image" id="ri3"></div>
+                                <div class="zone_rigs_images_image" id="ri4"></div>
+                                <div class="zone_rigs_images_image" id="ri5"></div>
+                                <div class="zone_rigs_images_image" id="ri6"></div>
+                                <div class="zone_rigs_images_image" id="ri7"></div>
+                                <div class="zone_rigs_images_image" id="ri8"></div>
                             </div>
                         </div>
                         <div class="zone_rigs_text">
                             <div class="placement_rigs first">
-                                <div class="placement_rigs_text">
-                                    <p class="placement_rigs_text_text off">OFF</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text off" id="rt1">OFF</p>
                                 </div>
                             </div>
                             <div class="placement_rigs">
-                                <div class="placement_rigs_text">
-                                    <p class="placement_rigs_text_text off">OFF</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text off" id="rt2">OFF</p>
                                 </div>
                             </div>
                             <div class="placement_rigs">
-                                <div class="placement_rigs_text">
-                                    <p class="placement_rigs_text_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="rt3">ON</p>
                                 </div>
                             </div>
                             <div class="placement_rigs">
-                                <div class="placement_rigs_text">
-                                    <p class="placement_rigs_text_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="rt4">ON</p>
                                 </div>
                             </div>
                             <div class="placement_rigs">
-                                <div class="placement_rigs_text">
-                                    <p class="placement_rigs_text_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="rt5">ON</p>
                                 </div>
                             </div>
                             <div class="placement_rigs">
-                                <div class="placement_rigs_text">
-                                    <p class="placement_rigs_text_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="rt6">ON</p>
                                 </div>
                             </div>
                             <div class="placement_rigs">
-                                <div class="placement_rigs_text">
-                                    <p class="placement_rigs_text_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="rt7">ON</p>
                                 </div>
                             </div>
                             <div class="placement_rigs">
-                                <div class="placement_rigs_text">
-                                    <p class="placement_rigs_text_text">ON</p>
+                                <div class="placement_text">
+                                    <p class="placement_text_text" id="rt8">ON</p>
                                 </div>
                             </div>
                         </div>
@@ -249,7 +249,7 @@
                         <p>Skylord est une communauté regroupant plusieurs milliers d’utilisateurs à travers toute la France.</p>
                         <p>C’est notre pôle principale, ce discord nous sert à annoncer les prochaines mises à jours, évènements sondages et même des concours exclusifs !</p>
                         <div class="bouton">
-                            <a class="bouton">Rejoindre le discord</a>
+                            <a href="https://discord.gg/skylord" class="bouton">Rejoindre le discord</a>
                         </div>
                     </div>
                 </div>

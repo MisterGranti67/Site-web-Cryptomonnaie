@@ -2,7 +2,7 @@
 	width: 156px;
 	height: 256px;
 	position: absolute;
-	left: 124.6077880859375px;
+	left: 124px;
 	top: 80px;
 }
 .zone_eolienne_images { 
@@ -26,25 +26,6 @@
 	position: absolute;
 	left: 110px;
 }
-.zone_eolienne_placement_text { 
-	background-color: rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
-	width: 32px;
-	height: 24px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-.zone_eolienne_placement_text_text { 
-	color: rgba(55, 213, 0, 1);
-	width: 32px;
-	height: 24px;
-	font-family: Roboto;
-	text-align: center;
-	font-size: 12px;
-	letter-spacing: 0;
-    padding-top: 5px;
-}
 .zone_eolienne_placement { 
 	width: 32px;
 	height: 24px;
@@ -57,6 +38,12 @@
 	height: 24px;
 	left: 0px;
 	margin-top: 64px;
+}
+.zone_eolienne_placement_text .off {
+    color:  rgba(213, 0, 0, 1);
+}
+.zone_eolienne_images .off {
+	filter: blur(5px);
 }
 
 
@@ -87,25 +74,6 @@
 	left: 0px;
 	margin-top: 64px;
 }
-.placement_groupe_text { 
-	background-color: rgba(217, 217, 217, 1);
-	width: 32px;
-	height: 24px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-.placement_groupe_text_text { 
-	color: rgba(55, 213, 0, 1);
-	width: 32px;
-	height: 24px;
-	font-family: Roboto;
-	text-align: center;
-	font-size: 12px;
-	letter-spacing: 0;
-    padding-top: 5px;
-}
 .groupes_images { 
 	width: 132px;
 	height: 258px;
@@ -120,10 +88,12 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.placement_groupe_text_text .off {
+.placement_groupe_text .off {
     color:  rgba(213, 0, 0, 1);
 }
-
+.groupes_images .off {
+	filter: blur(5px);
+}
 
 
 
@@ -135,7 +105,7 @@
 	width: 98px;
 	height: 384px;
 	position: absolute;
-	left: 352.6077880859375px;
+	left: 352px;
 	top: 80px;
 }
 .panneaux_solaires_images { 
@@ -170,30 +140,12 @@
 	height: 24px;
 	margin-top:  20px;
 }
-.zone_panneau_solaire { 
-	background-color: rgba(217, 217, 217, 1);
-	width: 32px;
-	height: 24px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-.zone_panneau_solaire_text { 
-	color: rgba(55, 213, 0, 1);
-	width: 32px;
-	height: 24px;
-	font-family: Roboto;
-	text-align: center;
-	font-size: 12px;
-	letter-spacing: 0;
-    padding-top: 5px;
-}
 .zone_panneau_solaire .off {
     color:  rgba(213, 0, 0, 1);
 }
-
-
+.panneaux_solaires_images .off {
+	filter: blur(5px);
+}
 
 
 
@@ -210,7 +162,7 @@
 	width: 115px;
 	height: 640px;
 	position: absolute;
-	left: 825.6077880859375px;
+	left: 825px;
 	top: 80px;
 }
 .zone_rigs_images { 
@@ -248,7 +200,18 @@
 	height: 24px;
 	margin-top: 28px;
 }
-.placement_rigs_text { 
+.zone_rigs .off {
+    color:  rgba(213, 0, 0, 1);
+}
+
+.zone_rigs_images .off {
+	filter: blur(5px);
+}
+
+
+
+
+.placement_text { 
 	background-color: rgba(217, 217, 217, 1);
 	width: 32px;
 	height: 24px;
@@ -259,7 +222,7 @@
     position: relative;
     display: block;
 }
-.placement_rigs_text_text { 
+.placement_text_text { 
 	color: rgba(55, 213, 0, 1);
 	width: 32px;
 	height: 24px;
@@ -269,14 +232,6 @@
 	letter-spacing: 0;
     padding-top: 5px;
 }
-.zone_rigs .off {
-    color:  rgba(213, 0, 0, 1);
-}
-
-
-
-
-
 
 
 
@@ -295,8 +250,8 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 144px;
-	height: 128.01773071289062px;
+	height: 128px;
 	position: absolute;
 	left: 0px;
-	top: -0.01773345097899437px;
+	top: 0px;
 }
