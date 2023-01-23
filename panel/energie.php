@@ -201,37 +201,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="e71_277">
-                        <div class="e71_278"></div>
-                    </div>
-                    <div class="e71_322">
-                        <div class="e71_318">
-                            <div class="e71_279"></div>
-                            <div class="e71_281"></div>
-                            <div class="e71_283"></div>
-                            <div class="e71_284"></div>
-                            <div class="e71_285"></div>
-                            <div class="e71_286"></div>
-                            <div class="e71_287"></div>
-                            <div class="e71_288"></div>
-                        </div>
-                        <div class="e71_319">
-                            <div class="e71_295"></div>
-                            <div class="e71_297"></div>
-                            <div class="e71_299"></div>
-                        </div>
-                        <div class="e71_320">
-                            <div class="e71_301"></div>
-                            <div class="e71_303"></div>
-                            <div class="e71_306"></div>
-                            <div class="e71_307"></div>
-                            <div class="e71_308"></div>
-                            <div class="e71_309"></div>
-                        </div>
-                        <div class="e71_321">
-                            <div class="e71_314"></div>
-                            <div class="e71_316"></div>
-                        </div>
+                    <div class="zone_network_wallet">
+                        <div class="zone_network_wallet_image"></div>
                     </div>
                 </div>
             </div>
