@@ -113,110 +113,68 @@
 	font-size: 12px;
 	letter-spacing: 0;
 }
-.e71_274 { 
+
+
+
+
+.zone_groupe { 
 	width: 164px;
 	height: 258px;
 	position: absolute;
-	left: 522.6077880859375px;
+	left: 522px;
 	top: 80px;
 }
-.e71_273 { 
+.groupe_text { 
 	width: 32px;
 	height: 152px;
 	position: absolute;
 	left: 132px;
-	top: 64px;
 }
-.e71_265 { 
+.placement_groupe { 
 	width: 32px;
 	height: 24px;
-	position: absolute;
 	left: 0px;
-	top: 0px;
+	margin-top: 104px;
 }
-.e71_266 { 
-	background-color: rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+.groupe_text .first { 
 	width: 32px;
 	height: 24px;
-	position: absolute;
 	left: 0px;
-	top: 0px;
+	margin-top: 64px;
+}
+.placement_groupe_text { 
+	background-color: rgba(217, 217, 217, 1);
+	width: 32px;
+	height: 24px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
-.e71_267 { 
-	color: rgba(213.56249392032623, 0, 0, 1);
+.placement_groupe_text_text { 
+	color: rgba(55, 213, 0, 1);
 	width: 32px;
 	height: 24px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
 	font-family: Roboto;
 	text-align: center;
 	font-size: 12px;
 	letter-spacing: 0;
+    padding-top: 6px;
 }
-.e71_268 { 
-	width: 32px;
-	height: 24px;
-	position: absolute;
-	left: 0px;
-	top: 128px;
-}
-.e71_269 { 
-	background-color: rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
-	width: 32px;
-	height: 24px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-.e71_270 { 
-	color: rgba(213.56249392032623, 0, 0, 1);
-	width: 32px;
-	height: 24px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Roboto;
-	text-align: center;
-	font-size: 12px;
-	letter-spacing: 0;
-}
-.e71_182 { 
-	width: 132.3905029296875px;
+.groupes_images { 
+	width: 132px;
 	height: 258px;
 	position: absolute;
 	left: 0px;
 	top: 0px;
 }
-.e71_176 { 
-	width: 132.3905029296875px;
+.groupe_image { 
 	height: 128px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
+    margin-top:  0px;
 	background-image: url(../img/energie/generator.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.e71_177 { 
-	width: 132.3905029296875px;
-	height: 128px;
-	position: absolute;
-	left: 0px;
-	top: 130px;
-	background-image: url(../img/energie/generator.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 
 
 

@@ -61,34 +61,40 @@
         <div class="energie_content">
             <div class="container">
                 <div class="zone">
-                    <div class=e71_323>
+                    <div class="e71_323">
                         <div class="e71_3"></div>
                         <div class="e71_243">
                             <div class="e71_180">
                                 <div class="e71_162"></div>
                                 <div class="e71_164"></div>
                             </div>
-                            <div class=e71_242>
-                                <div class=e71_233>
+                            <div class="e71_242">
+                                <div class="e71_233">
                                 <div class="e71_234"></div><span class="e71_235">ON</span>
                                 </div>
-                                <div class=e71_239>
+                                <div class="e71_239">
                                 <div class="e71_240"></div><span class="e71_241">OFF</span>
                                 </div>
                             </div>
                         </div>
-                        <div class=e71_274>
-                            <div class=e71_273>
-                                <div class=e71_265>
-                                <div class="e71_266"></div><span class="e71_267">OFF</span>
-                                </div>
-                                <div class=e71_268>
-                                <div class="e71_269"></div><span class="e71_270">OFF</span>
+                        <div class="zone_groupe">
+                            <div class="groupes_images">
+                                <div class="zone_container">
+                                    <div class="groupe_image"></div>
+                                    <div class="groupe_image"></div>
                                 </div>
                             </div>
-                            <div class=e71_182>
-                                <div class="e71_176"></div>
-                                <div class="e71_177"></div>
+                            <div class="groupe_text">
+                                <div class="placement_groupe first">
+                                    <div class="placement_groupe_text">
+                                        <p class="placement_groupe_text_text off">OFF</p>
+                                    </div>
+                                </div>
+                                <div class="placement_groupe">
+                                    <div class="placement_groupe_text">
+                                        <p class="placement_groupe_text_text off">OFF</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="zone_panneaux_solaires">
