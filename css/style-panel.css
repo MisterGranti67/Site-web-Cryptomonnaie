@@ -624,4 +624,5 @@ footer {
     height: 800px;
     margin-top: 144px;
     margin-bottom: 80px;
+    position: relative;
 }
