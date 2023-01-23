@@ -29,7 +29,8 @@
                                 if (data[i].priceChangePercent > 0) {
                                     variation = "gain";
                                 }
-                                var str = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"https://crypto.skylord.fr/img/crypto/" + nom_crypto[0] + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>1</h1></td><td data-label=\"Valeur\"><h1>19 000$</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
+                                var nom_crypto_img = nom_crypto[0].toLowerCase();
+                                var str = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"https://crypto.skylord.fr/img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>1</h1></td><td data-label=\"Valeur\"><h1>19 000$</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
                                 $(str).prependTo("#tableau_crypto");
                             }
                         }
