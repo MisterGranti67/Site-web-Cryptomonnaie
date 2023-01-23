@@ -61,173 +61,176 @@
         <div class="energie_content">
             <div class="container">
                 <div class="zone">
-                    <div class="e71_323">
-                        <div class="e71_3"></div>
-                        <div class="e71_243">
-                            <div class="e71_180">
-                                <div class="e71_162"></div>
-                                <div class="e71_164"></div>
+                    <div class="zone_eolienne">
+                        <div class="zone_eolienne_images">
+                            <div class="zone_container">
+                                <div class="zone_eolienne_image"></div>
+                                <div class="zone_eolienne_image"></div>
                             </div>
-                            <div class="e71_242">
-                                <div class="e71_233">
-                                <div class="e71_234"></div><span class="e71_235">ON</span>
+                        </div>
+                        <div class="zone_eolienne_text">
+                            <div class="zone_eolienne_placement first">
+                                <div class="zone_eolienne_placement_text">
+                                    <p class="zone_eolienne_placement_text_text">ON</p>
                                 </div>
-                                <div class="e71_239">
-                                <div class="e71_240"></div><span class="e71_241">OFF</span>
+                            </div>
+                            <div class="zone_eolienne_placement">
+                                <div class="zone_eolienne_placement_text">
+                                    <p class="zone_eolienne_placement_text_text">ON</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="zone_groupe">
-                            <div class="groupes_images">
-                                <div class="zone_container">
-                                    <div class="groupe_image"></div>
-                                    <div class="groupe_image"></div>
+                    </div>
+                    <div class="zone_groupe">
+                        <div class="groupes_images">
+                            <div class="zone_container">
+                                <div class="groupe_image"></div>
+                                <div class="groupe_image"></div>
+                            </div>
+                        </div>
+                        <div class="groupe_text">
+                            <div class="placement_groupe first">
+                                <div class="placement_groupe_text">
+                                    <p class="placement_groupe_text_text off">OFF</p>
                                 </div>
                             </div>
-                            <div class="groupe_text">
-                                <div class="placement_groupe first">
-                                    <div class="placement_groupe_text">
-                                        <p class="placement_groupe_text_text off">OFF</p>
-                                    </div>
-                                </div>
-                                <div class="placement_groupe">
-                                    <div class="placement_groupe_text">
-                                        <p class="placement_groupe_text_text off">OFF</p>
-                                    </div>
+                            <div class="placement_groupe">
+                                <div class="placement_groupe_text">
+                                    <p class="placement_groupe_text_text off">OFF</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="zone_panneaux_solaires">
-                            <div class="panneaux_solaires_images">
-                                <div class="zone_container">
-                                    <div class="panneaux_solaire_image"></div>
-                                    <div class="panneaux_solaire_image"></div>
-                                    <div class="panneaux_solaire_image"></div>
-                                    <div class="panneaux_solaire_image"></div>
-                                    <div class="panneaux_solaire_image"></div>
-                                    <div class="panneaux_solaire_image"></div>
+                    </div>
+                    <div class="zone_panneaux_solaires">
+                        <div class="panneaux_solaires_images">
+                            <div class="zone_container">
+                                <div class="panneaux_solaire_image"></div>
+                                <div class="panneaux_solaire_image"></div>
+                                <div class="panneaux_solaire_image"></div>
+                                <div class="panneaux_solaire_image"></div>
+                                <div class="panneaux_solaire_image"></div>
+                                <div class="panneaux_solaire_image"></div>
+                            </div>
+                        </div>
+                        <div class="panneaux_solaires_text">
+                            <div class="placement_panneaux_solaire first">
+                                <div class="zone_panneau_solaire">
+                                    <p class="zone_panneau_solaire_text">ON</p>
                                 </div>
                             </div>
-                            <div class="panneaux_solaires_text">
-                                <div class="placement_panneaux_solaire first">
-                                    <div class="zone_panneau_solaire">
-                                        <p class="zone_panneau_solaire_text">ON</p>
-                                    </div>
+                            <div class="placement_panneaux_solaire">
+                                <div class="zone_panneau_solaire">
+                                    <p class="zone_panneau_solaire_text">ON</p>
                                 </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="zone_panneau_solaire">
-                                        <p class="zone_panneau_solaire_text">ON</p>
-                                    </div>
+                            </div>
+                            <div class="placement_panneaux_solaire">
+                                <div class="zone_panneau_solaire">
+                                    <p class="zone_panneau_solaire_text">ON</p>
                                 </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="zone_panneau_solaire">
-                                        <p class="zone_panneau_solaire_text">ON</p>
-                                    </div>
+                            </div>
+                            <div class="placement_panneaux_solaire">
+                                <div class="zone_panneau_solaire">
+                                    <p class="zone_panneau_solaire_text">ON</p>
                                 </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="zone_panneau_solaire">
-                                        <p class="zone_panneau_solaire_text">ON</p>
-                                    </div>
+                            </div>
+                            <div class="placement_panneaux_solaire">
+                                <div class="zone_panneau_solaire">
+                                    <p class="zone_panneau_solaire_text">ON</p>
                                 </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="zone_panneau_solaire">
-                                        <p class="zone_panneau_solaire_text">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="zone_panneau_solaire">
-                                        <p class="zone_panneau_solaire_text off">OFF</p>
-                                    </div>
+                            </div>
+                            <div class="placement_panneaux_solaire">
+                                <div class="zone_panneau_solaire">
+                                    <p class="zone_panneau_solaire_text off">OFF</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="zone_rigs">
-                            <div class="zone_rigs_images">
-                                <div class="zone_container">
-                                    <div class="zone_rigs_images_image"></div>
-                                    <div class="zone_rigs_images_image"></div>
-                                    <div class="zone_rigs_images_image"></div>
-                                    <div class="zone_rigs_images_image"></div>
-                                    <div class="zone_rigs_images_image"></div>
-                                    <div class="zone_rigs_images_image"></div>
-                                    <div class="zone_rigs_images_image"></div>
-                                    <div class="zone_rigs_images_image"></div>
+                    </div>
+                    <div class="zone_rigs">
+                        <div class="zone_rigs_images">
+                            <div class="zone_container">
+                                <div class="zone_rigs_images_image"></div>
+                                <div class="zone_rigs_images_image"></div>
+                                <div class="zone_rigs_images_image"></div>
+                                <div class="zone_rigs_images_image"></div>
+                                <div class="zone_rigs_images_image"></div>
+                                <div class="zone_rigs_images_image"></div>
+                                <div class="zone_rigs_images_image"></div>
+                                <div class="zone_rigs_images_image"></div>
+                            </div>
+                        </div>
+                        <div class="zone_rigs_text">
+                            <div class="placement_rigs first">
+                                <div class="placement_rigs_text">
+                                    <p class="placement_rigs_text_text off">OFF</p>
                                 </div>
                             </div>
-                            <div class="zone_rigs_text">
-                                <div class="placement_rigs first">
-                                    <div class="placement_rigs_text">
-                                        <p class="placement_rigs_text_text off">OFF</p>
-                                    </div>
+                            <div class="placement_rigs">
+                                <div class="placement_rigs_text">
+                                    <p class="placement_rigs_text_text off">OFF</p>
                                 </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_rigs_text">
-                                        <p class="placement_rigs_text_text off">OFF</p>
-                                    </div>
+                            </div>
+                            <div class="placement_rigs">
+                                <div class="placement_rigs_text">
+                                    <p class="placement_rigs_text_text">ON</p>
                                 </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_rigs_text">
-                                        <p class="placement_rigs_text_text">ON</p>
-                                    </div>
+                            </div>
+                            <div class="placement_rigs">
+                                <div class="placement_rigs_text">
+                                    <p class="placement_rigs_text_text">ON</p>
                                 </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_rigs_text">
-                                        <p class="placement_rigs_text_text">ON</p>
-                                    </div>
+                            </div>
+                            <div class="placement_rigs">
+                                <div class="placement_rigs_text">
+                                    <p class="placement_rigs_text_text">ON</p>
                                 </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_rigs_text">
-                                        <p class="placement_rigs_text_text">ON</p>
-                                    </div>
+                            </div>
+                            <div class="placement_rigs">
+                                <div class="placement_rigs_text">
+                                    <p class="placement_rigs_text_text">ON</p>
                                 </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_rigs_text">
-                                        <p class="placement_rigs_text_text">ON</p>
-                                    </div>
+                            </div>
+                            <div class="placement_rigs">
+                                <div class="placement_rigs_text">
+                                    <p class="placement_rigs_text_text">ON</p>
                                 </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_rigs_text">
-                                        <p class="placement_rigs_text_text">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_rigs_text">
-                                        <p class="placement_rigs_text_text">ON</p>
-                                    </div>
+                            </div>
+                            <div class="placement_rigs">
+                                <div class="placement_rigs_text">
+                                    <p class="placement_rigs_text_text">ON</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="e71_277">
-                            <div class="e71_278"></div>
+                    </div>
+                    <div class="e71_277">
+                        <div class="e71_278"></div>
+                    </div>
+                    <div class="e71_322">
+                        <div class="e71_318">
+                            <div class="e71_279"></div>
+                            <div class="e71_281"></div>
+                            <div class="e71_283"></div>
+                            <div class="e71_284"></div>
+                            <div class="e71_285"></div>
+                            <div class="e71_286"></div>
+                            <div class="e71_287"></div>
+                            <div class="e71_288"></div>
                         </div>
-                        <div class="e71_322">
-                            <div class="e71_318">
-                                <div class="e71_279"></div>
-                                <div class="e71_281"></div>
-                                <div class="e71_283"></div>
-                                <div class="e71_284"></div>
-                                <div class="e71_285"></div>
-                                <div class="e71_286"></div>
-                                <div class="e71_287"></div>
-                                <div class="e71_288"></div>
-                            </div>
-                            <div class="e71_319">
-                                <div class="e71_295"></div>
-                                <div class="e71_297"></div>
-                                <div class="e71_299"></div>
-                            </div>
-                            <div class="e71_320">
-                                <div class="e71_301"></div>
-                                <div class="e71_303"></div>
-                                <div class="e71_306"></div>
-                                <div class="e71_307"></div>
-                                <div class="e71_308"></div>
-                                <div class="e71_309"></div>
-                            </div>
-                            <div class="e71_321">
-                                <div class="e71_314"></div>
-                                <div class="e71_316"></div>
-                            </div>
+                        <div class="e71_319">
+                            <div class="e71_295"></div>
+                            <div class="e71_297"></div>
+                            <div class="e71_299"></div>
+                        </div>
+                        <div class="e71_320">
+                            <div class="e71_301"></div>
+                            <div class="e71_303"></div>
+                            <div class="e71_306"></div>
+                            <div class="e71_307"></div>
+                            <div class="e71_308"></div>
+                            <div class="e71_309"></div>
+                        </div>
+                        <div class="e71_321">
+                            <div class="e71_314"></div>
+                            <div class="e71_316"></div>
                         </div>
                     </div>
                 </div>

@@ -1,117 +1,62 @@
-.e71_3 { 
-	background-color: rgba(249.6875050663948, 249.6875050663948, 249.6875050663948, 1);
-	width: 1024px;
-	height: 800px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-.e71_243 { 
+.zone_eolienne { 
 	width: 156px;
 	height: 256px;
 	position: absolute;
 	left: 124.6077880859375px;
 	top: 80px;
 }
-.e71_180 { 
+.zone_eolienne_images { 
 	width: 124px;
 	height: 256px;
 	position: absolute;
 	left: 0px;
 	top: 0px;
 }
-.e71_162 { 
+.zone_eolienne_image { 
 	width: 124px;
 	height: 128px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
 	background-image: url(../img/energie/wind_turbine_top.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.e71_164 { 
-	width: 124px;
-	height: 128px;
-	position: absolute;
-	left: 0px;
-	top: 128px;
-	background-image: url(../img/energie/wind_turbine_top.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.e71_242 { 
+
+.zone_eolienne_text { 
 	width: 32px;
 	height: 152px;
 	position: absolute;
-	left: 124px;
-	top: 64px;
+	left: 110px;
 }
-.e71_233 { 
-	width: 32px;
-	height: 24px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-.e71_234 { 
+.zone_eolienne_placement_text { 
 	background-color: rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
 	width: 32px;
 	height: 24px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
-.e71_235 { 
-	color: rgba(55.526245683431625, 213.56249392032623, 0, 1);
+.zone_eolienne_placement_text_text { 
+	color: rgba(55, 213, 0, 1);
 	width: 32px;
 	height: 24px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
 	font-family: Roboto;
 	text-align: center;
 	font-size: 12px;
 	letter-spacing: 0;
+    padding-top: 5px;
 }
-.e71_239 { 
+.zone_eolienne_placement { 
 	width: 32px;
 	height: 24px;
-	position: absolute;
 	left: 0px;
-	top: 128px;
+	margin-top: 104px;
 }
-.e71_240 { 
-	background-color: rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+
+.zone_eolienne_text .first { 
 	width: 32px;
 	height: 24px;
-	position: absolute;
 	left: 0px;
-	top: 0px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-.e71_241 { 
-	color: rgba(213.56249392032623, 0, 0, 1);
-	width: 32px;
-	height: 24px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Roboto;
-	text-align: center;
-	font-size: 12px;
-	letter-spacing: 0;
+	margin-top: 64px;
 }
 
 
@@ -159,7 +104,7 @@
 	text-align: center;
 	font-size: 12px;
 	letter-spacing: 0;
-    padding-top: 6px;
+    padding-top: 5px;
 }
 .groupes_images { 
 	width: 132px;
@@ -174,6 +119,9 @@
 	background-image: url(../img/energie/generator.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+.placement_groupe_text_text .off {
+    color:  rgba(213, 0, 0, 1);
 }
 
 
@@ -239,7 +187,7 @@
 	text-align: center;
 	font-size: 12px;
 	letter-spacing: 0;
-    padding-top: 6px;
+    padding-top: 5px;
 }
 .zone_panneau_solaire .off {
     color:  rgba(213, 0, 0, 1);
@@ -319,7 +267,7 @@
 	text-align: center;
 	font-size: 12px;
 	letter-spacing: 0;
-    padding-top: 6px;
+    padding-top: 5px;
 }
 .zone_rigs .off {
     color:  rgba(213, 0, 0, 1);
