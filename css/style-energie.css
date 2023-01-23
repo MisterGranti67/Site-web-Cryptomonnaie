@@ -221,6 +221,7 @@
 	border-bottom-right-radius: 5px;
     position: relative;
     display: block;
+	transition: background-color 300ms;
 }
 .placement_text_text { 
 	color: rgba(55, 213, 0, 1);
@@ -231,10 +232,27 @@
 	font-size: 12px;
 	letter-spacing: 0;
     padding-top: 5px;
+	transition: color 300ms;
 }
 
 
+.placement_text:hover {
+	background-color: rgb(234, 234, 234);
+	cursor: pointer;
+	transition: background-color 300ms;
+}
 
+.placement_text_text:hover.perte {
+	color:rgb(132, 0, 0);
+	cursor: pointer;
+	transition: color 300ms;
+}
+
+.placement_text_text:hover.gain {
+	color:rgb(32, 129, 0);
+	cursor: pointer;
+	transition: color 300ms;
+}
 
 
 
