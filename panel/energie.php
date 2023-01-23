@@ -39,7 +39,7 @@
         </script>  -->
     </head>
     <body>
-        <div class="top">
+        <div class="top" style="z-index:9">
             <div class="navbar">
                 <a href="" class="item logo"><img class="image" src="https://skylord.fr/logo.png" width="64px"></a>
                 <div class="navbar_menu">
@@ -204,6 +204,35 @@
                     <div class="zone_network_wallet">
                         <div class="zone_network_wallet_image"></div>
                     </div>
+                        <svg
+                        width="736"
+                        height="563"
+                        viewBox="0 0 736 563"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style="margin-top: 112px;  margin-left: 84px; height: 562px;"
+                        preserveAspectRatio="none"
+                        >
+                        <path d="M735.608 5.5H646.501V485" stroke="#FF00D6"></path>
+                        <path d="M735.608 85.5L646.501 85.5" stroke="#FF00D6"></path>
+                        <path d="M735.608 165.5H646.501" stroke="#FF00D6"></path>
+                        <path d="M735.608 244.5L646.496 243.5" stroke="#FF00D6"></path>
+                        <path d="M735.608 329.5H646.501" stroke="#FF00D6"></path>
+                        <path d="M735.608 408.5L646.506 409.52" stroke="#FF00D6"></path>
+                        <path d="M735.608 484.5H646.501" stroke="#FF00D6"></path>
+                        <path d="M735.608 562.5H646.5V485" stroke="#FF00D6"></path>
+                        <path d="M646.108 484.5H307.108" stroke="#FF00D6"></path>
+                        <path d="M441.657 36.4969L408.608 36.4969L408.608 460.5L408.608 484.5" stroke="#FF00D6"></path>
+                        <path d="M441.108 168.5L408.596 168.5" stroke="#FF00D6"></path>
+                        <path d="M274.608 0.500031H231.108L231.108 445" stroke="#FF00D6"></path>
+                        <path d="M274.608 64.4998L230.596 64.4998" stroke="#FF00D6"></path>
+                        <path d="M274.608 128.5H230.608" stroke="#FF00D6"></path>
+                        <path d="M274.608 192.5L230.596 192.5" stroke="#FF00D6"></path>
+                        <path d="M274.608 256.5L230.608 256.5" stroke="#FF00D6"></path>
+                        <path d="M274.608 324.5L230.619 324.5" stroke="#FF00D6"></path>
+                        <path d="M67.6078 31.4991L30.6078 31.4991L30.6078 482.5L148.608 482.5" stroke="#FF00D6"></path>
+                        <path d="M67.6078 166.5H30.6078" stroke="#FF00D6"></path>
+                    </svg>
                 </div>
             </div>
         </div>
