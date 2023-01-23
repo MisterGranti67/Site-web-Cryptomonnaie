@@ -38,6 +38,11 @@ body {
     padding: 0 15px;
 }
 
+.navbar_menu .active {
+    color: #000;
+    text-decoration: underline;
+}
+
 
 .item {
     color: #6A6A6A;
