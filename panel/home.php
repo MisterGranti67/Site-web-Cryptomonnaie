@@ -1,8 +1,3 @@
-<?php
-echo "<p>".$_SESSION['pseudo']."</p>";
-$session_pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:''; 
-$session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -67,6 +62,11 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         </script> 
     </head>
     <body>
+        <?php
+        echo "<p>".$_SESSION['pseudo']."</p>";
+        $session_pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:''; 
+        $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
+        ?>
         <div class="top">
             <div class="navbar">
                 <a href="" class="item logo"><img class="image" src="https://skylord.fr/logo.png" width="64px"></a>
