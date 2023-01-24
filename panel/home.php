@@ -1,6 +1,6 @@
-<?php
+<?php 
 session_start();
-echo "<p>".$_SESSION['pseudo']."</p>";
+if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
 $session_pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:''; 
 $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 ?>
@@ -240,3 +240,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         </div>
     </footer>
 </html>
+<?php } else {
+header("Location: /");
+}?>
