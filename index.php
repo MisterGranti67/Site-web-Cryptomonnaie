@@ -4,15 +4,16 @@
 <div class="container" id="container">
     <div class="form-container identifier-container">
         <?php
-            require('config.php');
             session_start();
             if (isset($_POST['pseudo'])){
                 $pseudo = stripslashes($_REQUEST['pseudo']);
                 $code = stripslashes($_REQUEST['code']);
-
-                if($rows==1){
+                $content = file_get_contents("https://apiv1.skylord.fr/api/checkconnect?pseudo=".$pseudo."&code=".$code."");
+                $result  = json_decode($content);
+                if ($result->Acces === "True"){
                     $_SESSION['pseudo'] = $pseudo;
-                    header("Location: index.php");
+                    $_SESSION['code'] = $code;
+                    header("Location: /panel/home.php");
                 }else{
                     $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
                 }
@@ -33,6 +34,9 @@
             <button id="login" type="submit">Se connecter</button>
             <a href="https://crypto.skylord.fr/connexion/mot-de-passe/oublie" class="btn btn-link">J'ai oublié mon code de sécurité</a>
             <a href="https://skylord.fr" class="btn btn-link"><i class="fas fa-arrow-left"></i>Retour à l'accueil</a>
+            <?php if (! empty($message)) { ?>
+                <p class="errorMessage"><?php echo $message; ?></p>
+            <?php } ?>
         </form>
     </div>
     <div class="overlay-container">
