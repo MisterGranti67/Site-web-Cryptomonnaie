@@ -6,6 +6,7 @@
         <link href="./css/style.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
     </head>
+    
     <body>
         <div class="container" id="container">
             <div class="form-container identifier-container">

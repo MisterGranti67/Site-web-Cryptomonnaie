@@ -56,6 +56,8 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             document.getElementById("info_connexion").textContent = data_crypto["Date_heure"];
                             var valeur_img = "https://minotar.net/avatar/" + mon_pseudo;
                             $("#info_avatar").attr('src', valeur_img);
+                            document.getElementById("chargement").style.display = 'none';
+                            document.getElementById("non_chargement").style.display = 'block';
                         } else {
                             document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
                         }
@@ -67,7 +69,12 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
             
         </script> 
     </head>
-    <body>
+    <div id="chargement" class="chargement">
+        <div class="centrer">
+            <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    <body id="non_chargement" style="display:none;">
         <?php include '../utils/header.php'; ?>
         <div class="informations">
             <div class="container">
