@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-        <title>Mon éspace joueur - Crypto Skylord</title>
+        <title>Mon espace joueur - Crypto Skylord</title>
         <link href="../css/style-panel.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
