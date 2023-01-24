@@ -3,13 +3,27 @@
 </head>
 <div class="container" id="container">
     <div class="form-container identifier-container">
-        
-        <form id="signinform" method="post" action="https://crypto.skylord.fr/dologin.php" role="form">
+        <?php
+            require('config.php');
+            session_start();
+            if (isset($_POST['pseudo'])){
+                $pseudo = stripslashes($_REQUEST['pseudo']);
+                $code = stripslashes($_REQUEST['code']);
+
+                if($rows==1){
+                    $_SESSION['pseudo'] = $pseudo;
+                    header("Location: index.php");
+                }else{
+                    $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
+                }
+            }
+        ?>
+        <form id="signinform" action="" method="post" name="login">
             <h1>Identifiez vous</h1>
             <div class="form-title">Éspace Crypto - Skylord</div>
             <div class="providerLinkingFeedback"></div>
-            <input class="class-input" type="text" name="username" placeholder="Votre pseudo Minecraft" />
-            <input class="class-input" type="password" name="password" placeholder="votre code de sécurité" />
+            <input class="class-input" type="text" name="pseudo" placeholder="Votre pseudo Minecraft" />
+            <input class="class-input" type="password" name="code" placeholder="votre code de sécurité" />
             <!--<label for="chkbox"><input id="chkbox" type="checkbox" class="accepttos" name="rememberme" />Se souvenir de moi</label>-->
             <!--
             <div class="text-center margin-bottom">
