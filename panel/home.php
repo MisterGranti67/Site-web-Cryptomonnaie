@@ -25,6 +25,7 @@
                         const data_crypto = await api_crypto.json();
                         console.log(data_crypto)
                         var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
+                        var valeur_solde = 0;
                         for (let i = 2000; i > 0; i--) {
                             if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
                                 const nom_crypto = data[i].symbol.split('USDT');
@@ -33,12 +34,15 @@
                                 if (data[i].priceChangePercent > 0) {
                                     variation = "gain";
                                 }
-
+                                valeur_solde = valeur_solde+(data_crypto[nom_crypto[0]]*data[i].lastPrice)
                                 var nom_crypto_img = nom_crypto[0].toLowerCase();
-                                var str = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>" + (data_crypto[nom_crypto[0]]*data[i].lastPrice) + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
-                                $(str).prependTo("#tableau_crypto");
+                                var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>" + (data_crypto[nom_crypto[0]]*data[i].lastPrice) + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
+                                $(tableau_crypto).prependTo("#tableau_crypto");
+                                
                             }
+                            
                         }
+                        document.getElementById("solde").textContent = valeur_solde + "$";
                     }
                 }
             });
@@ -94,7 +98,7 @@
                     <div class="flex-items crypto">
                         <div class="mon_solde">
                             <h1>Solde estimé</h1>
-                            <span>0.00 BTC</span><span>≈ 0.00000000$</span>
+                            <span id="solde">≈ 0.00000000$</span>
                         </div>
 
                         <div class="tableau_crypto">
