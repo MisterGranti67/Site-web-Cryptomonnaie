@@ -9,23 +9,21 @@
         <script>
             $(document).ready(async function(){
                 const queryString = window.location.search;
-                console.log(queryString);
 
                 const urlParams = new URLSearchParams(queryString);
-                console.log(urlParams.get('pseudo'));
+
                 if (urlParams.get('pseudo') != null) {
                     if (urlParams.get('code') != null) {
                         var pseudo = 'https://apiv1.skylord.fr/api/crypto?pseudo=' + urlParams.get('pseudo') + '&code=' + urlParams.get('code');
                         const api_crypto = await fetch(pseudo);
-
-
                         const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
+
                         const data = await api_binance.json();
-                        console.log(api_crypto)
                         const data_crypto = await api_crypto.json();
-                        console.log(data_crypto)
+
                         var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
                         var valeur_solde = 0;
+                        
                         for (let i = 2000; i > 0; i--) {
                             if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
                                 const nom_crypto = data[i].symbol.split('USDT');
@@ -34,6 +32,7 @@
                                 if (data[i].priceChangePercent > 0) {
                                     variation = "gain";
                                 }
+
                                 valeur_solde = valeur_solde+(data_crypto[nom_crypto[0]]*data[i].lastPrice)
                                 var nom_crypto_img = nom_crypto[0].toLowerCase();
                                 var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
@@ -45,8 +44,13 @@
                             
                         }
                         document.getElementById("solde").textContent = "≈" + valeur_solde + "$";
-                    }
-                }
+                        document.getElementById("info_pseudo").textContent = urlParams.get('pseudo');
+
+                        var valeur_img = "https://minotar.net/avatar/" + urlParams.get('pseudo');
+                        $("#info_avatar").attr('src', valeur_img);
+
+                    } 
+                } 
             });
 
 
@@ -76,17 +80,17 @@
         <div class="informations">
             <div class="container">
                 <div class="details">
-                    <img src="https://minotar.net/avatar/mrbaguette07" width="72px">
+                    <img id="info_avatar" src="https://minotar.net/avatar/Moi" width="72px">
                     <div class="more_details">
-                        <h1 class="titre">MrBaguette07</h1>
+                        <h1 class="titre" id="info_pseudo">Mois</h1>
                         <div class="sous_details">
                             <div class="coordonnes">
                                 <h2>Type d'utilisateur</h2>
-                                <p>Joueur</p>
+                                <p id="info_type">Joueur</p>
                             </div>
                             <div class="coordonnes">
                                 <h2>Date et heure de la dernière connexion</h2>
-                                <p>2023-01-18  20:20:19(192.168.1.1)</p>
+                                <p id="info_connexion">2023-01-18  20:20:19(192.168.1.1)</p>
                             </div>
                         </div>
                     </div>
