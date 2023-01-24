@@ -45,7 +45,7 @@
                         }
                         document.getElementById("solde").textContent = "≈" + valeur_solde + "$";
                         document.getElementById("info_pseudo").textContent = urlParams.get('pseudo');
-
+                        document.getElementById("info_connexion").textContent = data_crypto["Date_heure"];
                         var valeur_img = "https://minotar.net/avatar/" + urlParams.get('pseudo');
                         $("#info_avatar").attr('src', valeur_img);
 
@@ -90,7 +90,7 @@
                             </div>
                             <div class="coordonnes">
                                 <h2>Date et heure de la dernière connexion</h2>
-                                <p id="info_connexion">2023-01-18  20:20:19(192.168.1.1)</p>
+                                <p id="info_connexion">00 00 0000 à 00:00</p>
                             </div>
                         </div>
                     </div>
