@@ -18,6 +18,27 @@ body {
 .errorMessage {
     color: rgb(255, 0, 0)
 }
+.form-container label {
+    color: #fff;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 12px;
+}
+.form-container input[type=checkbox], input[type=radio] {
+    margin: 1px 0 0;
+    line-height: normal;
+    font-size: 12px;
+}
+.margin-bottom {
+    margin-bottom: 20px;
+}
+.container .form-container input[type=checkbox] {
+    position: absolute;
+    float: left;
+    margin-left: -20px;
+}
 .container h1 {
     font-weight: bold;
     margin: 0;
@@ -50,9 +71,9 @@ body {
 
 .container button {
     border-radius: 20px;
-    border: 1px solid rgba(7,146,227,.95);
-    background-color: rgba(7,146,227,.95);
-    color: #FFFFFF;
+    border: 1px solid #FFD97D;
+    background-color: #FFD97D;
+    color: #24253A;
     font-size: 12px;
     font-weight: bold;
     padding: 12px 45px;
@@ -62,16 +83,22 @@ body {
 }
 
 .container button:active {
+    cursor: pointer;
+
     transform: scale(0.95);
 }
 
 .container button:focus {
+    cursor: pointer;
     outline: none;
+}
+.container button:hover {
+    cursor: pointer;
 }
 
 .container button.ghost {
     background-color: transparent;
-    border-color: #fff;
+    border-color: #24253A;
 }
 
 .container form {
@@ -142,11 +169,13 @@ label {
 .container .container.right-panel-active .overlay-container{
     transform: translateX(-100%);
 }
-
+.overlay-container h1, .overlay-container button, .overlay-container p {
+    color: #24253A;
+}
 .container .overlay {
-    background: rgba(7,146,227,.95);
-    background: -webkit-linear-gradient(to right, rgba(7,146,227,0.85),rgba(10,69,166,0.85));
-    background: linear-gradient(to right, rgba(7,146,227,0.85),rgba(10,69,166,0.85));
+    background: #FFD97D;
+    background: -webkit-linear-gradient(to right, #ffe5a7,#FFD97D);
+    background: linear-gradient(to right, #ffe5a7,#FFD97D);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -210,6 +239,7 @@ a .fas{
 }
 a:hover .fas{
     animation: 1s ahoverfas forwards;
+    cursor: pointer;
 }
 @keyframes ahoverfas {
     from {
@@ -247,49 +277,30 @@ h1 {
 }
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-    color: #0792E3;
+    color: #ffe5a7;
     background-color: #f7f6f8;
+    cursor: pointer;
 }
 a {
-    color: #0792E3;
+    color: #ffe5a7;
     line-height:initial
 }
 
 a:hover, a:focus {
-    color: #0587D4;
-    text-decoration:none
+    color: #ffe5a7;
+    text-decoration:none;
+    cursor: pointer;
 }
 .navbar-main .navbar-nav .dropdown-menu > .active > a:hover, .navbar-main .navbar-nav .dropdown-menu > .active > a:focus, .navbar-main .navbar-nav .dropdown-menu > .open > a:hover, .navbar-main .navbar-nav .dropdown-menu > .open > a:focus {
-    color: #0587D4;
+    color: #ffe5a7;
+    cursor: pointer;
     background-color:#f7f6f8
 }
 
 .navbar-main .navbar-nav .dropdown-menu > li > a:hover, .navbar-main .navbar-nav .dropdown-menu > li > a:focus {
-    color: #0587D4;
+    color: #ffe5a7;
+    cursor: pointer;
     background-color:#f7f6f8
-}
-#header-holder.main-header .bg-animation {
-    position: absolute;
-    opacity: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-image: none;
-    background-repeat: repeat-x;
-    background-image: -webkit-linear-gradient(120deg, rgba(94, 6, 203, 0.92), rgba(14, 193, 247, 0.1));
-    background-image: -o-linear-gradient(120deg, rgba(94, 6, 203, 0.92), rgba(14, 193, 247, 0.1));
-    background-image: linear-gradient(120deg, rgba(94, 6, 203, 0.92), rgba(47, 133, 160, 0.1));
-    filter: blur(12px);
-    -webkit-transform-origin: top left;
-    -moz-transform-origin: top left;
-    -ms-transform-origin: top left;
-    transform-origin: top left;
-    -webkit-transform: skewY(0deg);
-    -moz-transform: skewY(0deg);
-    -ms-transform: skewY(0deg);
-    transform: skewY(0deg);
-    z-index: -1;
 }
 
 #more-info .links-holder ul li .info-link:after {
@@ -317,18 +328,6 @@ a:hover, a:focus {
     -webkit-overflow-scrolling: touch;
 }
 
-.bg-custom {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background-repeat: repeat-x;
-    background-image: -webkit-linear-gradient(120deg, rgba(94, 6, 203, 0.92), rgba(14, 193, 247, 0.92));
-    background-image: -o-linear-gradient(120deg, rgba(94, 6, 203, 0.92), rgba(14, 193, 247, 0.92));
-    background-image: linear-gradient(120deg, rgba(94, 6, 203, 0.92), rgba(14, 193, 247, 0.92));
-}
 
 #header-holder.main-header .bg-animation .graphic-show .img.img1 {
     margin-left: 50px;
@@ -396,12 +395,13 @@ a:hover, a:focus {
 .btn-primary {
     color: #fff;
     border: 0;
-    background-color: rgba(7,146,227,.95);
+    background-color: #FFD97D;
     font-weight: 600;
     border-radius: 10px !important;
 }
 .btn-primary:hover {
     color: #fff;
+    cursor: pointer;
     border: 0;
     background-color: rgba(7,146,227,0.5);
     font-weight: 600;
@@ -429,23 +429,26 @@ a:hover, a:focus {
 }
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-    color: #0792E3;
+    color: #ffe5a7;
+    cursor: pointer;
     background-color: #f7f6f8;    
 }
 .navbar-default .navbar-nav>.active a,
 .navbar-default .navbar-nav>.active a:focus,
 .navbar-default .navbar-nav>.active a:hover {
-    color: #0792E3;
+    color: #ffe5a7;
+    cursor: pointer;
     background-color: transparent;
 }
 
 a {
-    color: #0792E3;
+    color: #ffe5a7;
     line-height:initial
 }
 
 a:hover, a:focus {
-    color: #0587D4;
+    color: #ffe5a7;
+    cursor: pointer;
     text-decoration:none
 }
 div.dropdown-multicol{
@@ -506,12 +509,14 @@ div.dropdown-row>a.dropdown-item{
     color: #212529 !important;
     background-color: #f8f9fa;
     border-color: #ebebeb;
+    cursor: pointer;
     box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .2) 
 }
 .dropdown-itemx2:hover{
     color: #212529 !important;
     background-color: #f8f9fa;
     border-color: #ebebeb;
+    cursor: pointer;
     box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .2) 
 }
 .gauthier-voir-plus{
@@ -528,6 +533,7 @@ div.dropdown-row>a.dropdown-item{
     color: #212529 !important;
     background-color: #f8f9fa;
     border-color: #ebebeb;
+    cursor: pointer;
     box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .05) 
 }
 .dropdown-menu,
@@ -551,6 +557,7 @@ div.dropdown-row>a.dropdown-item{
     -moz-transform: none;
     -ms-transform: none;
     transform: none;
+    cursor: pointer;
     opacity: 1;
 }
 .accueil{
