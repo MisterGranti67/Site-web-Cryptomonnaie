@@ -241,5 +241,5 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
     </footer>
 </html>
 <?php } else {
-header("Location: /");
+header("Location: index.php");
 }?>
