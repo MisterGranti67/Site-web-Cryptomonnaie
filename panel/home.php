@@ -14,6 +14,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
         <script>
             $(document).ready(async function(){
+                document.footer.style.display = 'none';
                 var mon_pseudo='<?php echo $session_pseudo; ?>'
                 var mon_code='<?php echo $session_code; ?>'
                 const queryString = window.location.search;
@@ -58,6 +59,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             $("#info_avatar").attr('src', valeur_img);
                             document.getElementById("chargement").style.display = 'none';
                             document.getElementById("non_chargement").style.display = 'block';
+                            document.footer.style.display = 'block';
                         } else {
                             document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
                         }
@@ -69,125 +71,127 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
             
         </script> 
     </head>
-    <div id="chargement" class="chargement">
-        <div class="centrer">
-            <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <body>
+        <div id="chargement" class="chargement">
+            <div class="centrer">
+                <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
         </div>
-    </div>
-    <body id="non_chargement" style="display:none;">
-        <?php include '../utils/header.php'; ?>
-        <div class="informations">
-            <div class="container">
-                <div class="details">
-                    <img id="info_avatar" src="https://minotar.net/avatar/Moi" width="72px">
-                    <div class="more_details">
-                        <h1 class="titre" id="info_pseudo">Mois</h1>
-                        <div class="sous_details">
-                            <div class="coordonnes">
-                                <h2>Type d'utilisateur</h2>
-                                <p id="info_type">Joueur</p>
+        <div id="non_chargement" style="display:none;">
+            <?php include '../utils/header.php'; ?>
+            <div class="informations">
+                <div class="container">
+                    <div class="details">
+                        <img id="info_avatar" src="https://minotar.net/avatar/Moi" width="72px">
+                        <div class="more_details">
+                            <h1 class="titre" id="info_pseudo">Mois</h1>
+                            <div class="sous_details">
+                                <div class="coordonnes">
+                                    <h2>Type d'utilisateur</h2>
+                                    <p id="info_type">Joueur</p>
+                                </div>
+                                <div class="coordonnes">
+                                    <h2>Date et heure de la dernière connexion</h2>
+                                    <p id="info_connexion">00 00 0000 à 00:00</p>
+                                </div>
                             </div>
-                            <div class="coordonnes">
-                                <h2>Date et heure de la dernière connexion</h2>
-                                <p id="info_connexion">00 00 0000 à 00:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="container">
+                    <div class="flex-container">
+                        <div class="flex-items crypto">
+                            <div class="mon_solde">
+                                <h1>Solde estimé</h1>
+                                <span id="solde">≈ 0.00000000$</span>
+                            </div>
+
+                            <div class="tableau_crypto">
+                                <table>
+                                    <thead>
+                                        <tr class="thead">
+                                            <th scope="col">Nom</th>
+                                            <th scope="col">Montant</th>
+                                            <th scope="col">Valeur</th>
+                                            <th scope="col">Variation sur 24h</th>
+                                            <th scope="col"> </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableau_crypto">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="flex-items notification">
+                            <h1>Les dernières notifications</h1>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            <div class="notification_recu">
+                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="discord">
+                <div class="container">
+                    <div class="acces-discord">
+                        <div class="gauche">
+                            <img src="../img/wumpus.png">
+                        </div>
+                        <div class="droite">
+                            <h1>Rejoins-nous, et créons un lien unique !</h1>
+                            <h2>Rejoignez une communauté de plusieurs milliers de personnes</h2>
+                            <div class="margin"></div>
+                            <p>Skylord est une communauté regroupant plusieurs milliers d’utilisateurs à travers toute la France.</p>
+                            <p>C’est notre pôle principale, ce discord nous sert à annoncer les prochaines mises à jours, évènements sondages et même des concours exclusifs !</p>
+                            <div class="bouton">
+                                <a href="https://discord.gg/skylord" class="bouton">Rejoindre le discord</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-
-        <div class="content">
-            <div class="container">
-                <div class="flex-container">
-                    <div class="flex-items crypto">
-                        <div class="mon_solde">
-                            <h1>Solde estimé</h1>
-                            <span id="solde">≈ 0.00000000$</span>
-                        </div>
-
-                        <div class="tableau_crypto">
-                            <table>
-                                <thead>
-                                    <tr class="thead">
-                                        <th scope="col">Nom</th>
-                                        <th scope="col">Montant</th>
-                                        <th scope="col">Valeur</th>
-                                        <th scope="col">Variation sur 24h</th>
-                                        <th scope="col"> </th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tableau_crypto">
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="flex-items notification">
-                        <h1>Les dernières notifications</h1>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        <div class="notification_recu">
-                            <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <section class="discord">
-            <div class="container">
-                <div class="acces-discord">
-                    <div class="gauche">
-                        <img src="../img/wumpus.png">
-                    </div>
-                    <div class="droite">
-                        <h1>Rejoins-nous, et créons un lien unique !</h1>
-                        <h2>Rejoignez une communauté de plusieurs milliers de personnes</h2>
-                        <div class="margin"></div>
-                        <p>Skylord est une communauté regroupant plusieurs milliers d’utilisateurs à travers toute la France.</p>
-                        <p>C’est notre pôle principale, ce discord nous sert à annoncer les prochaines mises à jours, évènements sondages et même des concours exclusifs !</p>
-                        <div class="bouton">
-                            <a href="https://discord.gg/skylord" class="bouton">Rejoindre le discord</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </body>
 
     <?php include '../utils/footer.php'; ?>
