@@ -83,11 +83,17 @@ body {
 }
 
 .container button:active {
+    cursor: pointer;
+
     transform: scale(0.95);
 }
 
 .container button:focus {
+    cursor: pointer;
     outline: none;
+}
+.container button:hover {
+    cursor: pointer;
 }
 
 .container button.ghost {
