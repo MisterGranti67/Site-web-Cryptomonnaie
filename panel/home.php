@@ -14,7 +14,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
         <script>
             $(document).ready(async function(){
-                document.footer.style.display = 'none';
+                document.getElementById("footer").style.display = 'none';
                 var mon_pseudo='<?php echo $session_pseudo; ?>'
                 var mon_code='<?php echo $session_code; ?>'
                 const queryString = window.location.search;
@@ -59,7 +59,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             $("#info_avatar").attr('src', valeur_img);
                             document.getElementById("chargement").style.display = 'none';
                             document.getElementById("non_chargement").style.display = 'block';
-                            document.footer.style.display = 'block';
+                            document.getElementById("footer").style.display = 'block';
                         } else {
                             document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
                         }

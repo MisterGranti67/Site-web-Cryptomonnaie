@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
     <div class="footer-menu">
         <div class="container">
             <div class="total-haut-footer">
