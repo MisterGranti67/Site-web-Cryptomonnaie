@@ -456,6 +456,7 @@ body {
     color: #000000;
     margin-top: 42px;
     transition: background 300ms;
+    text-decoration: none;
 }
 
 .discord a.bouton:hover {
