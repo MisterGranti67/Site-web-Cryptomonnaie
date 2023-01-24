@@ -8,51 +8,55 @@
         <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
         <script>
             $(document).ready(async function(){
-                const queryString = window.location.search;
+                if (isset($_SESSION['pseudo']) && isset($_SESSION['code'])){
+                    const queryString = window.location.search;
 
-                const urlParams = new URLSearchParams(queryString);
+                    const urlParams = new URLSearchParams(queryString);
 
-                if (urlParams.get('pseudo') != null) {
-                    if (urlParams.get('code') != null) {
-                        var pseudo = 'https://apiv1.skylord.fr/api/crypto?pseudo=' + urlParams.get('pseudo') + '&code=' + urlParams.get('code');
-                        const api_crypto = await fetch(pseudo);
-                        const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
+                    if ($_SESSION['pseudo'] != null) {
+                        if ($_SESSION['code'] != null) {
+                            var pseudo = 'https://apiv1.skylord.fr/api/crypto?pseudo=' + $_SESSION['pseudo'] + '&code=' + $_SESSION['code'];
+                            const api_crypto = await fetch(pseudo);
+                            const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
 
-                        const data = await api_binance.json();
-                        const data_crypto = await api_crypto.json();
+                            const data = await api_binance.json();
+                            const data_crypto = await api_crypto.json();
 
-                        var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
-                        var valeur_solde = 0;
-                        if (data_crypto["Acces"] == "True"){
-                            for (let i = 2000; i > 0; i--) {
-                                if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
-                                    const nom_crypto = data[i].symbol.split('USDT');
-                                    
-                                    var variation = "perte";
-                                    if (data[i].priceChangePercent > 0) {
-                                        variation = "gain";
+                            var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
+                            var valeur_solde = 0;
+                            if (data_crypto["Acces"] == "True"){
+                                for (let i = 2000; i > 0; i--) {
+                                    if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
+                                        const nom_crypto = data[i].symbol.split('USDT');
+                                        
+                                        var variation = "perte";
+                                        if (data[i].priceChangePercent > 0) {
+                                            variation = "gain";
+                                        }
+
+                                        valeur_solde = valeur_solde+(data_crypto[nom_crypto[0]]*data[i].lastPrice)
+                                        var nom_crypto_img = nom_crypto[0].toLowerCase();
+                                        var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
+                                        var valeur_crypto = valeur_crypto.toString().split('.');
+                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
+                                        $(tableau_crypto).prependTo("#tableau_crypto");
+                                        
                                     }
-
-                                    valeur_solde = valeur_solde+(data_crypto[nom_crypto[0]]*data[i].lastPrice)
-                                    var nom_crypto_img = nom_crypto[0].toLowerCase();
-                                    var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
-                                    var valeur_crypto = valeur_crypto.toString().split('.');
-                                    var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
-                                    $(tableau_crypto).prependTo("#tableau_crypto");
                                     
                                 }
-                                
+                                document.getElementById("solde").textContent = "≈" + valeur_solde + "$";
+                                document.getElementById("info_pseudo").textContent = $_SESSION['pseudo'];
+                                document.getElementById("info_connexion").textContent = data_crypto["Date_heure"];
+                                var valeur_img = "https://minotar.net/avatar/" + $_SESSION['pseudo'];
+                                $("#info_avatar").attr('src', valeur_img);
+                            } else {
+                                document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
                             }
-                            document.getElementById("solde").textContent = "≈" + valeur_solde + "$";
-                            document.getElementById("info_pseudo").textContent = urlParams.get('pseudo');
-                            document.getElementById("info_connexion").textContent = data_crypto["Date_heure"];
-                            var valeur_img = "https://minotar.net/avatar/" + urlParams.get('pseudo');
-                            $("#info_avatar").attr('src', valeur_img);
-                        } else {
-                            document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
-                        }
+                        } 
                     } 
-                } 
+                } else {
+                    document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                }
             });
 
 
