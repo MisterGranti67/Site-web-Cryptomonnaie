@@ -21,20 +21,15 @@
         ?> 
         <form id="signinform" action="" method="post" name="login">
             <h1>Identifiez vous</h1>
-            <div class="form-title">Espace Crypto - Skylord</div>
             <div class="providerLinkingFeedback">
-            <?php if (! empty($message)) { ?>
-                <p class="errorMessage"><?php echo $message; ?></p>
-            <?php } ?>
+                <?php if (! empty($message)) { ?>
+                    <p class="errorMessage"><?php echo $message; ?></p>
+                <?php } ?>
             </div>
             <input class="class-input" type="text" name="pseudo" placeholder="Votre pseudo Minecraft" />
             <input class="class-input" type="password" name="code" placeholder="votre code de sécurité" />
-            <!--<label for="chkbox"><input id="chkbox" type="checkbox" class="accepttos" name="rememberme" />Se souvenir de moi</label>-->
-            <!--
-            <div class="text-center margin-bottom">
-                LE CAPTCHA
-            </div>
-            -->
+            <label for="chkbox"><input id="chkbox" type="checkbox" class="accepttos" name="rememberme" />Se souvenir de moi</label>
+
             <button id="login" type="submit">Se connecter</button>
 
             <a href="https://skylord.fr" class="btn btn-link"><i class="fas fa-arrow-left"></i>Retour à l'accueil</a>
