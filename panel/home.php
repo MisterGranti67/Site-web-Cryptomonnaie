@@ -1,4 +1,5 @@
-<?php 
+<?php
+echo "<p>".$_SESSION['pseudo']."</p>";
 $session_pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:''; 
 $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 ?>
