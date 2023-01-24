@@ -1,5 +1,5 @@
 <?php 
-if (isset($_SESSION['pseudo']) && isset($_SESSION['code'])) {
+if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
 $session_pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:''; 
 $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 ?>
