@@ -68,7 +68,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         </script> 
     </head>
     <body>
-        <?php include '/utils/header.php'; ?>
+        <?php include("/utils/header.php"); ?>
 
         <div class="informations">
             <div class="container">
