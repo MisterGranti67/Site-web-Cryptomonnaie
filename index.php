@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Connexion - Espace crypto - Skylord</title>
         <link href="./css/style.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
     </head>
@@ -33,11 +35,14 @@
                     <input class="class-input" type="text" name="pseudo" placeholder="Votre pseudo Minecraft" />
                     <input class="class-input" type="password" name="code" placeholder="votre code de sécurité" />
                     <label for="chkbox"><input id="chkbox" type="checkbox" class="accepttos" name="rememberme" />Se souvenir de moi</label>
+                    
+                    <div class="text-center margin-bottom"></div>
 
                     <button id="login" type="submit">Se connecter</button>
 
                     <a href="https://skylord.fr" class="btn btn-link">
-                        <i class="fas fa-arrow-left"></i>Retour à l'accueil</a>
+                        <i class="fas fa-arrow-left"></i>Retour à l'accueil
+                    </a>
                     
                 </form>
             </div>

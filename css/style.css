@@ -18,6 +18,27 @@ body {
 .errorMessage {
     color: rgb(255, 0, 0)
 }
+.form-container label {
+    color: #fff;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 12px;
+}
+.form-container input[type=checkbox], input[type=radio] {
+    margin: 1px 0 0;
+    line-height: normal;
+    font-size: 12px;
+}
+.margin-bottom {
+    margin-bottom: 20px;
+}
+.container .form-container input[type=checkbox] {
+    position: absolute;
+    float: left;
+    margin-left: -20px;
+}
 .container h1 {
     font-weight: bold;
     margin: 0;
