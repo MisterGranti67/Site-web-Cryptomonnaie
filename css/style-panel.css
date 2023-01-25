@@ -617,7 +617,12 @@ footer {
 
 
 
-
+.navbar .deconnexion {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
 .energie_content .zone {
     background: #FAFAFA;
     border-radius: 10px;
