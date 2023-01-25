@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<div class="top">
+<div class="top" style="z-index: 99999">
     <div class="navbar">
         <a href="" class="item logo"><img class="image" src="https://skylord.fr/logo.png" width="64px"></a>
         <div class="navbar_menu">

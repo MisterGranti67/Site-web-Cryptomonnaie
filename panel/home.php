@@ -18,8 +18,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 var mon_pseudo='<?php echo $session_pseudo; ?>'
                 var mon_code='<?php echo $session_code; ?>'
                 const queryString = window.location.search;
-
-                const urlParams = new URLSearchParams(queryString);
                 
                 if (mon_pseudo != '') {
                     if (mon_code != '') {
