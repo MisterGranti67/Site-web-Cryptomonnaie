@@ -18,6 +18,31 @@ async function Allumer_rig(pseudo, code, nombre) {
     document.getElementById("footer").style.display = 'block';
 
 }
+
+async function reparer_energie(pseudo, code, nombre, type) {
+    document.getElementById("chargement").style.display = '';
+    document.getElementById("non_chargement").style.display = 'none';
+    document.getElementById("footer").style.display = 'none';
+    var json_energie = 'https://apiv1.skylord.fr/api/energie/simple?pseudo=' + pseudo + '&code=' + code;
+    const api_energie = await fetch(json_energie);
+    const data_energie = await api_energie.json();
+
+    if (type == "ps"){
+        var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["panneauxsolaires"][nombre-1]["id"];
+    } else {
+        var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["eoliennes"][nombre-1]["id"];
+    }
+    const api_energie_reparer = await fetch(json_energie_reparer);
+    const data_energie_reparer = await api_energie_reparer.json();
+
+    energie(pseudo,code);
+
+
+    document.getElementById("chargement").style.display = 'none';
+    document.getElementById("non_chargement").style.display = 'block';
+    document.getElementById("footer").style.display = 'block';
+
+}
 async function energie(pseudo, code) {
     var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + pseudo + '&code=' + code;
     const api_rigs = await fetch(json_rigs);
@@ -65,6 +90,7 @@ async function energie(pseudo, code) {
                     var ei = document.getElementById(String("ei"+numb));
                     et.textContent = "ON";
                     et.classList.remove("off");
+                    et.classList.remove("reparer");
                     ei.classList.remove("off");
                 }
             }
@@ -90,6 +116,7 @@ async function energie(pseudo, code) {
                     var psi = document.getElementById(String("psi"+numb));
                     pst.textContent = "ON";
                     pst.classList.remove("off");
+                    pst.classList.remove("reparer");
                     psi.classList.remove("off");
                 }
             }

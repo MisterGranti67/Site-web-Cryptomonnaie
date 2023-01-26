@@ -53,12 +53,12 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             <div class="zone_eolienne_text">
                                 <div class="zone_eolienne_placement first">
                                     <div class="placement_text">
-                                        <p class="placement_text_text off" id="et1">OFF</p>
+                                        <p class="placement_text_text off" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'e')" id="et1">OFF</p>
                                     </div>
                                 </div>
                                 <div class="zone_eolienne_placement">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="et2">ON</p>
+                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2,'e')" id="et2">ON</p>
                                     </div>
                                 </div>
                             </div>
@@ -97,32 +97,32 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             <div class="panneaux_solaires_text">
                                 <div class="placement_panneaux_solaire first">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="pst1">ON</p>
+                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'ps')" id="pst1">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_panneaux_solaire">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="pst2">ON</p>
+                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'ps')" id="pst2">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_panneaux_solaire">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="pst3">ON</p>
+                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'ps')" id="pst3">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_panneaux_solaire">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="pst4">ON</p>
+                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'ps')" id="pst4">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_panneaux_solaire">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="pst5">ON</p>
+                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'ps')" id="pst5">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_panneaux_solaire">
                                     <div class="placement_text">
-                                        <p class="placement_text_text off" id="pst6">OFF</p>
+                                        <p class="placement_text_text off" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'ps')" id="pst6">OFF</p>
                                     </div>
                                 </div>
                             </div>
