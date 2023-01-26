@@ -57,8 +57,8 @@ async function energie(pseudo, code) {
                 if (data_energie["eoliennes"][i]["etat"] == "100") {
                     var et = document.getElementById(String("et"+numb));
                     var ei = document.getElementById(String("ei"+numb));
-                    et.textContent = "OFF";
-                    et.classList.add("off");
+                    et.textContent = "🔨";
+                    et.classList.add("reparer");
                     ei.classList.add("off");
                 } else {
                     var et = document.getElementById(String("et"+numb));
@@ -82,8 +82,8 @@ async function energie(pseudo, code) {
                 if (data_energie["panneaux_solaires"][i]["etat"] == "100") {
                     var pst = document.getElementById(String("pst"+numb));
                     var psi = document.getElementById(String("psi"+numb));
-                    pst.textContent = "OFF";
-                    pst.classList.add("off");
+                    pst.textContent = "🔨";
+                    pst.classList.add("reparer");
                     psi.classList.add("off");
                 } else {
                     var pst = document.getElementById(String("pst"+numb));
