@@ -53,7 +53,7 @@ async function energie(pseudo, code) {
         }
         var numb = 1;
         for (let i = 0; i < 6; i++) {
-            console.log(String("pst"+numb))
+            console.log(String("pst"+numb));
             if (data_energie["panneaux_solaires"].length <= i) {
                 var pst = document.getElementById(String("pst"+numb));
                 var psi = document.getElementById(String("psi"+numb));
