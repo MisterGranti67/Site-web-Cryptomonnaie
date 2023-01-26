@@ -22,10 +22,27 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 
                 if (mon_pseudo != '') {
                     if (mon_code != '') {
-                        var pseudo = 'https://apiv1.skylord.fr/api/checkconnect?pseudo=' + mon_pseudo + '&code=' + mon_code;
-                        const api_crypto = await fetch(pseudo);
-                        const data_crypto = await api_crypto.json();
-                        if (data_crypto["Acces"] == "True"){
+                        var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + mon_pseudo + '&code=' + mon_code;
+                        const api_rigs = await fetch(json_rigs);
+                        const data_rigs = await api_rigs.json();
+                        if (data_rigs["Acces"] == "True"){
+                            var numb = 1;
+                            for (let i = 0; i < 8; i++) {
+                                if (data_rigs["rigs"][i]["etat"] == "false") {
+                                    var rt = document.getElementById(String("rt"+numb));
+                                    var ri = document.getElementById(String("ri"+numb));
+                                    rt.textContent = "OFF";
+                                    rt.classList.add("off");
+                                    ri.classList.add("off");
+                                } else {
+                                    var rt = document.getElementById(String("rt"+numb));
+                                    var ri = document.getElementById(String("ri"+numb));
+                                    rt.textContent = "ON";
+                                    rt.classList.remove("off");
+                                    ri.classList.remove("off");
+                                }
+                                numb=numb+1;
+                            }
                             document.getElementById("chargement").style.display = 'none';
                             document.getElementById("non_chargement").style.display = 'block';
                             document.getElementById("footer").style.display = 'block';
@@ -50,6 +67,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
             <?php include '../utils/header.php'; ?>
             <div class="energie_content">
                 <div class="container">
+                    <h1>Votre production d'énergie</h1>
                     <div class="zone">
                         <div class="zone_eolienne">
                             <div class="zone_eolienne_images">
