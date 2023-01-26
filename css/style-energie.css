@@ -1,3 +1,10 @@
+body {
+	background: #181827;
+}
+
+
+/* #ffe5a7,#FFD97D */
+
 .zone_eolienne { 
 	width: 156px;
 	height: 256px;
@@ -103,11 +110,14 @@
 .zone h1 {
 	padding-top: 20px;
 	text-align: center;
+	color: #fff;
 }
 .zone h2 {
 	text-align: center;
 	padding-bottom: 20px;
 }
+
+
 
 .zone_panneaux_solaires { 
 	width: 98px;
@@ -220,7 +230,7 @@
 
 
 .placement_text { 
-	background-color: rgba(217, 217, 217, 1);
+	background-color: #fff;
 	width: 32px;
 	height: 24px;
 	border-top-left-radius: 5px;
@@ -241,6 +251,7 @@
 	letter-spacing: 0;
     padding-top: 5px;
 	transition: color 300ms;
+	font-weight: 900;
 }
 
 
