@@ -25,21 +25,50 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + mon_pseudo + '&code=' + mon_code;
                         const api_rigs = await fetch(json_rigs);
                         const data_rigs = await api_rigs.json();
-                        if (data_rigs["Acces"] == "True"){
+
+                        var json_energie = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + mon_pseudo + '&code=' + mon_code;
+                        const api_energie = await fetch(json_energie);
+                        const data_energie = await api_energie.json();
+                        if (data_energie["Acces"] == "True"){
+                            // var numb = 1;
+                            // for (let i = 0; i < 8; i++) {
+                            //     if (data_rigs["rigs"][i]["etat"] == "false") {
+                            //         var rt = document.getElementById(String("rt"+numb));
+                            //         var ri = document.getElementById(String("ri"+numb));
+                            //         rt.textContent = "OFF";
+                            //         rt.classList.add("off");
+                            //         ri.classList.add("off");
+                            //     } else {
+                            //         var rt = document.getElementById(String("rt"+numb));
+                            //         var ri = document.getElementById(String("ri"+numb));
+                            //         rt.textContent = "ON";
+                            //         rt.classList.remove("off");
+                            //         ri.classList.remove("off");
+                            //     }
+                            //     numb=numb+1;
+                            // }
                             var numb = 1;
-                            for (let i = 0; i < 8; i++) {
-                                if (data_rigs["rigs"][i]["etat"] == "false") {
-                                    var rt = document.getElementById(String("rt"+numb));
-                                    var ri = document.getElementById(String("ri"+numb));
+                            for (let i = 0; i < 3; i++) {
+                                if (Object.keys(data_energie["eoliennes"]).length >= i) {
+                                    var rt = document.getElementById(String("et"+numb));
+                                    var ri = document.getElementById(String("ei"+numb));
                                     rt.textContent = "OFF";
                                     rt.classList.add("off");
                                     ri.classList.add("off");
                                 } else {
-                                    var rt = document.getElementById(String("rt"+numb));
-                                    var ri = document.getElementById(String("ri"+numb));
-                                    rt.textContent = "ON";
-                                    rt.classList.remove("off");
-                                    ri.classList.remove("off");
+                                    if (data_rigs["eoliennes"][i]["etat"] == "100") {
+                                        var rt = document.getElementById(String("et"+numb));
+                                        var ri = document.getElementById(String("ei"+numb));
+                                        rt.textContent = "OFF";
+                                        rt.classList.add("off");
+                                        ri.classList.add("off");
+                                    } else {
+                                        var rt = document.getElementById(String("et"+numb));
+                                        var ri = document.getElementById(String("ei"+numb));
+                                        rt.textContent = "ON";
+                                        rt.classList.remove("off");
+                                        ri.classList.remove("off");
+                                    }
                                 }
                                 numb=numb+1;
                             }
