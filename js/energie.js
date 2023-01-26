@@ -60,7 +60,6 @@ async function energie(pseudo, code) {
                 pst.classList.add("off");
                 psi.classList.add("off");
             } else {
-                // console.log(data_energie["eoliennes"][i])
                 if (data_energie["panneaux_solaires"][i]["etat"] == "100") {
                     var pst = document.getElementById(String("pst"+numb));
                     var psi = document.getElementById(String("psi"+numb));
@@ -78,7 +77,7 @@ async function energie(pseudo, code) {
             numb=numb+1;
         }
         var numb = 1;
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 2; i++) {
             if (data_energie["groupes_electrogene"].length <= i) {
                 var gt = document.getElementById(String("pst"+numb));
                 var gi = document.getElementById(String("psi"+numb));
