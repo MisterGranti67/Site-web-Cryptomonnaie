@@ -9,7 +9,9 @@
       </h1>
       <p>Ce site web est pour Skylord afin de créer une interface de visualisation par API du système de cryptomonnaie depuis les serveurs Minecraft de Skylord</p>
 </p>
+
 ## Sommaires
+
 <ul> 
     <li>I. Prérequis</li>
     <li>II. Fonctionnement</li>
