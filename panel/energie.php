@@ -23,11 +23,11 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 
                 if (mon_pseudo != '') {
                     if (mon_code != '') {
-                        var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + pseudo + '&code=' + code;
+                        var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + mon_pseudo + '&code=' + mon_code;
                         const api_rigs = await fetch(json_rigs);
                         const data_rigs = await api_rigs.json();
 
-                        var json_energie = 'https://apiv1.skylord.fr/api/energie/simple?pseudo=' + pseudo + '&code=' + code;
+                        var json_energie = 'https://apiv1.skylord.fr/api/energie/simple?pseudo=' + mon_pseudo + '&code=' + mon_code;
                         const api_energie = await fetch(json_energie);
                         const data_energie = await api_energie.json();
 
