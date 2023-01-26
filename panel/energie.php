@@ -12,6 +12,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         <link href="../css/style-panel.css" rel="stylesheet">
         <link href="../css/style-energie.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/energie.js"></script>
         <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
         <script>
             $(document).ready(async function(){
@@ -22,23 +23,12 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 
                 if (mon_pseudo != '') {
                     if (mon_code != '') {
-                        var pseudo = 'https://apiv1.skylord.fr/api/checkconnect?pseudo=' + mon_pseudo + '&code=' + mon_code;
-                        const api_crypto = await fetch(pseudo);
-                        const data_crypto = await api_crypto.json();
-                        if (data_crypto["Acces"] == "True"){
-                            document.getElementById("chargement").style.display = 'none';
-                            document.getElementById("non_chargement").style.display = 'block';
-                            document.getElementById("footer").style.display = 'block';
-                        } else {
-                            document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
-                        }
-                    } 
+                        energie(mon_pseudo,mon_code);
+                    }
                 } 
             });
+        </script>
 
-
-            
-        </script> 
     </head>
     <body>
         <div id="chargement" class="chargement">
@@ -50,6 +40,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
             <?php include '../utils/header.php'; ?>
             <div class="energie_content">
                 <div class="container">
+                    <h1>Votre production d'énergie</h1>
                     <div class="zone">
                         <div class="zone_eolienne">
                             <div class="zone_eolienne_images">
