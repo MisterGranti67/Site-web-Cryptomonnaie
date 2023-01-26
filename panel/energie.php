@@ -40,8 +40,9 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
             <?php include '../utils/header.php'; ?>
             <div class="energie_content">
                 <div class="container">
-                    <h1>Votre production d'énergie</h1>
                     <div class="zone">
+                        <h1>Votre production d'énergie</h1>
+                        <h2 style="color: red" id="message"></h2>
                         <div class="zone_eolienne">
                             <div class="zone_eolienne_images">
                                 <div class="zone_container">
@@ -142,42 +143,42 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             <div class="zone_rigs_text">
                                 <div class="placement_rigs first">
                                     <div class="placement_text">
-                                        <p class="placement_text_text off" id="rt1">OFF</p>
+                                        <p class="placement_text_text off" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1)" id="rt1">OFF</p>
                                     </div>
                                 </div>
                                 <div class="placement_rigs">
                                     <div class="placement_text">
-                                        <p class="placement_text_text off" id="rt2">OFF</p>
+                                        <p class="placement_text_text off" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2)" id="rt2">OFF</p>
                                     </div>
                                 </div>
                                 <div class="placement_rigs">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="rt3">ON</p>
+                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',3)" id="rt3">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_rigs">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="rt4">ON</p>
+                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',4)" id="rt4">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_rigs">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="rt5">ON</p>
+                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',5)" id="rt5">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_rigs">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="rt6">ON</p>
+                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',6)" id="rt6">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_rigs">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="rt7">ON</p>
+                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',7)" id="rt7">ON</p>
                                     </div>
                                 </div>
                                 <div class="placement_rigs">
                                     <div class="placement_text">
-                                        <p class="placement_text_text" id="rt8">ON</p>
+                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',8)" id="rt8">ON</p>
                                     </div>
                                 </div>
                             </div>

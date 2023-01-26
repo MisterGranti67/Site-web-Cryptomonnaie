@@ -1,3 +1,15 @@
+async function Allumer_rig(pseudo, code, nombre) {
+    var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + pseudo + '&code=' + code;
+    const api_rigs = await fetch(json_rigs);
+    const data_rigs = await api_rigs.json();
+
+    var json_rigs_allumer = 'https://apiv1.skylord.fr/api/rig/simple/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_rigs["rigs"][nombre-1]["id"];
+    const api_rigs_allumer = await fetch(json_rigs_allumer);
+    const data_rigs_allumer = await api_rigs_allumer.json();
+
+    energie(pseudo,code)
+
+}
 async function energie(pseudo, code) {
     var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + pseudo + '&code=' + code;
     const api_rigs = await fetch(json_rigs);
@@ -6,7 +18,6 @@ async function energie(pseudo, code) {
     var json_energie = 'https://apiv1.skylord.fr/api/energie/simple?pseudo=' + pseudo + '&code=' + code;
     const api_energie = await fetch(json_energie);
     const data_energie = await api_energie.json();
-
     if (data_energie["Acces"] == "True"){
         numb = 1;
         for (let i = 0; i < 8; i++) {
