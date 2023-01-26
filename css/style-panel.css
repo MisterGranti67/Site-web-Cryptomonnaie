@@ -8,6 +8,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
+    background-color: #181827;
 }
 
 .top {
@@ -15,7 +16,7 @@ body {
     top: 0;
     height:64px;
     width: 100%;
-    background-color: #fff;
+    background-color: #24253A;
 }
 
 .top--scrolling {
@@ -39,13 +40,13 @@ body {
 }
 
 .navbar_menu .active {
-    color: #000;
+    color: #fff;
     text-decoration: underline;
 }
 
 
 .item {
-    color: #6A6A6A;
+    color: #fff;
     text-decoration: none;
     line-height: 64px;
 }
@@ -85,7 +86,7 @@ body {
         width: 82px;
         text-align: center;
         border-radius: 5px;
-        color: #000;
+        color: #24253A;
         transition: background 300ms;
     }
 
@@ -125,7 +126,7 @@ body {
     padding-top: 44px;
     padding-bottom: 44px;
     width: 100%;
-    background-color: #FAFAFA;
+    background-color: #24253A;
 }
 
 .informations .details {
@@ -151,6 +152,7 @@ body {
     margin-inline-end: 0px;
     font-weight: 400;
     font-style: normal;
+    color: #fff;
 }
 
 .informations .sous_details {
@@ -161,7 +163,7 @@ body {
     margin-right: 24px;
 }
 .informations .sous_details .coordonnes h2 {
-    color: #6D6D6D;
+    color: #E4E4E4;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -170,7 +172,7 @@ body {
 }
 
 .informations .sous_details .coordonnes p {
-    color: #000;
+    color: #fff;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -202,12 +204,12 @@ body {
 .content .notification {
     width: 374px;
     height: 496px;
-    background-color: #FAFAFA;
+    background-color: #24253A;
     border-radius: 10px;
 }
 
 .content .mon_solde h1 {
-    color: #000;
+    color: #fff;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -221,7 +223,7 @@ body {
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
-    color: #000;
+    color: #fff;
 }
 .notification h1 {
     font-family: 'Roboto';
@@ -229,7 +231,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #000000;
+    color: #ffffff;
     margin-top: 24px;
     margin-bottom: 24px;
     text-align: center;
@@ -244,14 +246,14 @@ body {
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: #000000;
+    color: #ffffff;
     text-align: left;
     text-decoration: none;
     transition: color 300ms;
 }
 
 .notification .notification_recu a:hover {
-    color: #6D6D6D;
+    color: #E4E4E4;
     transition: color 300ms;
 }
 .notification .notification_recu:hover {
@@ -274,7 +276,7 @@ body {
     font-weight: 800;
     font-size: 12px;
     line-height: 14px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .tableau_crypto h2 {
@@ -283,7 +285,7 @@ body {
     font-weight: 800;
     font-size: 12px;
     line-height: 14px;
-    color: #6D6D6D;
+    color: #E4E4E4;
 
 }
 .tableau_crypto .nom h1 {
@@ -332,7 +334,7 @@ body {
 .tableau_crypto table caption {
     font-size: 55px;
     font-weight:700;
-    color:#00000090;
+    color:#ffffff90;
     padding: 15px;
 }
 
@@ -341,7 +343,7 @@ body {
 }
 .tableau_crypto .thead{
     margin-top: 24px;
-    color:#000;
+    color:#fff;
 }
 
 .tableau_crypto table th,
@@ -376,7 +378,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
-    background: #EFEFEF;
+    background: #24253A;
     margin-top: 24px;
 }
 
@@ -403,7 +405,7 @@ body {
     margin-left: 113px;
 }
 .discord .margin {
-    border-top: #000 solid 1px;
+    border-top: #fff solid 1px;
     height: 1px;
     margin-top: 24px;
     margin-bottom: 26px;
@@ -418,7 +420,7 @@ body {
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-    color: #000000;
+    color: #ffffff;
 }
 
 .discord .droite h2 {
@@ -430,7 +432,7 @@ body {
     font-size: 14px;
     line-height: 16px;
     text-align: center;
-    color: #000000;
+    color: #ffffff;
 }
 
 .discord .droite p {
@@ -440,7 +442,7 @@ body {
     font-size: 16px;
     line-height: 19px;
     text-align: justify;
-    color: #000000;
+    color: #ffffff;
 }
 
 .discord a.bouton {
@@ -453,7 +455,7 @@ body {
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: #000000;
+    color: #24253A;
     margin-top: 42px;
     transition: background 300ms;
     text-decoration: none;
@@ -475,10 +477,10 @@ footer {
     height: 207px;
 }
 .footer-menu{
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #333333;
     height: 128px;
     width: 100%;
-    border-bottom: rgba(0, 0, 0, 0.3) solid 1px;
+    border-bottom: #232323 solid 1px;
 }
 
 .footer-menu .total-haut-footer {
@@ -538,7 +540,7 @@ footer {
 
 
 .bas-footer{
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #333333;
     height: 80px;
     width: 100%;
 }
@@ -625,7 +627,8 @@ footer {
     margin-right: 10px;
 }
 .energie_content .zone {
-    background: #FAFAFA;
+    background-color: #24253A;
+    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
     border-radius: 10px;
     width: 100%;
     height: 800px;
