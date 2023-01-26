@@ -12,6 +12,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         <link href="../css/style-panel.css" rel="stylesheet">
         <link href="../css/style-energie.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/energie.js"></script>
         <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
         <script>
             $(document).ready(async function(){
@@ -22,69 +23,12 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 
                 if (mon_pseudo != '') {
                     if (mon_code != '') {
-                        var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + mon_pseudo + '&code=' + mon_code;
-                        const api_rigs = await fetch(json_rigs);
-                        const data_rigs = await api_rigs.json();
-
-                        var json_energie = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + mon_pseudo + '&code=' + mon_code;
-                        const api_energie = await fetch(json_energie);
-                        const data_energie = await api_energie.json();
-                        if (data_energie["Acces"] == "True"){
-                            // var numb = 1;
-                            // for (let i = 0; i < 8; i++) {
-                            //     if (data_rigs["rigs"][i]["etat"] == "false") {
-                            //         var rt = document.getElementById(String("rt"+numb));
-                            //         var ri = document.getElementById(String("ri"+numb));
-                            //         rt.textContent = "OFF";
-                            //         rt.classList.add("off");
-                            //         ri.classList.add("off");
-                            //     } else {
-                            //         var rt = document.getElementById(String("rt"+numb));
-                            //         var ri = document.getElementById(String("ri"+numb));
-                            //         rt.textContent = "ON";
-                            //         rt.classList.remove("off");
-                            //         ri.classList.remove("off");
-                            //     }
-                            //     numb=numb+1;
-                            // }
-                            var numb = 1;
-                            for (let i = 0; i < 3; i++) {
-                                if (Object.keys(data_energie["eoliennes"]).length >= i) {
-                                    var rt = document.getElementById(String("et"+numb));
-                                    var ri = document.getElementById(String("ei"+numb));
-                                    rt.textContent = "OFF";
-                                    rt.classList.add("off");
-                                    ri.classList.add("off");
-                                } else {
-                                    if (data_rigs["eoliennes"][i]["etat"] == "100") {
-                                        var rt = document.getElementById(String("et"+numb));
-                                        var ri = document.getElementById(String("ei"+numb));
-                                        rt.textContent = "OFF";
-                                        rt.classList.add("off");
-                                        ri.classList.add("off");
-                                    } else {
-                                        var rt = document.getElementById(String("et"+numb));
-                                        var ri = document.getElementById(String("ei"+numb));
-                                        rt.textContent = "ON";
-                                        rt.classList.remove("off");
-                                        ri.classList.remove("off");
-                                    }
-                                }
-                                numb=numb+1;
-                            }
-                            document.getElementById("chargement").style.display = 'none';
-                            document.getElementById("non_chargement").style.display = 'block';
-                            document.getElementById("footer").style.display = 'block';
-                        } else {
-                            document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
-                        }
-                    } 
+                        energie(mon_pseudo,mon_code);
+                    }
                 } 
             });
+        </script>
 
-
-            
-        </script> 
     </head>
     <body>
         <div id="chargement" class="chargement">
