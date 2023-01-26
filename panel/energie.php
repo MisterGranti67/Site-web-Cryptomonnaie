@@ -192,7 +192,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             viewBox="0 0 736 563"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            style="margin-top: 112px;  margin-left: 84px; height: 562px;"
+                            style="margin-top: 32px;  margin-left: 84px; height: 562px;"
                             preserveAspectRatio="none"
                             >
                             <path d="M735.608 5.5H646.501V485" stroke="#FF00D6"></path>
