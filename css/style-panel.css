@@ -86,7 +86,7 @@ body {
         width: 82px;
         text-align: center;
         border-radius: 5px;
-        color: #fff;
+        color: #24253A;
         transition: background 300ms;
     }
 
@@ -455,7 +455,7 @@ body {
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: #ffffff;
+    color: #24253A;
     margin-top: 42px;
     transition: background 300ms;
     text-decoration: none;
