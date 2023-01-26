@@ -51,6 +51,7 @@ body {
 }
 .zone_eolienne_images .off {
 	filter: blur(5px);
+	opacity: 0.2;
 }
 
 
@@ -100,6 +101,7 @@ body {
 }
 .groupes_images .off {
 	filter: blur(5px);
+	opacity: 0.2;
 }
 
 
@@ -163,6 +165,7 @@ body {
 }
 .panneaux_solaires_images .off {
 	filter: blur(5px);
+	opacity: 0.2;
 }
 
 
@@ -224,6 +227,7 @@ body {
 
 .zone_rigs_images .off {
 	filter: blur(5px);
+	opacity: 0.2;
 }
 
 

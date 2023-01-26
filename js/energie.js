@@ -1,4 +1,7 @@
 async function Allumer_rig(pseudo, code, nombre) {
+    document.getElementById("chargement").style.display = '';
+    document.getElementById("non_chargement").style.display = 'none';
+    document.getElementById("footer").style.display = 'none';
     var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + pseudo + '&code=' + code;
     const api_rigs = await fetch(json_rigs);
     const data_rigs = await api_rigs.json();
@@ -7,7 +10,12 @@ async function Allumer_rig(pseudo, code, nombre) {
     const api_rigs_allumer = await fetch(json_rigs_allumer);
     const data_rigs_allumer = await api_rigs_allumer.json();
 
-    energie(pseudo,code)
+    energie(pseudo,code);
+
+
+    document.getElementById("chargement").style.display = 'none';
+    document.getElementById("non_chargement").style.display = 'block';
+    document.getElementById("footer").style.display = 'block';
 
 }
 async function energie(pseudo, code) {
