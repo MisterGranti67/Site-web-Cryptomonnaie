@@ -3,11 +3,10 @@
     <div class="navbar">
         <a href="" class="item logo"><img class="image" src="https://skylord.fr/logo.png" width="64px"></a>
         <div class="navbar_menu">
-            <a class="item lien" href="">Acheter des cryptos</a>
-            <a class="item lien" href="">Trader</a>
-            <a class="item lien" href="">Accès aux rigs</a>
-            <a class="item lien" href="../panel/energie.php">Production d'énergie</a>
-            <a class="item lien" href="">Technicien informatique</a>
+            <a class="item lien" href="../panel/dollarstocrypto.php">Acheter des cryptos</a>
+            <a class="item lien" href="../panel/trader.php">Trader</a>
+            <a class="item lien" href="../panel/energie.php">Production d'énergie et Rigs</a>
+            <a class="item lien" href="../panel/technicieninfo.php">Technicien informatique (Fonctionnalité Premium)</a>
         </div>
         <?php if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) { ?>
             <a class="item mon_wallet deconnexion" href="https://crypto.skylord.fr/deconnexion.php">Déconnexion</a>

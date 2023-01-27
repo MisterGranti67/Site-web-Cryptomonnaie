@@ -26,14 +26,20 @@ async function reparer_energie(pseudo, code, nombre, type) {
     var json_energie = 'https://apiv1.skylord.fr/api/energie/simple?pseudo=' + pseudo + '&code=' + code;
     const api_energie = await fetch(json_energie);
     const data_energie = await api_energie.json();
-
+    nombre = nombre-1;
     if (type == "ps"){
-        var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["panneauxsolaires"][nombre-1]["id"];
+        if (data_energie["panneaux_solaires"][nombre]["etat"] == "100") { 
+            var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["panneaux_solaires"][nombre-1]["id"];
+            const api_energie_reparer = await fetch(json_energie_reparer);
+            const data_energie_reparer = await api_energie_reparer.json();
+        }
     } else {
-        var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["eoliennes"][nombre-1]["id"];
+        if (data_energie["eoliennes"][nombre]["etat"] == "100") { 
+            var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["eoliennes"][nombre-1]["id"];
+            const api_energie_reparer = await fetch(json_energie_reparer);
+            const data_energie_reparer = await api_energie_reparer.json();
+        }
     }
-    const api_energie_reparer = await fetch(json_energie_reparer);
-    const data_energie_reparer = await api_energie_reparer.json();
 
     energie(pseudo,code);
 
