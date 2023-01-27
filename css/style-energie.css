@@ -49,6 +49,10 @@ body {
 .zone_eolienne_placement_text .off {
     color:  rgba(213, 0, 0, 1);
 }
+.zone_eolienne_placement_text .reparer {
+    color:  #FF8B00;
+	font-size: 24px;
+}
 .zone_eolienne_images .off {
 	filter: blur(5px);
 	opacity: 0.2;
@@ -98,6 +102,11 @@ body {
 }
 .placement_text .off {
     color:  rgba(213, 0, 0, 1);
+}
+.placement_text .reparer {
+    color:  #FF8B00;
+	font-size: 24px;
+	top: 3px;
 }
 .groupes_images .off {
 	filter: blur(5px);
@@ -234,9 +243,9 @@ body {
 
 
 .placement_text { 
-	background-color: #fff;
-	width: 32px;
-	height: 24px;
+	background-color: #ffffff10;
+	width: 36px;
+	height: 40px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-bottom-left-radius: 5px;
@@ -247,13 +256,14 @@ body {
 }
 .placement_text_text { 
 	color: rgba(55, 213, 0, 1);
-	width: 32px;
-	height: 24px;
+	width: 36px;
+	position: absolute;
+	height: 40px;
 	font-family: Roboto;
 	text-align: center;
 	font-size: 12px;
 	letter-spacing: 0;
-    padding-top: 5px;
+	top: 12px;
 	transition: color 300ms;
 	font-weight: 900;
 }
