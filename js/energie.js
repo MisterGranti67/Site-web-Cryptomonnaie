@@ -63,6 +63,7 @@ async function energie(pseudo, code) {
             } else {
                 var rt = document.getElementById(String("rt"+numb));
                 var ri = document.getElementById(String("ri"+numb));
+                $(String("#rl"+numb)).attr("href", "rigs.php?id="+data_rigs["rigs"][i]["id"]);
                 rt.textContent = "ON";
                 rt.classList.remove("off");
                 ri.classList.remove("off");

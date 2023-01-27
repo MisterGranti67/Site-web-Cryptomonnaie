@@ -130,14 +130,14 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         <div class="zone_rigs">
                             <div class="zone_rigs_images">
                                 <div class="zone_container">
-                                    <div class="zone_rigs_images_image off" id="ri1"></div>
-                                    <div class="zone_rigs_images_image off" id="ri2"></div>
-                                    <div class="zone_rigs_images_image" id="ri3"></div>
-                                    <div class="zone_rigs_images_image" id="ri4"></div>
-                                    <div class="zone_rigs_images_image" id="ri5"></div>
-                                    <div class="zone_rigs_images_image" id="ri6"></div>
-                                    <div class="zone_rigs_images_image" id="ri7"></div>
-                                    <div class="zone_rigs_images_image" id="ri8"></div>
+                                    <a href="#" id="rl1"><div class="zone_rigs_images_image off" id="ri1"></div></a>
+                                    <a href="#" id="rl2"><div class="zone_rigs_images_image off" id="ri2"></div></a>
+                                    <a href="#" id="rl3"><div class="zone_rigs_images_image" id="ri3"></div></a>
+                                    <a href="#" id="rl4"><div class="zone_rigs_images_image" id="ri4"></div></a>
+                                    <a href="#" id="rl5"><div class="zone_rigs_images_image" id="ri5"></div></a>
+                                    <a href="#" id="rl6"><div class="zone_rigs_images_image" id="ri6"></div></a>
+                                    <a href="#" id="rl7"><div class="zone_rigs_images_image" id="ri7"></div></a>
+                                    <a href="#" id="rl8"><div class="zone_rigs_images_image" id="ri8"></div></a>
                                 </div>
                             </div>
                             <div class="zone_rigs_text">
