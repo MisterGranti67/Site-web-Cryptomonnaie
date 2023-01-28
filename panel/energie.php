@@ -66,19 +66,19 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         <div class="zone_groupe">
                             <div class="groupes_images">
                                 <div class="zone_container">
-                                    <div class="groupe_image off" id="gi1"></div>
-                                    <div class="groupe_image off" id="gi2"></div>
+                                    <a href="#" id="gl1"><div class="groupe_image off" id="gi1"></div></a>
+                                    <a href="#" id="gl2"><div class="groupe_image off" id="gi2"></div></a>
                                 </div>
                             </div>
                             <div class="groupe_text">
                                 <div class="placement_groupe first">
                                     <div class="placement_text">
-                                        <p class="placement_text_text off" id="gt1">OFF</p>
+                                        <p class="placement_text_text off" onclick="Allumer_groupelectro('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1)" id="gt1">OFF</p>
                                     </div>
                                 </div>
                                 <div class="placement_groupe">
                                     <div class="placement_text">
-                                        <p class="placement_text_text off" id="gt2">OFF</p>
+                                        <p class="placement_text_text off" onclick="Allumer_groupelectro('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2)" id="gt2">OFF</p>
                                     </div>
                                 </div>
                             </div>

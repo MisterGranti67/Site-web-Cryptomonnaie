@@ -19,6 +19,27 @@ async function Allumer_rig(pseudo, code, nombre) {
 
 }
 
+async function Allumer_groupelectro(pseudo, code, nombre) {
+    document.getElementById("chargement").style.display = '';
+    document.getElementById("non_chargement").style.display = 'none';
+    document.getElementById("footer").style.display = 'none';
+    var json_energie = 'https://apiv1.skylord.fr/api/energie/simple?pseudo=' + pseudo + '&code=' + code;
+    const api_energie = await fetch(json_energie);
+    const data_energie = await api_energie.json();
+
+    if (data_energie["groupes_electrogene"].length >= nombre) {
+        var json_groupe_allumer = 'https://apiv1.skylord.fr/api/groupelectro/simple/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["groupes_electrogene"][nombre-1]["id"];
+        const api_groupe_allumer = await fetch(json_groupe_allumer);
+        const data_groupe_allumer = await api_groupe_allumer.json();
+    }
+
+    energie(pseudo,code);
+
+
+    document.getElementById("chargement").style.display = 'none';
+    document.getElementById("non_chargement").style.display = 'block';
+    document.getElementById("footer").style.display = 'block';
+}
 async function reparer_energie(pseudo, code, nombre, type) {
     document.getElementById("chargement").style.display = '';
     document.getElementById("non_chargement").style.display = 'none';
@@ -148,6 +169,7 @@ async function energie(pseudo, code) {
                 } else {
                     var gt = document.getElementById(String("gt"+numb));
                     var gi = document.getElementById(String("gi"+numb));
+                    $(String("#gl"+numb)).attr("href", "groupeelectro.php?id="+data_energie["groupes_electrogene"][i]["id"]);
                     gt.textContent = "ON";
                     gt.classList.remove("off");
                     gi.classList.remove("off");
