@@ -1,10 +1,8 @@
-<?php session_start(); ?>
 <div class="top" style="z-index: 99999">
     <div class="navbar">
         <a href="" class="item logo"><img class="image" src="https://skylord.fr/logo.png" width="64px"></a>
         <div class="navbar_menu">
-            <a class="item lien" href="../panel/dollarstocrypto.php">Acheter des cryptos</a>
-            <a class="item lien" href="../panel/trader.php">Trader</a>
+            <a class="item lien" href="../panel/change.php">Acheter des cryptos</a>
             <a class="item lien" href="../panel/energie.php">Production d'énergie et Rigs</a>
             <a class="item lien" href="../panel/technicieninfo.php">Technicien informatique (Fonctionnalité Premium)</a>
         </div>
