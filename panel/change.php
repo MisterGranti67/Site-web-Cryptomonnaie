@@ -49,7 +49,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         </div>
         <div id="non_chargement" >
             <?php include '../utils/header.php'; ?>
-            <!-- <div class="container"> -->
                 <body>
                     <div class="wrapper">
                         <div class="box box1">   
