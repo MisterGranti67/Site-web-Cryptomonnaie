@@ -48,7 +48,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         </div>
         <div id="non_chargement" >
             <?php include '../utils/header.php'; ?>
-                <body>
+                <div class="container">
                     <div class="wrapper">
                         <div class="box box1">   
                             <div class="container-fluid coinBorder" style="margin-top:6%;">
