@@ -93,12 +93,13 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="test" v-on:click="selectCoin(product.id)" v-for="product in filteredCoins">                      
+                                            <tr class="test" v-on:click = "selectCoin(product.id)" v-for="product in filteredCoins">                      
                                                 <td> $ {{product.price}}</td>
                                                 <td> $ {{product.volume}}</td>
                                                 <td  v-if= "product.change[0]!='-'" style="color:#30ff67;">+{{product.change}}%</td>
                                                 <td  v-else style="color:#ff5c30;">{{product.change}} %</td>
                                                 <td>{{product.name}}</td>
+                                            </tr>
                                             </tr>
                                         </tbody>
                                     </table>
