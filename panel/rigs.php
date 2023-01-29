@@ -88,7 +88,25 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 
                         <img src="../img/energie/crypto_rig_all.png" class="rig">
 
+                        <div class="tableau_crypto">
+                            <table>
+                                <thead>
+                                    <tr class="thead">
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Montant</th>
+                                        <th scope="col">Valeur</th>
+                                        <th scope="col">Changer la crypto de minage</th>
+                                        <th scope="col">Transférer sur votre wallet</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableau_crypto">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        
                     </div>
+                    
                 </div>
             </div>
             <section class="discord">

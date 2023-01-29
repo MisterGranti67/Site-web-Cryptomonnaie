@@ -48,16 +48,20 @@ async function reparer_energie(pseudo, code, nombre, type) {
     const data_energie = await api_energie.json();
     nombre = nombre-1;
     if (type == "ps"){
-        if (data_energie["panneaux_solaires"][nombre]["etat"] == "100") { 
-            var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["panneaux_solaires"][nombre]["id"];
-            const api_energie_reparer = await fetch(json_energie_reparer);
-            const data_energie_reparer = await api_energie_reparer.json();
+        if (data_energie["panneaux_solaires"].length >= (nombre+1)) {
+            if (data_energie["panneaux_solaires"][nombre]["etat"] == "100") { 
+                var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["panneaux_solaires"][nombre]["id"];
+                const api_energie_reparer = await fetch(json_energie_reparer);
+                const data_energie_reparer = await api_energie_reparer.json();
+            }
         }
     } else {
-        if (data_energie["eoliennes"][nombre]["etat"] == "100") { 
-            var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["eoliennes"][nombre]["id"];
-            const api_energie_reparer = await fetch(json_energie_reparer);
-            const data_energie_reparer = await api_energie_reparer.json();
+        if (data_energie["eoliennes"].length >= (nombre+1)) {
+            if (data_energie["eoliennes"][nombre]["etat"] == "100") { 
+                var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["eoliennes"][nombre]["id"];
+                const api_energie_reparer = await fetch(json_energie_reparer);
+                const data_energie_reparer = await api_energie_reparer.json();
+            }
         }
     }
 

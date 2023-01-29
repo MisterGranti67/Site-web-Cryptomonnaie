@@ -28,7 +28,9 @@ body {
     background-color: rgba(22, 22, 22, 0.85);
     transition: background-color .4s;
 }
-
+.tableau_crypto a:hover {
+    color: #ffe5a7;
+}
 .navbar {
     display: flex;
     justify-content: center;
