@@ -12,7 +12,6 @@ async function Allumer_rig(pseudo, code, nombre) {
 
     energie(pseudo,code);
 
-
     document.getElementById("chargement").style.display = 'none';
     document.getElementById("non_chargement").style.display = 'block';
     document.getElementById("footer").style.display = 'block';
@@ -35,11 +34,11 @@ async function Allumer_groupelectro(pseudo, code, nombre) {
 
     energie(pseudo,code);
 
-
     document.getElementById("chargement").style.display = 'none';
     document.getElementById("non_chargement").style.display = 'block';
     document.getElementById("footer").style.display = 'block';
 }
+
 async function reparer_energie(pseudo, code, nombre, type) {
     document.getElementById("chargement").style.display = '';
     document.getElementById("non_chargement").style.display = 'none';
@@ -49,27 +48,31 @@ async function reparer_energie(pseudo, code, nombre, type) {
     const data_energie = await api_energie.json();
     nombre = nombre-1;
     if (type == "ps"){
-        if (data_energie["panneaux_solaires"][nombre]["etat"] == "100") { 
-            var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["panneaux_solaires"][nombre-1]["id"];
-            const api_energie_reparer = await fetch(json_energie_reparer);
-            const data_energie_reparer = await api_energie_reparer.json();
+        if (data_energie["panneaux_solaires"].length >= (nombre+1)) {
+            if (data_energie["panneaux_solaires"][nombre]["etat"] == "100") { 
+                var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["panneaux_solaires"][nombre]["id"];
+                const api_energie_reparer = await fetch(json_energie_reparer);
+                const data_energie_reparer = await api_energie_reparer.json();
+            }
         }
     } else {
-        if (data_energie["eoliennes"][nombre]["etat"] == "100") { 
-            var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["eoliennes"][nombre-1]["id"];
-            const api_energie_reparer = await fetch(json_energie_reparer);
-            const data_energie_reparer = await api_energie_reparer.json();
+        if (data_energie["eoliennes"].length >= (nombre+1)) {
+            if (data_energie["eoliennes"][nombre]["etat"] == "100") { 
+                var json_energie_reparer = 'https://apiv1.skylord.fr/api/energie/reparer/action?pseudo=' + pseudo + '&code=' + code + '&id=' + data_energie["eoliennes"][nombre]["id"];
+                const api_energie_reparer = await fetch(json_energie_reparer);
+                const data_energie_reparer = await api_energie_reparer.json();
+            }
         }
     }
 
     energie(pseudo,code);
-
 
     document.getElementById("chargement").style.display = 'none';
     document.getElementById("non_chargement").style.display = 'block';
     document.getElementById("footer").style.display = 'block';
 
 }
+
 async function energie(pseudo, code) {
     var json_rigs = 'https://apiv1.skylord.fr/api/rigs/simple?pseudo=' + pseudo + '&code=' + code;
     const api_rigs = await fetch(json_rigs);
@@ -106,7 +109,6 @@ async function energie(pseudo, code) {
                 rt.classList.add("off");
                 ri.classList.add("off");
             } else {
-                // console.log(data_energie["eoliennes"][i])
                 if (data_energie["eoliennes"][i]["etat"] == "100") {
                     var et = document.getElementById(String("et"+numb));
                     var ei = document.getElementById(String("ei"+numb));
@@ -159,7 +161,6 @@ async function energie(pseudo, code) {
                 gt.classList.add("off");
                 gi.classList.add("off");
             } else {
-                // console.log(data_energie["eoliennes"][i])
                 if (data_energie["groupes_electrogene"][i]["etat"] == "false") {
                     var gt = document.getElementById(String("gt"+numb));
                     var gi = document.getElementById(String("gi"+numb));

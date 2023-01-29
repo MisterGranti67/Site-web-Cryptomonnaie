@@ -1,3 +1,34 @@
+async function changer_crypto(pseudo, code, id, nombre) {
+    document.getElementById("chargement").style.display = '';
+    document.getElementById("non_chargement").style.display = 'none';
+    document.getElementById("footer").style.display = 'none';
+    var json_groupe_allumer = 'https://apiv1.skylord.fr/api/rig/changercrypto?pseudo=' + pseudo + '&code=' + code + '&id=' + id + '&crypto=' + nombre;
+    const api_groupe_allumer = await fetch(json_groupe_allumer);
+    const data_groupe_allumer = await api_groupe_allumer.json();
+    console.log(data_groupe_allumer)
+    rigs(pseudo,code,id);
+
+    document.getElementById("chargement").style.display = 'none';
+    document.getElementById("non_chargement").style.display = 'block';
+    document.getElementById("footer").style.display = 'block';
+}
+
+async function transfert_crypto(pseudo, code, id, nombre) {
+    document.getElementById("chargement").style.display = '';
+    document.getElementById("non_chargement").style.display = 'none';
+    document.getElementById("footer").style.display = 'none';
+    var json_groupe_allumer = 'https://apiv1.skylord.fr/api/rig/transfert?pseudo=' + pseudo + '&code=' + code + '&id=' + id + '&crypto=' + nombre;
+    const api_groupe_allumer = await fetch(json_groupe_allumer);
+    const data_groupe_allumer = await api_groupe_allumer.json();
+    console.log(data_groupe_allumer)
+    rigs(pseudo,code,id);
+
+    document.getElementById("chargement").style.display = 'none';
+    document.getElementById("non_chargement").style.display = 'block';
+    document.getElementById("footer").style.display = 'block';
+}
+
+
 async function rigs(pseudo, code, id) {
     var json_rig = 'https://apiv1.skylord.fr/api/rig/all?pseudo=' + pseudo + '&code=' + code + '&id=' + id;
     const api_rig = await fetch(json_rig);
@@ -35,6 +66,39 @@ async function rigs(pseudo, code, id) {
             document.getElementById("allumer").classList.remove("allumer");
             document.getElementById("allumer").classList.add("eteindre");
             document.getElementById("allumer").textContent = "Éteindre";
+            
+        }
+
+        const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
+        const data = await api_binance.json();
+        var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
+        $('#tableau_crypto').html('');
+        for (let i = 2000; i > 0; i--) {
+            if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
+                const nom_crypto = data[i].symbol.split('USDT');
+                const crypto_mine = data_rig["crypto_mine"][0]["id"].split('USDT');
+                
+                var variation = "perte";
+                if (data[i].priceChangePercent > 0) {
+                    variation = "gain";
+                }
+                nbCrypto = 0
+                for (let j = 0; j < 9; j++) {
+                    if (nom_crypto[0] == data_rig["cryptos"][j]["id"]){
+                        nbCrypto = j
+                        valeur_crypto = data_rig["cryptos"][j]["nombre"]*data[i].lastPrice
+                    }
+                }
+                var nom_crypto_img = nom_crypto[0].toLowerCase();
+                var valeur_crypto = valeur_crypto.toString().split('.');
+                if (nom_crypto.toString() != crypto_mine.toString()){
+                    var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_rig["cryptos"][nbCrypto]["nombre"] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Changer la crypto de minage\" onclick=\"changer_crypto('"+ pseudo + "','"+ code + "', " + id + "," + (nbCrypto+1) + ")\"><a href=\"#\">Changer</a> </td><td data-label=\"Transférer sur votre wallet\" onclick=\"transfert_crypto('"+ pseudo + "','"+ code + "', " + id + ", " + (nbCrypto+1) + ")\"><a href=\"#\">Transférer</a></td></tr>"
+                } else {
+                    var tableau_crypto = "<tr class=\"crypto_mine\"><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_rig["cryptos"][nbCrypto]["nombre"] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Changer la crypto de minage\" onclick=\"changer_crypto('"+ pseudo + "','"+ code + "', " + id + "," + (nbCrypto+1) + ")\"><a href=\"#\">Changer</a> </td><td data-label=\"Transférer sur votre wallet\" onclick=\"transfert_crypto('"+ pseudo + "','"+ code + "', " + id + ", " + (nbCrypto+1) + ")\"><a href=\"#\">Transférer</a></td></tr>"
+                }
+                $(tableau_crypto).prependTo("#tableau_crypto");
+                
+            }
             
         }
         document.getElementById("numero").textContent = "RIG N°"+id;
