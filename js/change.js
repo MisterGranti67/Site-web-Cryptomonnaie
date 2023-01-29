@@ -32,147 +32,93 @@ var coins = new Vue(
     products:[
     {
         id:0,
-        name:'Nano',
-        tag:"NANO",
-        volume:2300,
-        description:'First Crypto',
-        change:'+3%',
+        name:'Bitcoin',
+        tag:"BTC",
+        volume: 0,
+        change:'+5%',
         wallet: 0,
-        price: 9000,
-    icon:'https://s2.coinmarketcap.com/static/img/coins/32x32/1567.png'
+        price: 0,
+        icon:'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png'
     },
     {
         id:1,
-        name:'LiteCoin',
-        tag:"LTC",
-        volume:2300,
-        description:'Second Crypto',
+        name:'Ethereum',
+        tag:"ETH",
+        volume: 0,
         change:'+5%',
         wallet: 0,
-        price: 150,
-        high:3,
-        low:1,
-        icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/2.png'
-        
-    
+        price: 0,
+        icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png'
     },
-        {
+    {
         id:2,
-        name:'Ripple',
-            tag:"XRP",
-            volume:2300,
-        description:'Ripple',
-        change:'+3%', 
+        name:'Litecoin',
+        tag:"LTC",
+        volume: 0,
+        change:'+5%',
         wallet: 0,
-        price: .89,
-            high:3,
-        low:1,
-        icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/52.png'
-        
-    
+        price: 0,
+        icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/2.png'
     },
-        {
+    {
         id:3,
-        name:'BitCoin-Cash',
-            tag:"BCH",
-            volume:2300,
-        description:'Bitcoin Fork',
-        change:'+6%',
+        name:'Binance Coin',
+        tag:"BNB",
+        volume: 0,
+        change:'+5%',
         wallet: 0,
-        price: 1500,
-        high:3,
-        low:1,
-        icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/1831.png'
-        
-    
+        price: 0,
+        icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png'
     },
         {
         id:4,
-        name:'EOS',
-        tag:"EOS",
-        volume:2300,
-        description:'Other Ethereum',
-        change:'-5%',
+        name:'Shiba',
+        tag:"SHIB",
+        volume: 0,
+        change:'+5%',
         wallet: 0,
-        price: 15,
-            high:3,
-        low:1,
-        icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/1765.png'
-        
-    
+        price: 0,
+        icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png'
     },
-        {
+    {
         id:5,
-        name:'Stellar',
-        tag:"XLM",
-        volume:2300,
-        description:'Other Ripple',
-        change:'-3%',
+        name:'Dogecoin',
+        tag:"DOGE",
+        volume: 0,
+        change:'+5%',
         wallet: 0,
-        price: .48,
-        high:3,
-        low:1,
-        icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/512.png'
-        
-    
+        price: 0,
+        icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/74.png'
     },
-        {
+    {
         id:6,
+        name:'Ripple',
+        tag:"XRP",
+        volume: 0,
+        change:'+5%',
+        wallet: 0,
+        price: 0,
+        icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/52.png'
+    },
+    {
+        id:7,
         name:'Cardano',
         tag:"ADA",
-        volume:2300,
-        description:'Second Crypto',
-        change:'+2%',
+        volume: 0,
+        change:'+5%',
         wallet: 0,
-        price: .35,
-            high:3,
-        low:1,
-        icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/2010.png'
-        
-    
+        price: 0,
+        icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png'
     },
-        {
-        id:7,
-        name:'Tron',
-        tag:"TRX",
-            volume:2300,
-        description:'Game Crypto',
-        change:'-10%',
-        wallet: 0,
-        price: .08,
-            high:3,
-        low:1,
-        icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/1958.png'
-        
-    
-    },
-        {
+    {
         id:8,
-        name:'NEO',
-        tag:"NEO",
-        volume:2300,
-        description:'Best Crypto',
-        change:'+20%',
+        name:'Polkadot',
+        tag:"DOT",
+        volume: 0,
+        change:'+5%',
         wallet: 0,
-        price: 150,
-        high:3,
-        low:1,
-        icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/1376.png'
-        
-    },
-        {
-        id:9,
-        name:'Ontology',
-        tag:"ONT",
-        volume:2300,
-        description:'Best Crypto',
-        change:'+20%',
-        wallet: 0,
-        price: 150,
-        high:3,
-        low:1,
-        icon: 'https://s2.coinmarketcap.com/static/img/coins/32x32/2566.png'
-        
+        price: 0,
+        icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/6636.png' 
     },
     
     
@@ -202,7 +148,7 @@ var coins = new Vue(
         {
     
             var self = this;
-            
+            console.log(self)
             return this.products.filter(function(product) {
             
             return product.name.toLowerCase().indexOf(self.search.toLowerCase())>=0 ||
@@ -364,10 +310,10 @@ function updateCoinProperties(change,high,low,volume)
 {
     if(change>0) $("#selectedChange").text("+"+change+"%");
     else $("#selectedChange").text(change+"%");
-    $("#selectedHigh").text("$"+high);
+    $("#selectedHigh").text(high+"$");
 
-    $("#selectedLow").text("$"+low);
-    $("#selectedVolume").text("$"+volume);
+    $("#selectedLow").text(low+"$");
+    $("#selectedVolume").text(volume+"$");
 
 }
 function timeConverter(UNIX_timestamp){

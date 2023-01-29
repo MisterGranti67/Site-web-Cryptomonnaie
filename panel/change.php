@@ -16,11 +16,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
-        <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="../js/change.js"></script>
         <script>
             $(document).ready(async function(){
                 document.getElementById("footer").style.display='none';
@@ -237,7 +232,11 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
             </div>
         </section>
     </body>
-
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
+    <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/change.js"></script>
     <?php include '../utils/footer.php'; ?>
 
 </html>
