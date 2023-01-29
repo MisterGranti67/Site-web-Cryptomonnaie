@@ -1,6 +1,6 @@
 .wrapper{
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     grid-auto-rows: minmax(85px, auto);
     grid-gap: 1em;
     justify-items: stretch;
@@ -274,7 +274,9 @@ canvas {
     box-sizing: border-box;
     color: #ffffff;
 }
-
+.tableau_crypto h1 {
+    font-size: 12px;
+}
 p {
     display: inline;
 }

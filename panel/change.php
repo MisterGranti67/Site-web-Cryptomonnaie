@@ -67,35 +67,36 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                     </div>
                     <div class="box box2">
                         <h2 class="text-center">Markets</h2>
-                            <div class="table-scroll" id='app'>
+                            <div class="tableau_crypto" id='app'>
                                 <table>
                                     <thead class="thead-row">
                                         <tr>
-                                            <th class="coinCell" data-th="Driver details"><input  placeholder="Coin" class="form-control" size="10" type="text" v-model="search"></input></th>  
-                                            <th>Price(USD)</th>
-                                            <th >Volume</th>
-                                            <th>Change</th>
-                                            <th>Name</th>		
-                                        </tr>
-                                    </thead>
-                                    <thead class="thead-col">
-                                        <tr class="test"></tr>
-                                        <tr v-for="product in filteredCoins">
-                                            <th>
-                                                <image v-bind:src=product.icon class="iconImage"></image> 
-                                                {{product.tag}}
-                                            </th>
+                                            <th class="coinCell" scope="col"><input  placeholder="Coin" class="form-control" size="10" type="text" v-model="search"></input></th>  
+                                            <th scope="col">Valeur</th>
+                                            <th scope="col">Volume</th>
+                                            <th scope="col">Variation sur 24h</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="test" v-on:click = "selectCoin(product.id)" v-for="product in filteredCoins">                      
-                                            <td> $ {{product.price}}</td>
-                                            <td> $ {{product.volume}}</td>
-                                            <td  v-if= "product.change[0]!='-'" style="color:#30ff67;">+{{product.change}}%</td>
-                                            <td  v-else style="color:#ff5c30;">{{product.change}} %</td>
-                                            <td>{{product.name}}</td>
-                                        </tr>
-                                        </tr>
+                                        <tr class="test" v-on:click = "selectCoin(product.id)" v-for="product in filteredCoins">  
+                                            <td data-label="Nom" class="nom">
+                                                <!-- <img v-bind:src=product.icon>  -->
+                                                <h1>{{product.tag}}</h1>
+                                                <h2>{{product.name}}</h2>
+                                            </td>
+                                            <td data-label="Valeur">
+                                                <h1>{{product.price}} $</h1>
+                                            </td>
+                                            <td data-label="Volume">
+                                                <h1>{{product.price}} $</h1>
+                                            </td>
+                                            <td  v-if= "product.change[0]!='-'" data-label="Variation sur 24h">
+                                                <h1 style="color:#30ff67;">{{product.change}} %<h1>
+                                            </td>
+                                            <td v-else data-label="Variation sur 24h">
+                                                <h1 style="color:#ff5c30;">{{product.change}} %<h1>
+                                            </td>
+                                        </tr>                    
                                     </tbody>
                                 </table>
                             </div>
@@ -103,51 +104,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 
                         <div class="box box3">
                             <canvas id="ctx" style="height:200px;" class="chartMe"></canvas>
-                        </div>
-
-                        <div class="box box4">
-                            <h2 class="text-center headerMargin">24H Trade History</h2>
-                            <div style="color:white;" id='transactionHistory' class="table-scroll">
-                                <table class="table table-bordered">
-                                    <thead class="thead-row">
-                                        <tr>
-                                            <th>Coin</th>
-                                            <th>Price(USD)</th>
-                                            <th>Amount</th>
-                                            <th>Date(M-D-Y)</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="thead-col-history">
-                                        <tr v-for="transaction in transactions"  class="test">
-                                            <template v-if="transaction.transactionType == 'sell'">
-                                                <td style="color:#ff5c30;">
-                                                    {{ transaction.name }}
-                                                </td>
-                                                <td style="color:#ff5c30;">
-                                                    {{ transaction.transactionPrice }}
-                                                </td>
-                                                <td style="color:#ff5c30;"> 
-                                                    {{ transaction.transactionAmount }}
-                                                </td>
-                                                <td style="color:#ff5c30;"> 
-                                                    {{ transaction.transactionDate }}
-                                                </td>
-                                                <td style="color:#ff5c30;"> 
-                                                    {{ transaction.total}}
-                                                </td>
-                                            </template>
-                                        </tr style="color:#ff5c30;">
-                                        <template v-else>       
-                                            <td style="color:#30ff67;">{{ transaction.name }}</td>  
-                                            <td style="color:#30ff67;">{{ transaction.transactionPrice }}</td>
-                                            <td style="color:#30ff67;"> {{ transaction.transactionAmount }}</td>
-                                            <td style="color:#30ff67;"> {{ transaction.transactionDate }}</td>
-                                            <td style="color:#30ff67;"> {{ transaction.total}}</td>
-                                        </template>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                         <div class="box box5">
                             <div class="container-fluid tradeWindow">
