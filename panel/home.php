@@ -29,6 +29,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         const data_crypto = await api_crypto.json();
 
                         var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
+                        var baseToNumber7Days = { BTC: "1", ETH: "279", LTC: "2", SHIB: "11939", DOGE: "5", XRP: "44", DOT: "12171", BNB: "825", ADA: "975"}
                         var valeur_solde = 0;
                         if (data_crypto["Acces"] == "True"){
                             for (let i = 2000; i > 0; i--) {
@@ -44,7 +45,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     var nom_crypto_img = nom_crypto[0].toLowerCase();
                                     var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
                                     var valeur_crypto = valeur_crypto.toString().split('.');
-                                    var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
+                                    var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\"Les 7 derniers jours\"><img src=\"https://www.coingecko.com/coins/" + baseToNumber7Days[nom_crypto[0]] + "/sparkline\" style=\"width:96px\" /></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
                                     $(tableau_crypto).prependTo("#tableau_crypto");
                                     
                                 }
@@ -115,6 +116,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                             <th scope="col">Montant</th>
                                             <th scope="col">Valeur</th>
                                             <th scope="col">Variation sur 24h</th>
+                                            <th scape="col">Les 7 derniers jours</th>
                                             <th scope="col"> </th>
                                         </tr>
                                     </thead>

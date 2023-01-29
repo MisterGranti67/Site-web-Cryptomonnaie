@@ -198,16 +198,17 @@ body {
     flex-basis: auto;
 }
 .content .crypto {
-    width: 650px;
-    height: 496px;
+    width: 750px;
+    height: 516px;
     margin-left: 32px;
 }
 
 .content .notification {
-    width: 374px;
-    height: 496px;
+    width: 274px;
+    height: 516px;
     background-color: #24253A;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .content .mon_solde h1 {
@@ -299,6 +300,7 @@ body {
     display: flex;
     align-items: center;
     margin-left: 5px;
+    font-size: 9px;
 }
 .tableau_crypto .perte {
     color: red;
@@ -477,11 +479,11 @@ body {
 }
 
 footer {
-    height: 207px;
+    height: 175px;
 }
 .footer-menu{
     background-color: #302F3D;
-    height: 128px;
+    height: 96px;
     width: 100%;
     border-bottom: #232323 solid 1px;
 }
@@ -493,7 +495,7 @@ footer {
 }
 
 .footer-menu .gauche img {
-    width: 128px;
+    width: 96px;
 }
 
 .footer-menu .gauche{
@@ -503,7 +505,7 @@ footer {
 .footer-menu .droite {
     position: relative;
     width:859px;
-    margin-top: 50px;
+    margin-top: 36px;
     margin-left: 37px;
 
 }
@@ -515,6 +517,7 @@ footer {
     flex-direction: row;
     position: relative;
     top: auto;
+    float: right;
 }
 
 .footer-menu .droite .menu li {
@@ -525,7 +528,7 @@ footer {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 28px;
     color: #FFFFFF;
     text-align: right;
