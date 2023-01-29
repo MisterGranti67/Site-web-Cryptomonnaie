@@ -89,6 +89,11 @@ body {
     transition: background-color 300ms;
 }
 
+.crypto_mine {
+    background-color: #ffffff10;
+    padding: 2px;
+    border-radius: 10px;
+}
 .rigs_content .informations {
     width: 273px;
     background-color: #ffffff10;

@@ -5,12 +5,9 @@ async function changer_crypto(pseudo, code, id, nombre) {
     var json_groupe_allumer = 'https://apiv1.skylord.fr/api/rig/changercrypto?pseudo=' + pseudo + '&code=' + code + '&id=' + id + '&crypto=' + nombre;
     const api_groupe_allumer = await fetch(json_groupe_allumer);
     const data_groupe_allumer = await api_groupe_allumer.json();
-    console.log(data_groupe_allumer)
+
     rigs(pseudo,code,id);
 
-    document.getElementById("chargement").style.display = 'none';
-    document.getElementById("non_chargement").style.display = 'block';
-    document.getElementById("footer").style.display = 'block';
 }
 
 async function transfert_crypto(pseudo, code, id, nombre) {
@@ -20,12 +17,9 @@ async function transfert_crypto(pseudo, code, id, nombre) {
     var json_groupe_allumer = 'https://apiv1.skylord.fr/api/rig/transfert?pseudo=' + pseudo + '&code=' + code + '&id=' + id + '&crypto=' + nombre;
     const api_groupe_allumer = await fetch(json_groupe_allumer);
     const data_groupe_allumer = await api_groupe_allumer.json();
-    console.log(data_groupe_allumer)
+    
     rigs(pseudo,code,id);
 
-    document.getElementById("chargement").style.display = 'none';
-    document.getElementById("non_chargement").style.display = 'block';
-    document.getElementById("footer").style.display = 'block';
 }
 
 
