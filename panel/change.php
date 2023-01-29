@@ -13,7 +13,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         <link href="../css/style-energie.css" rel="stylesheet">
         <link href="../css/style-change.css" rel="stylesheet">
         <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'> -->
-        <link rel="stylesheet" href="../css/style.css">
         <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
@@ -216,6 +215,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         </div>
                     </div>
                 </body>
+            </div>
             </div>
             <section class="discord">
                 <div class="container">

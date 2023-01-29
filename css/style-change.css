@@ -375,17 +375,6 @@
   header {
     margin: 3rem 0;
   }
-  
-  a,
-  a:visited {
-    color: #DDD;
-  }
-  
-  a:hover,
-  a:focus {
-    color: #FFF;
-    text-decoration: none;
-  }
 
   
   /*
