@@ -368,7 +368,8 @@ body {
     transition: transform 300ms;
 }
 .tableau_crypto tbody td {
-    margin-bottom: 7px;
+    margin-bottom: 3px;
+    margin-top: 3px;
 }
 .tableau_crypto tbody tr:hover {
     cursor: pointer;
