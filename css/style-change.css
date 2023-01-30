@@ -91,8 +91,7 @@ footer {
     position: relative;
     margin: 0 auto;
     border-radius: 15px;
-    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
-    background-color: white;
+    background-color: #24253A;
 }
 
 
@@ -150,9 +149,11 @@ footer {
 
 .coinBorder {
     border-radius: 25px;
-    border: 15px solid white;
+    border: 15px solid #24253A;
 }
-
+.col-sm-2, .col-sm-4{
+    color: #fff;
+}
 h2.headerMargin {
     margin-top: -35px;
 }
@@ -288,7 +289,7 @@ input {
 
 .coinCell {
     color: white;
-    background-color: #343a40;
+    background-color: #24253A;
 }
 
 
@@ -322,7 +323,7 @@ td, th {
     transition: all 0.125s ease-in-out;
 }
 .test:nth-child(2n-1) {
-    background-color: #343a40;
+    background-color: #24253A;
 }
 .test:hover {
     background-color: black;

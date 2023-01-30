@@ -34,20 +34,20 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 <div class="box box1">   
                     <div class="container-fluid coinBorder" style="margin-top:6%;">
                         <div class="row text-center">
-                            <div class="col-sm-4" style="background-color:white;">Coin</div>
-                            <div class="col-sm-2" style="background-color:white;">24h Change</div>
-                            <div class="col-sm-2" style="background-color:white;">24h High</div>
-                            <div class="col-sm-2" style="background-color:white;">24h Low</div>
-                        <div class="col-sm-2" style="background-color:white;"> 24h Volume</div>
+                            <div class="col-sm-4" style="background-color:#24253A;">Coin</div>
+                            <div class="col-sm-2" style="background-color:#24253A;">24h Change</div>
+                            <div class="col-sm-2" style="background-color:#24253A;">24h High</div>
+                            <div class="col-sm-2" style="background-color:#24253A;">24h Low</div>
+                        <div class="col-sm-2" style="background-color:#24253A;"> 24h Volume</div>
                     </div>
                         <div class="row text-center">
-                            <div class="col-sm-4" style="background-color:white;">
+                            <div class="col-sm-4" style="background-color:#24253A;">
                                 <p id="selectedCoin" class="boldMe"><img src="https://s2.coinmarketcap.com/static/img/coins/32x32/1567.png" class="iconImage"></img>Nano</p>
                             </div>
-                            <div class="col-sm-2" style="background-color:white;" id ="selectedChange">+6%</div>
-                            <div class="col-sm-2" style="background-color:white;" id="selectedHigh">7.2</div>
-                            <div class="col-sm-2" style="background-color:white;" id="selectedLow">6.7</div>
-                            <div class="col-sm-2" style="background-color:white;" id="selectedVolume">230</div>
+                            <div class="col-sm-2" style="background-color:#24253A;" id ="selectedChange">+6%</div>
+                            <div class="col-sm-2" style="background-color:#24253A;" id="selectedHigh">7.2</div>
+                            <div class="col-sm-2" style="background-color:#24253A;" id="selectedLow">6.7</div>
+                            <div class="col-sm-2" style="background-color:#24253A;" id="selectedVolume">230</div>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                     <div class="box box5">
                         <div class="container-fluid tradeWindow">
                             <div class="row">
-                                <div class="col-sm-6 borderMe" style="background-color:#343a40;">
+                                <div class="col-sm-6 borderMe" style="background-color:#24253A;">
                                     <p class ="text-center"><b><i>Market Buy</i></b></p>
                                     <table>
                                         <tr>
@@ -119,7 +119,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     </table>
                                     <input class="btn button buyButton btn-success float-right"type="button"placeholder="0" value="Buy" style="background-color:#30ff67;" onclick="buyCoin()">
                                 </div>
-                                <div class="col-sm-6 borderMe" style="background-color:#343a40;"><p class ="text-cente"><b><i>Market Sell </i></b> </p>
+                                <div class="col-sm-6 borderMe" style="background-color:#24253A;"><p class ="text-cente"><b><i>Market Sell </i></b> </p>
                                 <table>
                                     <tr>
                                         <th class ="text-right" style ="color:white;">Price: </th>
