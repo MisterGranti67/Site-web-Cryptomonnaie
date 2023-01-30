@@ -1,20 +1,15 @@
 var chart;
 var selectedCoin = 0;
 var wallet = 1000;
-var transactionVue = new Vue(
-{
+var transactionVue = new Vue({
     el: '#transactionHistory',
-    data:
-    {
-    message:"HAHA",
-    cart:{
-    items:[]
-    }, 
-    methods: {
-
-    },
-            transactions:[]
-    ,
+    data: {
+        message:"HAHA",
+        cart: {
+            items:[]
+        }, 
+        methods: {},
+        transactions:[],
     },
 }
 )
@@ -234,7 +229,7 @@ function setPrices() {
 }
 
 function create24HChart(coinTag) {
-    getPriceChart(coinTag,24,1);
+    getPriceChart(coinTag,60,24);
 }
 
 function getPriceChart(coinTag,totalHours,hourIncrement) {
@@ -390,7 +385,7 @@ function createTransaction(name,transactionPrice,transactionAmount,transactionDa
     transactionVue.transactions.push(myObject);
 }
 
-getPriceChart("NANO",24,1);
+getPriceChart("BTC",60,24);
 setPrices();
 
 $('#buyAmount').bind('input', function() { 
