@@ -70,7 +70,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 async function actualisation_all() {
                     var mon_pseudo='<?php echo $session_pseudo; ?>'
                     var mon_code='<?php echo $session_code; ?>'
-                    $('#tableau_crypto').innerHTML('');
                     if (mon_pseudo != '') {
                         if (mon_code != '') {
                             var pseudo = 'https://apiv1.skylord.fr/api/crypto?pseudo=' + mon_pseudo + '&code=' + mon_code;
@@ -83,6 +82,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
                             var baseToNumber7Days = { BTC: "1", ETH: "279", LTC: "2", SHIB: "11939", DOGE: "5", XRP: "44", DOT: "12171", BNB: "825", ADA: "975"}
                             var valeur_solde = 0;
+                            $('#tableau_crypto').html('');
                             if (data_crypto["Acces"] == "True"){
                                 for (let i = 2000; i > 0; i--) {
                                     if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
@@ -113,9 +113,8 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             }
                         } 
                     } 
+                    console.log("Actualisation réussie.")
                     setTimeout(actualisation_all,10000);
-                    actualisation_all();
-
                 }
 
             });
