@@ -1,3 +1,16 @@
+<?php
+session_start();
+if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
+    $pseudo = stripslashes($_SESSION['pseudo']);
+    $code = stripslashes($_SESSION['code']);
+    $content = file_get_contents("https://apiv1.skylord.fr/api/checkconnect?pseudo=" . $pseudo . "&code=" . $code . "");
+    $result = json_decode($content);
+    if ($result->Acces === "True") {
+        header("Location: /panel/home.php");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,7 +24,6 @@
         <div class="container" id="container">
             <div class="form-container identifier-container">
                 <?php
-                    session_start();
                     if (isset($_POST['pseudo'])){
                         $pseudo = stripslashes($_REQUEST['pseudo']);
                         $code = stripslashes($_REQUEST['code']);
