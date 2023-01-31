@@ -65,7 +65,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="test" v-on:click = "selectCoin(product.id)" v-for="product in filteredCoins">  
+                                        <tr class="tableCrypto" v-on:click = "selectCoin(product.id)" v-for="product in filteredCoins">  
                                             <td data-label="Nom" class="nom">
                                                 <img v-bind:src=product.icon> 
                                                 <h1>{{product.tag}}</h1>
@@ -95,11 +95,11 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             <div class="container-fluid tradeWindow">
                                 <div class="row">
                                     <div class="col-sm-6 borderMe" style="background-color:#24253A;">
-                                        <p class ="text-center"><b>Achat</b></p>
+                                        <p class ="text-center" class="titre"><b>Achat</b></p>
                                         <table>
                                             <tr>
                                                 <th class ="text-right" style ="color:white;">Prix: </th>
-                                                <th><input class="padding form-control"  placeholder="0" id="buyPrice" style="background-color:gray;color:white;" readonly></th>
+                                                <th><input class="padding form-control"  placeholder="0" id="buyPrice" style="opacity:0.5;color:white;" readonly></th>
                                             </tr>
                                             <tr>
                                                 <th class ="text-right" style ="color:white;">Montant:</th>
@@ -115,16 +115,16 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                             </tr>
                                             <tr>
                                                 <th class ="text-right" style ="color:white;">Total:</th>
-                                                <th><input size="105"  id="buyTotal" class="padding form-control"  style="background-color:gray;color:white;" placeholder="$0" readonly></th>   
+                                                <th><input size="105"  id="buyTotal" class="padding form-control"  style="opacity:0.5;color:white;" placeholder="$0" readonly></th>   
                                             </tr>
                                         </table>
-                                        <input class="btn button buyButton btn-success float-right"type="button"placeholder="0" value="Buy" style="background-color:#30ff67;" onclick="buyCoin()">
+                                        <input class="btn button buyButton btn-success float-right"type="button"placeholder="0" value="Buy" onclick="buyCoin()">
                                     </div>
                                     <div class="col-sm-6 borderMe" style="background-color:#24253A;"><p class ="text-cente"><b>Vente</b> </p>
                                     <table>
                                         <tr>
                                             <th class ="text-right" style ="color:white;">Prix: </th>
-                                            <th><input class="padding form-control"  placeholder="0" id="sellPrice" style="background-color:gray;color:white;" readonly></th>
+                                            <th><input class="padding form-control"  placeholder="0" id="sellPrice" style="opacity:0.5;color:white;" readonly></th>
                                         </tr>
                                         <tr>
                                             <th class ="text-right" style ="color:white;">Montant:</th>
@@ -141,10 +141,10 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         </tr>
                                         <tr>
                                             <th class ="text-right" style ="color:white;">Total:</th>
-                                            <th><input size="105" class="padding form-control" placeholder="0"  id="sellTotal" style="background-color:gray;color:white;"  readonly></th>
+                                            <th><input size="105" class="padding form-control" placeholder="0"  id="sellTotal" style="opacity:0.5;color:white;"  readonly></th>
                                         </tr>
                                     </table>
-                                    <input class="btn button buyButton float-right btn-danger"type="button"placeholder="0" style="background-color: #ff5c30;" value="Sell" onclick="sellCoin()">
+                                    <input class="btn button sellButton float-right btn-danger" type="button"placeholder="0" value="Sell" onclick="sellCoin()">
                                 </div>
                             </div>
                         </div>
