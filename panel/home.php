@@ -113,7 +113,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             }
                         } 
                     } 
-                    console.log("Actualisation réussie.")
+                    console.log("Actualisation réussie.");
                     setTimeout(actualisation_all,10000);
                 }
 

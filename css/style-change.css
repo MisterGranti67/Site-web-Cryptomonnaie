@@ -476,3 +476,10 @@ p {
         max-width: 1400px;
     }
 }
+
+
+#tableau_crypto {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

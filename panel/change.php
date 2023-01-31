@@ -157,8 +157,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     <th scope="col">Nom</th>
                                     <th scope="col">Montant</th>
                                     <th scope="col">Valeur</th>
-                                    <th scope="col">Changer la crypto de minage</th>
-                                    <th scope="col">Transférer sur votre wallet</th>
                                 </tr>
                             </thead>
                             <tbody id="tableau_crypto">
@@ -219,12 +217,15 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
                             var baseToNumber7Days = { BTC: "1", ETH: "279", LTC: "2", SHIB: "11939", DOGE: "5", XRP: "44", DOT: "12171", BNB: "825", ADA: "975"}
                             var valeur_solde = 0;
+                            var maListe = [];
                             $('#tableau_crypto').html('');
                             if (data_crypto["Acces"] == "True"){
+                                var numero = 0
                                 for (let i = 2000; i > 0; i--) {
                                     if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
                                         const nom_crypto = data[i].symbol.split('USDT');
-                                        
+                                        maListe[numero] = i
+                                        console.log(maListe)
                                         var variation = "perte";
                                         if (data[i].priceChangePercent > 0) {
                                             variation = "gain";
@@ -234,8 +235,10 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         var nom_crypto_img = nom_crypto[0].toLowerCase();
                                         var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
                                         var valeur_crypto = valeur_crypto.toString().split('.');
-                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\"Les 7 derniers jours\"><img src=\"https://www.coingecko.com/coins/" + baseToNumber7Days[nom_crypto[0]] + "/sparkline\" style=\"width:96px\" /></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
+                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
                                         $(tableau_crypto).prependTo("#tableau_crypto");
+
+                                        numero = numero+1;
                                         
                                     }
                                     
@@ -251,8 +254,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         }
                     }
                 }
-                mes_cryptos();
-
+                mes_cryptos()
                 async function mes_cryptos() {
                     pseudo = mon_pseudo;
                     code = mon_code;
@@ -272,25 +274,24 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
                                 var baseToNumber7Days = { BTC: "1", ETH: "279", LTC: "2", SHIB: "11939", DOGE: "5", XRP: "44", DOT: "12171", BNB: "825", ADA: "975"}
                                 var valeur_solde = 0;
-                                $('#tableau_crypto').html('');
                                 if (data_crypto["Acces"] == "True"){
-                                    for (let i = 2000; i > 0; i--) {
-                                        if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
-                                            const nom_crypto = data[i].symbol.split('USDT');
-                                            
-                                            var variation = "perte";
-                                            if (data[i].priceChangePercent > 0) {
-                                                variation = "gain";
-                                            }
-
-                                            valeur_solde = valeur_solde+(data_crypto[nom_crypto[0]]*data[i].lastPrice)
-                                            var nom_crypto_img = nom_crypto[0].toLowerCase();
-                                            var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
-                                            var valeur_crypto = valeur_crypto.toString().split('.');
-                                            var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\"Les 7 derniers jours\"><img src=\"https://www.coingecko.com/coins/" + baseToNumber7Days[nom_crypto[0]] + "/sparkline\" style=\"width:96px\" /></td><td data-label=\" \"><a href=\"\">Trader</a></td></tr>"
-                                            $(tableau_crypto).prependTo("#tableau_crypto");
-                                            
+                                    $('#tableau_crypto').html('');
+                                    for (let i = 0; i < 9; i++) {
+                                        var numero = maListe[i];
+                                        console.log(numero);
+                                        const nom_crypto = data[numero].symbol.split('USDT');
+                                        
+                                        var variation = "perte";
+                                        if (data[numero].priceChangePercent > 0) {
+                                            variation = "gain";
                                         }
+
+                                        valeur_solde = valeur_solde+(data_crypto[nom_crypto[0]]*data[numero].lastPrice)
+                                        var nom_crypto_img = nom_crypto[0].toLowerCase();
+                                        var valeur_crypto = data_crypto[nom_crypto[0]]*data[numero].lastPrice
+                                        var valeur_crypto = valeur_crypto.toString().split('.');
+                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
+                                        $(tableau_crypto).prependTo("#tableau_crypto");
                                         
                                     }
                                     document.getElementById("chargement").style.display = 'none';
