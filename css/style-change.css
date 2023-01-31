@@ -1,6 +1,6 @@
 .wrapper{
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 0.5fr 1.5fr;
     grid-auto-rows: minmax(85px, auto);
     grid-gap: 1em;
     justify-items: stretch;
@@ -39,7 +39,10 @@
     grid-row: 7/8;
 }
 
-
+.box12 {
+    grid-column: 1;
+    grid-row: 6/6;
+}
 
 
 
@@ -76,7 +79,6 @@
 
 footer {
     position: relative;
-    margin-top: -55px;
     height: 100px;
 }
 
@@ -86,16 +88,24 @@ footer {
 }
 
 .chartMe {
-    height: 385px !important;
+    height: 100%;
+    width: 100%;
     display: block;
     position: relative;
     margin: 0 auto;
-    border-radius: 15px;
-    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
-    background-color: white;
+    border-radius: 10px;
+    background-color: #24253A;
 }
 
+.tableau_crypto tbody td {
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
 
+.tableau_crypto2 tbody td {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
 
 
 
@@ -126,6 +136,27 @@ footer {
 }
 
 
+.buyButton, .sellButton {
+    margin-top: 5%;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #FFD97D;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 12px;
+    line-height: 19px;
+    text-align: center;
+    color: #24253A;
+    border: none;
+    height: 32px;
+}
+
+.sellButton:hover, .buyButton:hover {
+    background-color: #ffe5a7;
+    cursor: pointer;
+}
+
+
 
 
 
@@ -149,10 +180,12 @@ footer {
 }
 
 .coinBorder {
-    border-radius: 25px;
-    border: 15px solid white;
+    border-radius: 10px;
+    border: 15px solid #24253A;
 }
-
+.col-sm-2, .col-sm-4{
+    color: #fff;
+}
 h2.headerMargin {
     margin-top: -35px;
 }
@@ -167,14 +200,8 @@ input.padding {
 }
 
 .tradeWindow {
-    margin-bottom: 25%;
     width: 100%;
     position: relative;
-}
-
-.buyButton {
-    margin-top: 5%;
-    width: 100%;
 }
 
 .testBox {
@@ -187,7 +214,13 @@ input.padding {
 
 .borderMe {
     color: white;
-    border-radius: 15px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    text-align: center;
 }
 
 .testBox {
@@ -227,7 +260,16 @@ canvas {
 
 
 
-
+.tableau_crypto tbody tr:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: transform 300ms;
+}
+.tableau_crypto2 tbody tr:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 300ms;
+}
 .table-scroll {
     border-radius: 1px;
     box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
@@ -273,9 +315,6 @@ canvas {
 .tableau_crypto h1 {
     font-size: 12px;
 }
-p {
-    display: inline;
-}
 
 input.marketInput {
     outline: none;
@@ -288,7 +327,7 @@ input {
 
 .coinCell {
     color: white;
-    background-color: #343a40;
+    background-color: #24253A;
 }
 
 
@@ -300,13 +339,13 @@ td, th {
     padding: 0.65rem 0.35em;
 }
 
-.thead-row {
-    background-color: #41494f;
+/* .thead-row {
+    background-color: #ffffff10;
 }
 
 .thead-col {
-    background-color: #41494f;
-}
+    background-color: #ffffff10;
+} */
 
 
 .imageMe {
@@ -317,15 +356,29 @@ td, th {
     margin-bottom: 2%;
 }
 
-.test {
-    background-color: #606163;
+.tableau_crypto {
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #24253A;
+}
+
+.tableCrypto {
+    background-color: #24253A;
     transition: all 0.125s ease-in-out;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
 }
-.test:nth-child(2n-1) {
-    background-color: #343a40;
+/* .tableCrypto:nth-child(2n-1) {
+    background-color: #282938;
+} */
+.tableCrypto:hover {
+    background-color: #FFD97D;
 }
-.test:hover {
-    background-color: black;
+
+.tableCrypto:hover h1 {
+    color: #24253A;
 }
 
 header {
@@ -345,13 +398,14 @@ header {
 .text-center {
     text-align: center !important;
 }
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+.col-1, .col-2, .col-3, .col-sm-5, .col-sm-9, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
     position: relative;
     width: 100%;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
 }
+
 @media (min-width: 576px){
     .col-sm-4 {
         -ms-flex: 0 0 33.333333%;
@@ -364,18 +418,26 @@ header {
         max-width: 16.666667%;
     }
     .col-sm-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
+        -ms-flex: 0 0 48%;
+        flex: 0 0 48%;
+        max-width: 48%;
+    }
+    .col-sm-5 {
+        -ms-flex: 0 0 66%;
+        flex: 0 0 66%;
+        max-width: 66%;
+    }
+    .col-sm-9 {
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%;
     }
 }
-*, *::before, *::after {
+.exchange *, .exchange *::before, .exchange *::after {
     box-sizing: border-box;
 }
 .container-fluid {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -386,13 +448,14 @@ header {
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: #000;
-    background-color: #fff;
+    color: #FFD97D;
+    background-color: transparent;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid #FFD97D;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 
 button, input {
     overflow: visible;
@@ -412,27 +475,52 @@ table {
 
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
 }
 
-p {
-    display: inline;
+.titre {
+    font-size: 16px;
+    text-align: center !important;
+    color: #fff;
+    padding: 10px;
 }
 
 @media (min-width: 576px) {
-    .container {
+    .exchange .container {
         max-width: 540px;
     }
 }
 
 @media (min-width: 768px) {
-    .container {
+    .exchange .container {
         max-width: 720px;
     }
 }
 
 @media (min-width: 992px) {
-    .container {
+    .exchange .container {
         max-width: 960px;
     }
+}
+
+@media (min-width: 1400px) {
+    .exchange .container {
+        max-width: 1400px;
+    }
+}
+
+
+#tableau_crypto {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px !important;
+}
+
+.tableau_crypto {
+    margin-top: 0px;
+}
+
+.tableau_crypto .img {
+    width: 16px;
+    display: inline-block;
 }

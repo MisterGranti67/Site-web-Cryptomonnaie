@@ -1,25 +1,27 @@
 var chart;
 var selectedCoin = 0;
 var wallet = 1000;
-var transactionVue = new Vue(
-{
+var transactionVue = new Vue({
     el: '#transactionHistory',
-    data:
-    {
-    message:"HAHA",
-    cart:{
-    items:[]
-    }, 
-    methods: {
-
-    },
-            transactions:[]
-    ,
+    data: {
+        message:"HAHA",
+        cart: {
+            items:[]
+        }, 
+        methods: {},
+        transactions:[],
     },
 }
 )
-
-
+const skipped = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
+const down = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
+const genericOptions = {
+    fill: false,
+    interaction: {
+      intersect: false
+    },
+    radius: 0,
+  };
 var coins = new Vue( {
     el: '#app',
     data: {
@@ -149,61 +151,26 @@ var coins = new Vue( {
     }
 });
 function createChart(xLabels,chartData) {
-    Chart.defaults.LineWithLine = Chart.defaults.line;
-    Chart.controllers.LineWithLine = Chart.controllers.line.extend({
-        draw: function(ease) {
-            Chart.controllers.line.prototype.draw.call(this, ease);
-
-            if (this.chart.tooltip._active && this.chart.tooltip._active.length) {
-                var activePoint = this.chart.tooltip._active[0],
-                ctx = this.chart.ctx,
-                x = activePoint.tooltipPosition().x,
-                topY = this.chart.scales['y-axis-0'].top,
-                bottomY = this.chart.scales['y-axis-0'].bottom;
-
-                ctx.save();
-                ctx.beginPath();
-                ctx.moveTo(x, topY);
-                ctx.lineTo(x, bottomY);
-                ctx.lineWidth = 1;
-                ctx.strokeStyle = '#a396a0';
-                ctx.stroke();
-                ctx.restore();
-            }
-        }
-    });
     chart = new Chart(ctx, {
-        type: 'LineWithLine',
+        type: 'line',
         data: {
-            // labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
             labels: xLabels,
             datasets: [{
                 label: coins.products[selectedCoin].name,
-                //data: [3, 1, 2, 5, 4, 7, 6],
                 data:chartData,
-                backgroundColor: '#68546d',
-                borderColor: '#68546d',
-                fill: false,
+                borderColor: 'rgb(13,203,129)',
+                segment: {
+                    borderColor: ctx => down(ctx, 'rgb(246,70,93)')
+                },
+                spanGaps: true
             }]
         },
         options: {
-            title: {
-                display: true,
-                text:  (coins.products[selectedCoin].tag +"s in Wallet: " + coins.products[selectedCoin].wallet + "    " + "USD in Wallet: " + wallet.toFixed(4))
+            fill: false,
+            interaction: {
+              intersect: false
             },
-            fullwidth:false,
-            responsive:true,
-            maintainAspectRatio: false,
-            tooltips: {
-                intersect: false
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: false,
-                    }
-                }]
-            }
+            radius: 0,
         }
     });
 }
@@ -231,10 +198,11 @@ function setPrices() {
     for(var i = 0; i < coins.products.length; i++) {
         setPrice(coins.products[i].tag,i);
     }
+    setTimeout(setPrices,5000);
 }
 
 function create24HChart(coinTag) {
-    getPriceChart(coinTag,24,1);
+    getPriceChart(coinTag,96,1);
 }
 
 function getPriceChart(coinTag,totalHours,hourIncrement) {
@@ -272,7 +240,7 @@ function updateCoinProperties(change,high,low,volume) {
 }
 function timeConverter(UNIX_timestamp) {
     var a = new Date(UNIX_timestamp * 1000);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var months = ['Jan','Fev','Mar','Avr','Mai','Jui','Jui','Aou','Sep','Oct','Nov','Dec'];
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
@@ -282,15 +250,12 @@ function timeConverter(UNIX_timestamp) {
 
     var times = {date: date, month: month, year: year, hour:hour,min:min};
 
-    /*var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ; */
     return times;
 }
 
 function getPrice(coinTag) {
 
-    $.getJSON("https://api.binance.com/api/v1/ticker/24hr?symbol="  + coinTag + "USDT", function(data){
-    //console.log(data[0].price_usd);
-    })
+    $.getJSON("https://api.binance.com/api/v1/ticker/24hr?symbol="  + coinTag + "USDT", function(data){})
 
 }
 
@@ -307,7 +272,7 @@ function buyCoin() {
     createTransaction(coins.products[selectedCoin].name + '(' + coins.products[selectedCoin].tag + ')',coins.products[selectedCoin].price,$("#buyAmount").val(), getCurrentTime(),'buy');
 
     $("#buyAmount").val("");
-    $("#buyTotal").val("$0.0000");
+    $("#buyTotal").val("0.0000$");
 
     chart.options.title.text = (coins.products[selectedCoin].tag +"s in Wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD in Wallet: " + wallet.toFixed(4));
 
@@ -326,7 +291,7 @@ function sellCoin() {
     createTransaction(coins.products[selectedCoin].name + '(' + coins.products[selectedCoin].tag + ')',coins.products[selectedCoin].price,$("#sellAmount").val(), getCurrentTime(),'sell');
 
     $("#sellAmount").val("");
-    $("#sellTotal").val("$0.0000");
+    $("#sellTotal").val("0.0000$");
 
     chart.options.title.text = (coins.products[selectedCoin].tag +"s in Wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD in Wallet: " + wallet.toFixed(4));
 
@@ -352,10 +317,10 @@ function setUpAmountOptions() {
 }
 
 function setUpTradePrice() {
-    $("#buyPrice").val("$"+coins.products[selectedCoin].price);
-    $("#sellPrice").val("$"+coins.products[selectedCoin].price);
-    $("#buyTotal").val("$0.0000");
-    $("#sellTotal").val("$0.0000");
+    $("#buyPrice").val(coins.products[selectedCoin].price+"$");
+    $("#sellPrice").val(coins.products[selectedCoin].price+"$");
+    $("#buyTotal").val("0.0000$");
+    $("#sellTotal").val("0.0000$");
     setUpAmountOptions();
 }
 
@@ -384,21 +349,21 @@ function createTransaction(name,transactionPrice,transactionAmount,transactionDa
         transactionPrice: transactionPrice,
         transactionAmount: parseFloat(transactionAmount).toFixed(4),
         transactionDate:transactionDate,
-        total:"$"+(transactionAmount*transactionPrice).toFixed(3),
+        total:(transactionAmount*transactionPrice).toFixed(3)+"$",
         transactionType: type,
     }
     transactionVue.transactions.push(myObject);
 }
 
-getPriceChart("NANO",24,1);
+getPriceChart("BTC",96,1);
 setPrices();
 
 $('#buyAmount').bind('input', function() { 
     var totalVal = $("#buyAmount").val() * $("#buyPrice").val();
-        $("#buyTotal").val( ("$" + ($("#buyAmount").val() *                $("#buyPrice").val().replace("$","")).toFixed(4)));
+        $("#buyTotal").val( (($("#buyAmount").val() *                $("#buyPrice").val().replace("$","")).toFixed(4)+"$"));
 });
 
 $('#sellAmount').bind('input', function() { 
     var totalVal = $("#sellAmount").val() * $("#sellPrice").val();
-        $("#sellTotal").val( "$" + ($("#sellAmount").val() *                $("#sellPrice").val().replace("$","")).toFixed(4));
+        $("#sellTotal").val(($("#sellAmount").val() *                $("#sellPrice").val().replace("$","")).toFixed(4)+"$");
 });
