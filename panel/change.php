@@ -256,7 +256,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         var nom_crypto_img = nom_crypto[0].toLowerCase();
                                         var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
                                         var valeur_crypto = valeur_crypto.toString().split('.');
-                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
+                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img class=\"img\" src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
                                         $(tableau_crypto).prependTo("#tableau_crypto");
 
                                         numero = numero+1;
