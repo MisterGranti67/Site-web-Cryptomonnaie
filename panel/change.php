@@ -22,7 +22,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             </div>
         </div>
-        <div id="non_chargement" style="display:none;">
+        <div id="non_chargement" style="opacity: 0;">
             <?php include '../utils/header.php'; ?>
             <div class="exchange">
                 <div class="container">
@@ -83,22 +83,28 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             </div>  
 
                             <div class="box box3">
-                                <canvas id="ctx" style="width: 100%;" class="chartMe"></canvas>
-                            </div>
-                            <div class="box box12">
-                                <div class="tableau_crypto">
-                                    <table>
-                                        <thead>
-                                            <tr class="thead">
-                                                <th scope="col">Nom</th>
-                                                <th scope="col">Montant</th>
-                                                <th scope="col">Valeur</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tableau_crypto">
-                                            
-                                        </tbody>
-                                    </table>
+                                <div class="row">
+                                    <div class="col-sm-5 borderMe" style="background-color:#24253A;">
+                                        <canvas id="ctx" style="width: 100%;" class="chartMe"></canvas>
+                                    </div>
+                                    <div class="col-sm-9 borderMe" style="background-color:#24253A;">
+                                        <!-- <div class="box box12"> -->
+                                        <div class="tableau_crypto tableau_crypto2">
+                                            <table>
+                                                <thead>
+                                                    <tr class="thead">
+                                                        <th scope="col">Nom</th>
+                                                        <th scope="col">Montant</th>
+                                                        <th scope="col">Valeur</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tableau_crypto">
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- </div> -->
+                                    </div>
                                 </div>
                             </div>
                             <div class="box box5">
@@ -250,7 +256,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         var nom_crypto_img = nom_crypto[0].toLowerCase();
                                         var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
                                         var valeur_crypto = valeur_crypto.toString().split('.');
-                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
+                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
                                         $(tableau_crypto).prependTo("#tableau_crypto");
 
                                         numero = numero+1;
@@ -260,6 +266,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 }
                                 document.getElementById("chargement").style.display = 'none';
                                 document.getElementById("non_chargement").style.display = 'block';
+                                document.getElementById("non_chargement").style.opacity = '1';
                                 document.getElementById("footer").style.display = 'block';
                             } else {
                                 document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
@@ -305,12 +312,13 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         var nom_crypto_img = nom_crypto[0].toLowerCase();
                                         var valeur_crypto = data_crypto[nom_crypto[0]]*data[numero].lastPrice
                                         var valeur_crypto = valeur_crypto.toString().split('.');
-                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
+                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img class=\"img\" src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
                                         $(tableau_crypto).prependTo("#tableau_crypto");
                                         
                                     }
                                     document.getElementById("chargement").style.display = 'none';
                                     document.getElementById("non_chargement").style.display = 'block';
+                                    document.getElementById("non_chargement").style.opacity = '1';
                                     document.getElementById("footer").style.display = 'block';
                                 } else {
                                     document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
