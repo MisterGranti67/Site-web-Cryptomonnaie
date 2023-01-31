@@ -31,7 +31,7 @@
     grid-row: 5/7;
 }
 .box5 {
-    grid-column: 2/4;
+    grid-column: 1/4;
     grid-row: 6;
 }
 .box6 {
@@ -76,7 +76,6 @@
 
 footer {
     position: relative;
-    margin-top: -55px;
     height: 100px;
 }
 
@@ -91,7 +90,7 @@ footer {
     display: block;
     position: relative;
     margin: 0 auto;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: #24253A;
 }
 
@@ -141,6 +140,7 @@ footer {
 
 .sellButton:hover, .buyButton:hover {
     background-color: #ffe5a7;
+    cursor: pointer;
 }
 
 
@@ -167,7 +167,7 @@ footer {
 }
 
 .coinBorder {
-    border-radius: 25px;
+    border-radius: 10px;
     border: 15px solid #24253A;
 }
 .col-sm-2, .col-sm-4{
@@ -187,7 +187,6 @@ input.padding {
 }
 
 .tradeWindow {
-    margin-bottom: 25%;
     width: 100%;
     position: relative;
 }
@@ -202,7 +201,13 @@ input.padding {
 
 .borderMe {
     color: white;
-    border-radius: 15px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    text-align: center;
 }
 
 .testBox {
@@ -288,9 +293,6 @@ canvas {
 .tableau_crypto h1 {
     font-size: 12px;
 }
-p {
-    display: inline;
-}
 
 input.marketInput {
     outline: none;
@@ -350,7 +352,11 @@ td, th {
     background-color: #282938;
 } */
 .tableCrypto:hover {
-    background-color: black;
+    background-color: #FFD97D;
+}
+
+.tableCrypto:hover h1 {
+    color: #24253A;
 }
 
 header {
@@ -377,6 +383,7 @@ header {
     padding-right: 15px;
     padding-left: 15px;
 }
+
 @media (min-width: 576px){
     .col-sm-4 {
         -ms-flex: 0 0 33.333333%;
@@ -389,9 +396,9 @@ header {
         max-width: 16.666667%;
     }
     .col-sm-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
+        -ms-flex: 0 0 48%;
+        flex: 0 0 48%;
+        max-width: 48%;
     }
 }
 .exchange *, .exchange *::before, .exchange *::after {
@@ -399,8 +406,6 @@ header {
 }
 .container-fluid {
     width: 100%;
-    padding-right: 14px;
-    padding-left: 14px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -417,23 +422,6 @@ header {
     border: 1px solid #FFD97D;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.buyButton, .sellButton {
-    margin-top: 5%;
-    width: 100%;
-    border-radius: 5px;
-    background-color: #FFD97D;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-size: 12px;
-    line-height: 19px;
-    text-align: center;
-    color: #24253A;
-}
-
-.sellButton:hover, .buyButton:hover {
-    background-color: #ffe5a7;
 }
 
 
@@ -456,10 +444,6 @@ table {
 p {
     margin-top: 0;
     margin-bottom: 1rem;
-}
-
-p {
-    display: inline;
 }
 
 .titre {

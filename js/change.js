@@ -360,10 +360,10 @@ setPrices();
 
 $('#buyAmount').bind('input', function() { 
     var totalVal = $("#buyAmount").val() * $("#buyPrice").val();
-        $("#buyTotal").val( ("$" + ($("#buyAmount").val() *                $("#buyPrice").val().replace("$","")).toFixed(4)));
+        $("#buyTotal").val( (($("#buyAmount").val() *                $("#buyPrice").val().replace("$","")).toFixed(4)+"$"));
 });
 
 $('#sellAmount').bind('input', function() { 
     var totalVal = $("#sellAmount").val() * $("#sellPrice").val();
-        $("#sellTotal").val( "$" + ($("#sellAmount").val() *                $("#sellPrice").val().replace("$","")).toFixed(4));
+        $("#sellTotal").val(($("#sellAmount").val() *                $("#sellPrice").val().replace("$","")).toFixed(4)+"$");
 });
