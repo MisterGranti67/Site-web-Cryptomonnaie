@@ -86,7 +86,8 @@ footer {
 }
 
 .chartMe {
-    height: 385px !important;
+    height: 100%;
+    width: 100%;
     display: block;
     position: relative;
     margin: 0 auto;
@@ -370,13 +371,13 @@ header {
         max-width: 50%;
     }
 }
-*, *::before, *::after {
+.exchange *, .exchange *::before, .exchange *::after {
     box-sizing: border-box;
 }
 .container-fluid {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 14px;
+    padding-left: 14px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -421,19 +422,25 @@ p {
 }
 
 @media (min-width: 576px) {
-    .container {
+    .exchange .container {
         max-width: 540px;
     }
 }
 
 @media (min-width: 768px) {
-    .container {
+    .exchange .container {
         max-width: 720px;
     }
 }
 
 @media (min-width: 992px) {
-    .container {
+    .exchange .container {
         max-width: 960px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .exchange .container {
+        max-width: 1400px;
     }
 }

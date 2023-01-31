@@ -158,34 +158,17 @@ function createChart(xLabels,chartData) {
             datasets: [{
                 label: coins.products[selectedCoin].name,
                 data:chartData,
-                borderColor: 'rgb(75, 192, 192)',
+                borderColor: 'rgb(13,203,129)',
                 segment: {
-                  borderColor: ctx => skipped(ctx, 'rgb(0,0,0,0.2)') || down(ctx, 'rgb(192,75,75)')
+                    borderColor: ctx => down(ctx, 'rgb(246,70,93)')
                 },
                 spanGaps: true
             }]
         },
         options: {
-            title: {
-                display: true,
-                text:  (coins.products[selectedCoin].tag +"s in Wallet: " + coins.products[selectedCoin].wallet + "    " + "USD in Wallet: " + wallet.toFixed(4))
-            },
-            fullwidth:false,
-            responsive:true,
-            maintainAspectRatio: false,
-            tooltips: {
-                intersect: false
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: false,
-                    }
-                }]
-            },
             fill: false,
             interaction: {
-                intersect: false
+              intersect: false
             },
             radius: 0,
         }
@@ -215,11 +198,11 @@ function setPrices() {
     for(var i = 0; i < coins.products.length; i++) {
         setPrice(coins.products[i].tag,i);
     }
-    setTimeout(setPrices,10000);
+    setTimeout(setPrices,5000);
 }
 
 function create24HChart(coinTag) {
-    getPriceChart(coinTag,24,1);
+    getPriceChart(coinTag,96,1);
 }
 
 function getPriceChart(coinTag,totalHours,hourIncrement) {
@@ -257,7 +240,7 @@ function updateCoinProperties(change,high,low,volume) {
 }
 function timeConverter(UNIX_timestamp) {
     var a = new Date(UNIX_timestamp * 1000);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var months = ['Jan','Fev','Mar','Avr','Mai','Jui','Jui','Aou','Sep','Oct','Nov','Dec'];
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
@@ -267,15 +250,12 @@ function timeConverter(UNIX_timestamp) {
 
     var times = {date: date, month: month, year: year, hour:hour,min:min};
 
-    /*var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ; */
     return times;
 }
 
 function getPrice(coinTag) {
 
-    $.getJSON("https://api.binance.com/api/v1/ticker/24hr?symbol="  + coinTag + "USDT", function(data){
-    //console.log(data[0].price_usd);
-    })
+    $.getJSON("https://api.binance.com/api/v1/ticker/24hr?symbol="  + coinTag + "USDT", function(data){})
 
 }
 
@@ -375,7 +355,7 @@ function createTransaction(name,transactionPrice,transactionAmount,transactionDa
     transactionVue.transactions.push(myObject);
 }
 
-getPriceChart("BTC",24,1);
+getPriceChart("BTC",96,1);
 setPrices();
 
 $('#buyAmount').bind('input', function() { 
