@@ -1,6 +1,6 @@
 .wrapper{
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 0.5fr 1.5fr;
     grid-auto-rows: minmax(85px, auto);
     grid-gap: 1em;
     justify-items: stretch;
@@ -31,7 +31,7 @@
     grid-row: 5/7;
 }
 .box5 {
-    grid-column: 1/4;
+    grid-column: 2/4;
     grid-row: 6;
 }
 .box6 {
@@ -39,7 +39,10 @@
     grid-row: 7/8;
 }
 
-
+.box12 {
+    grid-column: 1;
+    grid-row: 6/6;
+}
 
 
 
@@ -94,7 +97,10 @@ footer {
     background-color: #24253A;
 }
 
-
+.tableau_crypto tbody td {
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
 
 
 
@@ -443,7 +449,6 @@ table {
 
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
 }
 
 .titre {
@@ -482,4 +487,9 @@ p {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0px !important;
+}
+
+.tableau_crypto {
+    margin-top: 0px;
 }

@@ -48,7 +48,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             </div>
                         </div>
                         <div class="box box2">
-                            <h2 class="text-center">Le marché</h2>
                                 <div class="tableau_crypto" id='app'>
                                     <table>
                                         <thead class="thead-row">
@@ -85,6 +84,22 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 
                             <div class="box box3">
                                 <canvas id="ctx" style="width: 100%;" class="chartMe"></canvas>
+                            </div>
+                            <div class="box box12">
+                                <div class="tableau_crypto">
+                                    <table>
+                                        <thead>
+                                            <tr class="thead">
+                                                <th scope="col">Nom</th>
+                                                <th scope="col">Montant</th>
+                                                <th scope="col">Valeur</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableau_crypto">
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="box box5">
                                 <div class="container-fluid tradeWindow">
@@ -149,7 +164,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         
                     </div>
                 </div>
-                <div class="container">
+                <!-- <div class="container">
                     <div class="tableau_crypto">
                         <table>
                             <thead>
@@ -164,7 +179,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>
@@ -225,7 +240,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
                                         const nom_crypto = data[i].symbol.split('USDT');
                                         maListe[numero] = i
-                                        console.log(maListe)
+
                                         var variation = "perte";
                                         if (data[i].priceChangePercent > 0) {
                                             variation = "gain";
@@ -278,7 +293,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     $('#tableau_crypto').html('');
                                     for (let i = 0; i < 9; i++) {
                                         var numero = maListe[i];
-                                        console.log(numero);
+
                                         const nom_crypto = data[numero].symbol.split('USDT');
                                         
                                         var variation = "perte";
