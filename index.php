@@ -12,10 +12,11 @@ if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Connexion - Espace crypto - Skylord</title>
+        <?php include '../utils/head_seo.php'; ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Connexion - Espace crypto de Skylord</title>
         <link href="./css/style.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
     </head>
