@@ -254,7 +254,6 @@ function timeConverter(UNIX_timestamp) {
 }
 
 function getPrice(coinTag) {
-
     $.getJSON("https://api.binance.com/api/v1/ticker/24hr?symbol="  + coinTag + "USDT", function(data){})
 
 }
@@ -374,10 +373,12 @@ setPrices();
 
 $('#buyAmount').bind('input', function() { 
     var totalVal = $("#buyAmount").val() * $("#buyPrice").val();
-        $("#buyTotal").val( (($("#buyAmount").val() *                $("#buyPrice").val().replace("$","")).toFixed(4)+"$"));
+    $("#buyTotal").val( (($("#buyAmount").val() * $("#buyPrice").val().replace("$","")).toFixed(4)+"$"));
+    $('#resultat_achat').html('');
 });
 
 $('#sellAmount').bind('input', function() { 
     var nombre = parseFloat(coins.products[selectedCoin].price * $("#sellAmount").val());
     $("#sellTotal").val(nombre-(nombre*(taxe/100)));
+    $('#resultat_vente').html('');
 });
