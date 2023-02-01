@@ -1,6 +1,7 @@
 var chart;
 var selectedCoin = 0;
 var wallet = 1000;
+var taxe = 7;
 var transactionVue = new Vue({
     el: '#transactionHistory',
     data: {
@@ -193,7 +194,6 @@ function setPrice(coinTag,id) {
 }
 
 
-
 function setPrices() {
     for(var i = 0; i < coins.products.length; i++) {
         setPrice(coins.products[i].tag,i);
@@ -333,9 +333,10 @@ function setUpAmountOptions() {
 
 function setUpTradePrice() {
     $("#buyPrice").val(coins.products[selectedCoin].price+"$");
-    $("#sellPrice").val(coins.products[selectedCoin].price+"$");
+    $("#sellPrice").val(coins.products[selectedCoin].price+"$"+" +"+taxe+"%");
     $("#buyTotal").val(coins.products[selectedCoin].price * $("#buyAmount").val());
-    $("#sellTotal").val(coins.products[selectedCoin].price * $("#sellAmount").val());
+    var nombre = parseFloat(coins.products[selectedCoin].price * $("#sellAmount").val());
+    $("#sellTotal").val(nombre-(nombre*(taxe/100)));
     setUpAmountOptions();
 }
 
@@ -377,6 +378,6 @@ $('#buyAmount').bind('input', function() {
 });
 
 $('#sellAmount').bind('input', function() { 
-    var totalVal = $("#sellAmount").val() * $("#sellPrice").val();
-        $("#sellTotal").val(($("#sellAmount").val() *                $("#sellPrice").val().replace("$","")).toFixed(4)+"$");
+    var nombre = parseFloat(coins.products[selectedCoin].price * $("#sellAmount").val());
+    $("#sellTotal").val(nombre-(nombre*(taxe/100)));
 });
