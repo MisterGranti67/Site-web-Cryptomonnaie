@@ -54,9 +54,7 @@ if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
 
                     <button id="login" type="submit">Se connecter</button>
 
-                    <a href="https://skylord.fr" class="btn btn-link">
-                        <i class="fas fa-arrow-left"></i>Retour à l'accueil
-                    </a>
+                    <a href="https://skylord.fr" class="btn btn-link"><i class="fas fa-arrow-left"></i>Retour à l'accueil</a>
                     
                 </form>
             </div>
