@@ -9,11 +9,11 @@
                 </div>
                 <div class="droite">
                     <ul class="menu">
-                        <li>Nos CGU</li>
-                        <li>Nos CGV</li>
-                        <li>Mentions légales</li>
-                        <li>Vote et Gagne</li>
-                        <li>Boutique</li>
+                        <a href="https://skylord.fr/legale/"><li>Nos CGU</li></a>
+                        <a href="https://skylord.fr/legale/CGV.php"><li>Nos CGV</li></a>
+                        <a href="https://skylord.fr/legale/mentions-legales.php"><li>Mentions légales</li></a>
+                        <a href="https://joueur.skylord.fr/vote"><li>Vote et Gagne</li></a>
+                        <a href="https://joueur.skylord.fr/shop"><li>Boutique</li></a>
                     </ul>
                 </div>
             </div>
