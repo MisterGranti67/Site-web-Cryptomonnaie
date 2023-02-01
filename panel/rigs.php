@@ -6,8 +6,9 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
+        <?php include '../utils/head_seo.php'; ?>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <title>Mon espace joueur - Crypto Skylord</title>
         <link href="../css/style-panel.css" rel="stylesheet">
