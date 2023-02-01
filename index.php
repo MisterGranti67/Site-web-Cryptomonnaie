@@ -14,7 +14,7 @@ if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <?php include '../utils/head_seo.php'; ?>
+        <?php include 'utils/head_seo.php'; ?>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Connexion - Espace crypto de Skylord</title>
         <link href="./css/style.css" rel="stylesheet">
