@@ -259,52 +259,64 @@ function getPrice(coinTag) {
 
 }
 
-function buyCoin() {
-    if( isNaN($("#buyAmount").val())||$("#buyAmount").val()<0) {
-        console.log(wallet-coins.products[selectedCoin].price * $("#buyAmount").val())
-        alert("Bon de commande non valide (dépasse le portefeuille ou n'est pas un numéro)");
-        return;
-    }
-    wallet -= coins.products[selectedCoin].price * $("#buyAmount").val();
-    coins.products[selectedCoin].wallet += parseFloat($("#buyAmount").val());
-    setUpAmountOptions();  
-    createTransaction(coins.products[selectedCoin].name + '(' + coins.products[selectedCoin].tag + ')',coins.products[selectedCoin].price,$("#buyAmount").val(), getCurrentTime(),'buy');
+function getAchat(coinTag) {
 
-    $("#buyAmount").val("");
-    $("#buyTotal").val("0.0000$");
-
-    // chart.options.title.text = (coins.products[selectedCoin].tag +"dans le wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD dans le wallet: " + wallet.toFixed(4));
-
-    chart.update();
+    $.getJSON("https://api.binance.com/api/v1/ticker/24hr?symbol="  + coinTag + "USDT", function(data){})
 
 }
 
-function sellCoin() {
-    if( isNaN($("#sellAmount").val())||(coins.products[selectedCoin].wallet - $("#sellAmount").val())<0 || $("#sellAmount").val()<0 ) {
-        alert("Bon de commande non valide (dépasse le portefeuille ou n'est pas un numéro)");
-        return;
-    }
-    wallet += coins.products[selectedCoin].price * $("#sellAmount").val();
-    coins.products[selectedCoin].wallet-= $("#sellAmount").val(); 
-    setUpAmountOptions(); 
-    createTransaction(coins.products[selectedCoin].name + '(' + coins.products[selectedCoin].tag + ')',coins.products[selectedCoin].price,$("#sellAmount").val(), getCurrentTime(),'sell');
+// function buyCoin() {
+//     if( isNaN($("#buyAmount").val())||$("#buyAmount").val()<0) {
+//         alert("Bon de commande non valide (dépasse le portefeuille ou n'est pas un numéro)");
+//         return;
+//     }
+//     wallet -= coins.products[selectedCoin].price * $("#buyAmount").val();
+//     coins.products[selectedCoin].wallet += parseFloat($("#buyAmount").val());
+//     setUpAmountOptions();  
+//     createTransaction(coins.products[selectedCoin].name + '(' + coins.products[selectedCoin].tag + ')',coins.products[selectedCoin].price,$("#buyAmount").val(), getCurrentTime(),'buy');
 
-    $("#sellAmount").val("");
-    $("#sellTotal").val("0.0000$");
+//     $("#buyAmount").val("");
+//     $("#buyTotal").val("0.0000$");
 
-    // chart.options.title.text = (coins.products[selectedCoin].tag +"dans le wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD dans le wallet: " + wallet.toFixed(4));
+//     // chart.options.title.text = (coins.products[selectedCoin].tag +"dans le wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD dans le wallet: " + wallet.toFixed(4));
 
-    chart.update();
+//     chart.update();
+
+// }
+
+// function sellCoin() {
+//     if( isNaN($("#sellAmount").val())||(coins.products[selectedCoin].wallet - $("#sellAmount").val())<0 || $("#sellAmount").val()<0 ) {
+//         alert("Bon de commande non valide (dépasse le portefeuille ou n'est pas un numéro)");
+//         return;
+//     }
+//     wallet += coins.products[selectedCoin].price * $("#sellAmount").val();
+//     coins.products[selectedCoin].wallet-= $("#sellAmount").val(); 
+//     setUpAmountOptions(); 
+//     createTransaction(coins.products[selectedCoin].name + '(' + coins.products[selectedCoin].tag + ')',coins.products[selectedCoin].price,$("#sellAmount").val(), getCurrentTime(),'sell');
+
+//     $("#sellAmount").val("");
+//     $("#sellTotal").val("0.0000$");
+
+//     // chart.options.title.text = (coins.products[selectedCoin].tag +"dans le wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD dans le wallet: " + wallet.toFixed(4));
+
+//     chart.update();
+// }
+function getActuelCrypto_Tag() {
+    return coins.products[selectedCoin].tag
+}
+function getActuelCrypto_Name() {
+    return coins.products[selectedCoin].name
 }
 
 function setWallet(numero,nombre) {
-    coins.products[numero].wallet = nombre;
+
+        coins.products[numero].wallet = nombre;
 }
 
 function setUpAmountOptions() {
     $("#buyOptionOne").val( ((wallet*.25)/ coins.products[selectedCoin].price) );   
 
-    $("#buyOptionTwo").val( ((wallet*.5)/ coins.products[selectedCoin].price));   
+    $("#buyOptionTwo").val( ((wallet*.50)/ coins.products[selectedCoin].price));   
 
         $("#buyOptionThree").val( ((wallet*.75)/ coins.products[selectedCoin].price));   
 

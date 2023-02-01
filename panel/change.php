@@ -112,6 +112,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     <div class="row">
                                         <div class="col-sm-6 borderMe" style="background-color:#24253A;">
                                             <p class ="text-center" class="titre"><b>Achat</b></p>
+                                            <div id="resultat_achat"></div>
                                             <table>
                                                 <tr>
                                                     <th class ="text-right" style ="color:white;">Prix: </th>
@@ -215,6 +216,37 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
     <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../js/change.js"></script>
     <script>
+            async function buyCoin() {
+                var pseudo='<?php echo $session_pseudo; ?>'
+                var code='<?php echo $session_code; ?>'
+                var crypto = getActuelCrypto_Tag()
+                var nombre = $("#buyAmount").val()
+                if (!nombre){
+                    var nombre = 0;
+                }
+                console.log(crypto + " " + nombre)
+                var json_rig = 'https://apiv1.skylord.fr/api/action/achat?pseudo=' + pseudo + '&code=' + code + "&crypto=" + crypto + "USDT&nombre=" + nombre;
+                const api_rig = await fetch(json_rig);
+                const data_rig = await api_rig.json();
+                if (data_rig["Acces"] == "True"){
+                    if (data_rig["Resultat"] == "01"){
+                        $('#resultat_achat').html('<p style="color:#CEFF33">Vous avez bien acheté '+ nombre + ' ' + getActuelCrypto_Name() +'</p>');
+                    } else if (data_rig["Resultat"] == "14"){
+                        $('#resultat_achat').html('<p style="color:#FF6133">Vous n\'avez pas assez d\'argent.</p>');
+                    } else if (data_rig["Resultat"] == "15"){
+                        $('#resultat_achat').html('<p style="color:#FF6133">Vous ne pouvez acheter 0 crypto-monnaie.</p>');
+                    } else if (data_rig["Resultat"] == "16"){
+                        $('#resultat_achat').html('<p style="color:#FF6133">Vous devez spécifier un nombre de crypto-monnaie à acheter.</p>');
+                    } else if (data_rig["Resultat"] == "17"){
+                        $('#resultat_achat').html('<p style="color:#FF6133">Vous devez spécifier la crypto-monnaie à acheter.</p>');
+                    } else {
+                        $('#resultat_achat').html('<p style="color:#FF6133">Erreur inattendue.</p>');
+                    }
+                } else {
+                    document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                }
+
+            }
             $(document).ready(async function(){
                 document.getElementById("footer").style.display = 'none';
                 var mon_pseudo='<?php echo $session_pseudo; ?>'
