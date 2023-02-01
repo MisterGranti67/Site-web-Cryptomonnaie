@@ -254,7 +254,6 @@ function timeConverter(UNIX_timestamp) {
 }
 
 function getPrice(coinTag) {
-
     $.getJSON("https://api.binance.com/api/v1/ticker/24hr?symbol="  + coinTag + "USDT", function(data){})
 
 }
