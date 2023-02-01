@@ -52,7 +52,7 @@ var coins = new Vue( {
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png'
             },
             {
-                id:2,
+                id:3,
                 name:'Litecoin',
                 tag:"LTC",
                 volume: 0,
@@ -62,7 +62,7 @@ var coins = new Vue( {
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/2.png'
             },
             {
-                id:3,
+                id:2,
                 name:'Binance Coin',
                 tag:"BNB",
                 volume: 0,
@@ -72,7 +72,7 @@ var coins = new Vue( {
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png'
             },
                 {
-                id:4,
+                id:8,
                 name:'Shiba',
                 tag:"SHIB",
                 volume: 0,
@@ -82,7 +82,7 @@ var coins = new Vue( {
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png'
             },
             {
-                id:5,
+                id:6,
                 name:'Dogecoin',
                 tag:"DOGE",
                 volume: 0,
@@ -92,7 +92,7 @@ var coins = new Vue( {
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/74.png'
             },
             {
-                id:6,
+                id:5,
                 name:'Ripple',
                 tag:"XRP",
                 volume: 0,
@@ -102,7 +102,7 @@ var coins = new Vue( {
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/52.png'
             },
             {
-                id:7,
+                id:4,
                 name:'Cardano',
                 tag:"ADA",
                 volume: 0,
@@ -112,7 +112,7 @@ var coins = new Vue( {
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png'
             },
             {
-                id:8,
+                id:7,
                 name:'Polkadot',
                 tag:"DOT",
                 volume: 0,
@@ -260,21 +260,20 @@ function getPrice(coinTag) {
 }
 
 function buyCoin() {
-    if( isNaN($("#buyAmount").val())||(wallet-coins.products[selectedCoin].price * $("#buyAmount").val())<0 || $("#buyAmount").val()<0) {
-        alert("Invalid Buy Order (Exceeds Wallet or Is Not A Number)");
+    if( isNaN($("#buyAmount").val())||$("#buyAmount").val()<0) {
+        console.log(wallet-coins.products[selectedCoin].price * $("#buyAmount").val())
+        alert("Bon de commande non valide (dépasse le portefeuille ou n'est pas un numéro)");
         return;
     }
     wallet -= coins.products[selectedCoin].price * $("#buyAmount").val();
-
     coins.products[selectedCoin].wallet += parseFloat($("#buyAmount").val());
     setUpAmountOptions();  
-
     createTransaction(coins.products[selectedCoin].name + '(' + coins.products[selectedCoin].tag + ')',coins.products[selectedCoin].price,$("#buyAmount").val(), getCurrentTime(),'buy');
 
     $("#buyAmount").val("");
     $("#buyTotal").val("0.0000$");
 
-    chart.options.title.text = (coins.products[selectedCoin].tag +"s in Wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD in Wallet: " + wallet.toFixed(4));
+    // chart.options.title.text = (coins.products[selectedCoin].tag +"dans le wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD dans le wallet: " + wallet.toFixed(4));
 
     chart.update();
 
@@ -282,7 +281,7 @@ function buyCoin() {
 
 function sellCoin() {
     if( isNaN($("#sellAmount").val())||(coins.products[selectedCoin].wallet - $("#sellAmount").val())<0 || $("#sellAmount").val()<0 ) {
-        alert("Invalid Buy Order (Exceeds Wallet or Is Not A Number)");
+        alert("Bon de commande non valide (dépasse le portefeuille ou n'est pas un numéro)");
         return;
     }
     wallet += coins.products[selectedCoin].price * $("#sellAmount").val();
@@ -293,9 +292,13 @@ function sellCoin() {
     $("#sellAmount").val("");
     $("#sellTotal").val("0.0000$");
 
-    chart.options.title.text = (coins.products[selectedCoin].tag +"s in Wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD in Wallet: " + wallet.toFixed(4));
+    // chart.options.title.text = (coins.products[selectedCoin].tag +"dans le wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD dans le wallet: " + wallet.toFixed(4));
 
     chart.update();
+}
+
+function setWallet(numero,nombre) {
+    coins.products[numero].wallet = nombre;
 }
 
 function setUpAmountOptions() {
@@ -319,8 +322,8 @@ function setUpAmountOptions() {
 function setUpTradePrice() {
     $("#buyPrice").val(coins.products[selectedCoin].price+"$");
     $("#sellPrice").val(coins.products[selectedCoin].price+"$");
-    $("#buyTotal").val("0.0000$");
-    $("#sellTotal").val("0.0000$");
+    $("#buyTotal").val(coins.products[selectedCoin].price * $("#buyAmount").val());
+    $("#sellTotal").val(coins.products[selectedCoin].price * $("#sellAmount").val());
     setUpAmountOptions();
 }
 
@@ -341,8 +344,6 @@ function getCurrentTime() {
 }
 
 function createTransaction(name,transactionPrice,transactionAmount,transactionDate,type) {
-
-
     var myObject = {
         id:transactionVue.transactions.length,
         name:name,
