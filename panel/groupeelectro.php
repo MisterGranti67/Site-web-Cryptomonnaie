@@ -9,7 +9,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 <html>
     <head>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-        <title>Mon éspace joueur - Crypto Skylord</title>
+        <title>Mon espace joueur - Crypto Skylord</title>
         <link href="../css/style-panel.css" rel="stylesheet">
         <link href="../css/style-groupelectro.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>

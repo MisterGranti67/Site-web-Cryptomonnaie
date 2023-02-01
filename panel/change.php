@@ -8,7 +8,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 <html>
     <head>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-        <title>Mon éspace joueur - Crypto Skylord</title>
+        <title>Mon espace joueur - Crypto Skylord</title>
         <link href="../css/style-panel.css" rel="stylesheet">
         <link href="../css/style-energie.css" rel="stylesheet">
         <link href="../css/style-change.css" rel="stylesheet">
@@ -112,6 +112,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     <div class="row">
                                         <div class="col-sm-6 borderMe" style="background-color:#24253A;">
                                             <p class ="text-center" class="titre"><b>Achat</b></p>
+                                            <div id="resultat_achat"></div>
                                             <table>
                                                 <tr>
                                                     <th class ="text-right" style ="color:white;">Prix: </th>
@@ -137,6 +138,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                             <input class="btn button buyButton btn-success float-right"type="button"placeholder="0" value="Buy" onclick="buyCoin()">
                                         </div>
                                         <div class="col-sm-6 borderMe" style="background-color:#24253A;"><p class ="text-cente"><b>Vente</b> </p>
+                                        <div id="resultat_vente"></div>
                                         <table>
                                             <tr>
                                                 <th class ="text-right" style ="color:white;">Prix: </th>
@@ -215,6 +217,72 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
     <script src="https://kit.fontawesome.com/da8f9491f0.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../js/change.js"></script>
     <script>
+            async function buyCoin() {
+                var pseudo='<?php echo $session_pseudo; ?>'
+                var code='<?php echo $session_code; ?>'
+                var crypto = getActuelCrypto_Tag()
+                var nombre = $("#buyAmount").val()
+                if (!nombre){
+                    var nombre = 0;
+                }
+                console.log(crypto + " " + nombre)
+                var json_rig = 'https://apiv1.skylord.fr/api/action/achat?pseudo=' + pseudo + '&code=' + code + "&crypto=" + crypto + "USDT&nombre=" + nombre;
+                const api_rig = await fetch(json_rig);
+                const data_rig = await api_rig.json();
+                if (data_rig["Acces"] == "True"){
+                    if (data_rig["Resultat"] == "01"){
+                        $('#resultat_achat').html('<p style="color:#CEFF33">Vous avez bien acheté '+ nombre + ' ' + getActuelCrypto_Name() +'</p>');
+                    } else if (data_rig["Resultat"] == "14"){
+                        $('#resultat_achat').html('<p style="color:#FF6133">Vous n\'avez pas assez d\'argent.</p>');
+                    } else if (data_rig["Resultat"] == "15"){
+                        $('#resultat_achat').html('<p style="color:#FF6133">Vous ne pouvez acheter 0 '+ getActuelCrypto_Name() +'.</p>');
+                    } else if (data_rig["Resultat"] == "16"){
+                        $('#resultat_achat').html('<p style="color:#FF6133">Vous devez spécifier un nombre de '+ getActuelCrypto_Name() +' à acheter.</p>');
+                    } else if (data_rig["Resultat"] == "17"){
+                        $('#resultat_achat').html('<p style="color:#FF6133">Vous devez spécifier la crypto-monnaie à acheter.</p>');
+                    } else {
+                        $('#resultat_achat').html('<p style="color:#FF6133">Erreur inattendue.</p>');
+                    }
+                    $("#sellAmount").val('');
+                    $("#sellTotal").val('');
+                } else {
+                    document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                }
+
+            }
+            async function sellCoin() {
+                var pseudo='<?php echo $session_pseudo; ?>'
+                var code='<?php echo $session_code; ?>'
+                var crypto = getActuelCrypto_Tag()
+                var nombre = $("#sellAmount").val()
+                if (!nombre){
+                    var nombre = 0;
+                }
+                console.log(crypto + " " + nombre)
+                var json_rig = 'https://apiv1.skylord.fr/api/action/vente?pseudo=' + pseudo + '&code=' + code + "&crypto=" + crypto + "USDT&nombre=" + nombre;
+                const api_rig = await fetch(json_rig);
+                const data_rig = await api_rig.json();
+                if (data_rig["Acces"] == "True"){
+                    if (data_rig["Resultat"] == "01"){
+                        $('#resultat_vente').html('<p style="color:#CEFF33">Vous avez bien vendu '+ nombre + ' ' + getActuelCrypto_Name() +'</p>');
+                    } else if (data_rig["Resultat"] == "14"){
+                        $('#resultat_vente').html('<p style="color:#FF6133">Vous n\'avez pas assez de '+ getActuelCrypto_Name() +'.</p>');
+                    } else if (data_rig["Resultat"] == "15"){
+                        $('#resultat_vente').html('<p style="color:#FF6133">Vous ne pouvez vendre 0 '+ getActuelCrypto_Name() +'.</p>');
+                    } else if (data_rig["Resultat"] == "16"){
+                        $('#resultat_vente').html('<p style="color:#FF6133">Vous devez spécifier un nombre de '+ getActuelCrypto_Name() +' à acheter.</p>');
+                    } else if (data_rig["Resultat"] == "17"){
+                        $('#resultat_vente').html('<p style="color:#FF6133">Vous devez spécifier la crypto-monnaie à acheter.</p>');
+                    } else {
+                        $('#resultat_achat').html('<p style="color:#FF6133">Erreur inattendue.</p>');
+                    }
+                    $("#sellAmount").val('');
+                    $("#sellTotal").val('');
+                } else {
+                    document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                }
+
+            }
             $(document).ready(async function(){
                 document.getElementById("footer").style.display = 'none';
                 var mon_pseudo='<?php echo $session_pseudo; ?>'
@@ -258,7 +326,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         var valeur_crypto = valeur_crypto.toString().split('.');
                                         var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img class=\"img\" src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
                                         $(tableau_crypto).prependTo("#tableau_crypto");
-
+                                        setWallet(numero,data_crypto[nom_crypto[0]]);
                                         numero = numero+1;
                                         
                                     }
@@ -314,7 +382,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         var valeur_crypto = valeur_crypto.toString().split('.');
                                         var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img class=\"img\" src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
                                         $(tableau_crypto).prependTo("#tableau_crypto");
-                                        
+                                        setWallet(i,data_crypto[nom_crypto[0]]);
                                     }
                                     document.getElementById("chargement").style.display = 'none';
                                     document.getElementById("non_chargement").style.display = 'block';
