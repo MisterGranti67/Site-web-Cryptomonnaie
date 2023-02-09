@@ -724,3 +724,64 @@ footer {
     opacity: 0.1;
     }
 }
+@media (min-width: 0px) and (max-width: 1100px){
+	.acces-discord .gauche {
+        margin-top: 10px;
+        position: relative;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .discord .droite {
+        position: relative;
+        width: auto;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .discord .gauche img {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+    .discord div.bouton {
+        margin-top: 57px;
+        position: relative;
+        display: block;
+        margin-bottom: 20px;
+        text-align: center;
+        
+    }
+    .discord a.bouton {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-width: 0px) and (max-width: 1000px){
+	.flex-container {
+        margin-top: 24px;
+        display: block;
+    }
+    .content .crypto {
+        width: auto;
+        height: 516px;
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+    .content .notification {
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+    .notification .notification_recu {
+        text-align: center;
+    }
+    .home th:nth-child(2),.home th:nth-child(4),.home th:nth-child(5) {
+        display: none;
+    }
+    .home tr td:nth-child(2),.home tr td:nth-child(4),.home tr td:nth-child(5) {
+        display: none;
+    }
+}
