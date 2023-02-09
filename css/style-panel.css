@@ -725,7 +725,7 @@ footer {
     }
 }
 @media (min-width: 0px) and (max-width: 1100px){
-	.acces-discord .gauche {
+    .acces-discord .gauche {
         margin-top: 10px;
         position: relative;
         width: auto;
@@ -757,49 +757,11 @@ footer {
         margin-right: auto;
     }
 
-    .footer-menu .droite {
-        position: relative;
-        width: 100%;
-        margin-top: 0px;
-        margin-left: 0px;
-    }
-    .footer-menu .droite .menu {
-        margin-left: 69px;
-        opacity: 1;
-        display: flex;
-        position: relative;
-        top: 0px;
-        float: none;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-    .footer-menu .gauche {
-        width: 128px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .footer-menu {
-        height: 160px;
-    }
-
 
 }
-@media (min-width: 0px) and (max-width: 630px){
-    #footer .droite .menu {
-        flex-direction: column;
-    }
-    .footer-menu .droite .menu li {
-        margin-left: -28px;
-    }
-    .footer-menu {
-        height: 250px;
-    }
-}
+
 @media (min-width: 0px) and (max-width: 1000px){
-	.flex-container {
+    .flex-container {
         margin-top: 24px;
         display: block;
     }
@@ -830,5 +792,95 @@ footer {
     .informations .details {
         height: 144px;
         margin-left: 32px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .acces-discord .gauche {
+        width: 100%;
+        text-align: center;
+    }
+    .discord .gauche img {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;
+    }
+    .acces-discord .droite {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    .acces-discord {
+        padding-bottom: 32px; 
+    }
+    .acces-discord .bouton {
+        text-align: center;
+    }
+    .footer-menu .droite {
+        position: relative;
+        width: auto;
+        margin-top: 36px;
+        margin-left: 37px;
+    }
+
+    .total-bas-footer .droite {
+        margin-left: 212px;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+    .total-bas-footer .droite {
+        margin-left: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .bas-footer {
+        height: 160px;
+    }
+}
+@media screen and (max-width: 950px) {
+    .mobileButton {
+        display: block;
+    }
+    .header .gauche {
+        width: 100%;
+    }
+    .menuSkylord .menu a {
+        display: none;
+    }
+    .footer-menu .droite {
+        margin-left: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .footer-menu .droite .menu {
+        margin-left: 0px;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    .footer-menu {
+        height: 192px;
+    }
+    .footer-menu .gauche {
+        width: 100%;
+    }
+    .footer-menu a {
+        display:flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-menu {
+        height: 288px;
     }
 }
