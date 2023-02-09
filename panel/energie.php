@@ -44,178 +44,180 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                     <div class="zone">
                         <h1>Votre production d'énergie</h1>
                         <h2 style="color: #FF6133" id="message"></h2>
-                        <div class="zone_eolienne">
-                            <div class="zone_eolienne_images">
-                                <div class="zone_container">
-                                    <div class="zone_eolienne_image off" id="ei1"></div>
-                                    <div class="zone_eolienne_image" id="ei2"></div>
-                                </div>
-                            </div>
-                            <div class="zone_eolienne_text">
-                                <div class="zone_eolienne_placement first">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text off" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'e')" id="et1">OFF</p>
+                        <div class="total-zone">
+                            <div class="zone_eolienne">
+                                <div class="zone_eolienne_images">
+                                    <div class="zone_container">
+                                        <div class="zone_eolienne_image off" id="ei1"></div>
+                                        <div class="zone_eolienne_image" id="ei2"></div>
                                     </div>
                                 </div>
-                                <div class="zone_eolienne_placement">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2,'e')" id="et2">ON</p>
+                                <div class="zone_eolienne_text">
+                                    <div class="zone_eolienne_placement first">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text off" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'e')" id="et1">OFF</p>
+                                        </div>
+                                    </div>
+                                    <div class="zone_eolienne_placement">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2,'e')" id="et2">ON</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="zone_groupe">
+                                <div class="groupes_images">
+                                    <div class="zone_container">
+                                        <a href="#" id="gl1"><div class="groupe_image off" id="gi1"></div></a>
+                                        <a href="#" id="gl2"><div class="groupe_image off" id="gi2"></div></a>
+                                    </div>
+                                </div>
+                                <div class="groupe_text">
+                                    <div class="placement_groupe first">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text off" onclick="Allumer_groupelectro('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1)" id="gt1">OFF</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_groupe">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text off" onclick="Allumer_groupelectro('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2)" id="gt2">OFF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="zone_panneaux_solaires">
+                                <div class="panneaux_solaires_images">
+                                    <div class="zone_container">
+                                        <div class="panneaux_solaire_image" id="psi1"></div>
+                                        <div class="panneaux_solaire_image" id="psi2"></div>
+                                        <div class="panneaux_solaire_image" id="psi3"></div>
+                                        <div class="panneaux_solaire_image" id="psi4"></div>
+                                        <div class="panneaux_solaire_image" id="psi5"></div>
+                                        <div class="panneaux_solaire_image off" id="psi6"></div>
+                                    </div>
+                                </div>
+                                <div class="panneaux_solaires_text">
+                                    <div class="placement_panneaux_solaire first">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'ps')" id="pst1">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_panneaux_solaire">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2,'ps')" id="pst2">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_panneaux_solaire">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',3,'ps')" id="pst3">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_panneaux_solaire">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',4,'ps')" id="pst4">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_panneaux_solaire">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',5,'ps')" id="pst5">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_panneaux_solaire">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text off" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',6,'ps')" id="pst6">OFF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="zone_rigs">
+                                <div class="zone_rigs_images">
+                                    <div class="zone_container">
+                                        <a href="#" id="rl1"><div class="zone_rigs_images_image off" id="ri1"></div></a>
+                                        <a href="#" id="rl2"><div class="zone_rigs_images_image off" id="ri2"></div></a>
+                                        <a href="#" id="rl3"><div class="zone_rigs_images_image" id="ri3"></div></a>
+                                        <a href="#" id="rl4"><div class="zone_rigs_images_image" id="ri4"></div></a>
+                                        <a href="#" id="rl5"><div class="zone_rigs_images_image" id="ri5"></div></a>
+                                        <a href="#" id="rl6"><div class="zone_rigs_images_image" id="ri6"></div></a>
+                                        <a href="#" id="rl7"><div class="zone_rigs_images_image" id="ri7"></div></a>
+                                        <a href="#" id="rl8"><div class="zone_rigs_images_image" id="ri8"></div></a>
+                                    </div>
+                                </div>
+                                <div class="zone_rigs_text">
+                                    <div class="placement_rigs first">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text off" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1)" id="rt1">OFF</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_rigs">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text off" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2)" id="rt2">OFF</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_rigs">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',3)" id="rt3">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_rigs">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',4)" id="rt4">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_rigs">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',5)" id="rt5">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_rigs">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',6)" id="rt6">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_rigs">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',7)" id="rt7">ON</p>
+                                        </div>
+                                    </div>
+                                    <div class="placement_rigs">
+                                        <div class="placement_text">
+                                            <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',8)" id="rt8">ON</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="zone_network_wallet">
+                                <div class="zone_network_wallet_image"></div>
+                            </div>
+                                <svg
+                                width="736"
+                                height="563"
+                                viewBox="0 0 736 563"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                style="margin-top: 32px;  margin-left: 84px; height: 562px;"
+                                preserveAspectRatio="none"
+                                >
+                                <path d="M735.608 5.5H646.501V485" stroke="#fff"></path>
+                                <path d="M735.608 85.5L646.501 85.5" stroke="#fff"></path>
+                                <path d="M735.608 165.5H646.501" stroke="#fff"></path>
+                                <path d="M735.608 244.5L646.496 243.5" stroke="#fff"></path>
+                                <path d="M735.608 329.5H646.501" stroke="#fff"></path>
+                                <path d="M735.608 408.5L646.506 409.52" stroke="#fff"></path>
+                                <path d="M735.608 484.5H646.501" stroke="#fff"></path>
+                                <path d="M735.608 562.5H646.5V485" stroke="#fff"></path>
+                                <path d="M646.108 484.5H307.108" stroke="#fff"></path>
+                                <path d="M441.657 36.4969L408.608 36.4969L408.608 460.5L408.608 484.5" stroke="#fff"></path>
+                                <path d="M441.108 168.5L408.596 168.5" stroke="#fff"></path>
+                                <path d="M274.608 0.500031H231.108L231.108 445" stroke="#fff"></path>
+                                <path d="M274.608 64.4998L230.596 64.4998" stroke="#fff"></path>
+                                <path d="M274.608 128.5H230.608" stroke="#fff"></path>
+                                <path d="M274.608 192.5L230.596 192.5" stroke="#fff"></path>
+                                <path d="M274.608 256.5L230.608 256.5" stroke="#fff"></path>
+                                <path d="M274.608 324.5L230.619 324.5" stroke="#fff"></path>
+                                <path d="M67.6078 31.4991L30.6078 31.4991L30.6078 482.5L148.608 482.5" stroke="#fff"></path>
+                                <path d="M67.6078 166.5H30.6078" stroke="#fff"></path>
+                            </svg>
                         </div>
-                        <div class="zone_groupe">
-                            <div class="groupes_images">
-                                <div class="zone_container">
-                                    <a href="#" id="gl1"><div class="groupe_image off" id="gi1"></div></a>
-                                    <a href="#" id="gl2"><div class="groupe_image off" id="gi2"></div></a>
-                                </div>
-                            </div>
-                            <div class="groupe_text">
-                                <div class="placement_groupe first">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text off" onclick="Allumer_groupelectro('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1)" id="gt1">OFF</p>
-                                    </div>
-                                </div>
-                                <div class="placement_groupe">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text off" onclick="Allumer_groupelectro('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2)" id="gt2">OFF</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="zone_panneaux_solaires">
-                            <div class="panneaux_solaires_images">
-                                <div class="zone_container">
-                                    <div class="panneaux_solaire_image" id="psi1"></div>
-                                    <div class="panneaux_solaire_image" id="psi2"></div>
-                                    <div class="panneaux_solaire_image" id="psi3"></div>
-                                    <div class="panneaux_solaire_image" id="psi4"></div>
-                                    <div class="panneaux_solaire_image" id="psi5"></div>
-                                    <div class="panneaux_solaire_image off" id="psi6"></div>
-                                </div>
-                            </div>
-                            <div class="panneaux_solaires_text">
-                                <div class="placement_panneaux_solaire first">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1,'ps')" id="pst1">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2,'ps')" id="pst2">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',3,'ps')" id="pst3">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',4,'ps')" id="pst4">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',5,'ps')" id="pst5">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_panneaux_solaire">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text off" onclick="reparer_energie('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',6,'ps')" id="pst6">OFF</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="zone_rigs">
-                            <div class="zone_rigs_images">
-                                <div class="zone_container">
-                                    <a href="#" id="rl1"><div class="zone_rigs_images_image off" id="ri1"></div></a>
-                                    <a href="#" id="rl2"><div class="zone_rigs_images_image off" id="ri2"></div></a>
-                                    <a href="#" id="rl3"><div class="zone_rigs_images_image" id="ri3"></div></a>
-                                    <a href="#" id="rl4"><div class="zone_rigs_images_image" id="ri4"></div></a>
-                                    <a href="#" id="rl5"><div class="zone_rigs_images_image" id="ri5"></div></a>
-                                    <a href="#" id="rl6"><div class="zone_rigs_images_image" id="ri6"></div></a>
-                                    <a href="#" id="rl7"><div class="zone_rigs_images_image" id="ri7"></div></a>
-                                    <a href="#" id="rl8"><div class="zone_rigs_images_image" id="ri8"></div></a>
-                                </div>
-                            </div>
-                            <div class="zone_rigs_text">
-                                <div class="placement_rigs first">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text off" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',1)" id="rt1">OFF</p>
-                                    </div>
-                                </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text off" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',2)" id="rt2">OFF</p>
-                                    </div>
-                                </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',3)" id="rt3">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',4)" id="rt4">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',5)" id="rt5">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',6)" id="rt6">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',7)" id="rt7">ON</p>
-                                    </div>
-                                </div>
-                                <div class="placement_rigs">
-                                    <div class="placement_text">
-                                        <p class="placement_text_text" onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>',8)" id="rt8">ON</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="zone_network_wallet">
-                            <div class="zone_network_wallet_image"></div>
-                        </div>
-                            <svg
-                            width="736"
-                            height="563"
-                            viewBox="0 0 736 563"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style="margin-top: 32px;  margin-left: 84px; height: 562px;"
-                            preserveAspectRatio="none"
-                            >
-                            <path d="M735.608 5.5H646.501V485" stroke="#fff"></path>
-                            <path d="M735.608 85.5L646.501 85.5" stroke="#fff"></path>
-                            <path d="M735.608 165.5H646.501" stroke="#fff"></path>
-                            <path d="M735.608 244.5L646.496 243.5" stroke="#fff"></path>
-                            <path d="M735.608 329.5H646.501" stroke="#fff"></path>
-                            <path d="M735.608 408.5L646.506 409.52" stroke="#fff"></path>
-                            <path d="M735.608 484.5H646.501" stroke="#fff"></path>
-                            <path d="M735.608 562.5H646.5V485" stroke="#fff"></path>
-                            <path d="M646.108 484.5H307.108" stroke="#fff"></path>
-                            <path d="M441.657 36.4969L408.608 36.4969L408.608 460.5L408.608 484.5" stroke="#fff"></path>
-                            <path d="M441.108 168.5L408.596 168.5" stroke="#fff"></path>
-                            <path d="M274.608 0.500031H231.108L231.108 445" stroke="#fff"></path>
-                            <path d="M274.608 64.4998L230.596 64.4998" stroke="#fff"></path>
-                            <path d="M274.608 128.5H230.608" stroke="#fff"></path>
-                            <path d="M274.608 192.5L230.596 192.5" stroke="#fff"></path>
-                            <path d="M274.608 256.5L230.608 256.5" stroke="#fff"></path>
-                            <path d="M274.608 324.5L230.619 324.5" stroke="#fff"></path>
-                            <path d="M67.6078 31.4991L30.6078 31.4991L30.6078 482.5L148.608 482.5" stroke="#fff"></path>
-                            <path d="M67.6078 166.5H30.6078" stroke="#fff"></path>
-                        </svg>
                     </div>
                 </div>
             </div>

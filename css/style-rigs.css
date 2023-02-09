@@ -209,3 +209,77 @@ body {
 	left: 0px;
 	top: 0px;
 }
+
+@media (min-width: 0px) and (max-width: 1000px){
+	.rig {
+		display: none;
+	}
+}
+
+@media (min-width: 0px) and (max-width: 640px){
+	.rig {
+		display: none;
+	}
+    .zone .eteindre {
+        padding-left: 42px;
+        padding-right: 42px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #D60000;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 28px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+        position: relative;
+        margin-top: 20px;
+        border-radius: 10px;
+        transition: background-color 300ms;
+        top: 0px;
+        right: 0px;
+        justify-content: center;
+    }
+    .rigs_content .informations {
+        width: auto;
+        background-color: #ffffff10;
+        padding: 16px;
+        position: absolute;
+        top: 100px;
+        border-radius: 10px;
+    }
+    .rigs_content .zone {
+        background-color: #24253A;
+        box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+        border-radius: 10px;
+        width: 100%;
+        height: 1420px;
+        margin-top: 144px;
+        margin-bottom: 80px;
+        position: relative;
+    }
+}
+
+
+@media (min-width: 0px) and (max-width: 870px){
+    .zone {
+        overflow: auto;
+    }
+    .tableau_crypto {
+        width: 700px;
+        left: 0px;
+        right: 0px;
+    }
+    .rigs_content .informations {
+        width: 273px;
+        background-color: #ffffff10;
+        padding: 16px;
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        border-radius: 10px;
+    }
+}
