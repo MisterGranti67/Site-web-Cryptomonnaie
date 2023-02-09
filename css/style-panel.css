@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --font-medium: 600;
+    --font-semibold: 700;
+    --font-bold: 800;
+    --text-shadow: 0 1.5px 0 rgba(0, 0, 0, 0.5);
+    --box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+    --top-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --content-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
+    --classic-transition: all 0.2s ease-in-out 0s;
+    --spacing: 15px;
+    --big-spacing: 20px;
+    --radius: 10px;
+    --sidebar-width: 25%;
+}
 * {
     font-family: 'Roboto';
     margin-block-start: 0px;
@@ -725,7 +739,7 @@ footer {
     }
 }
 @media (min-width: 0px) and (max-width: 1100px){
-	.acces-discord .gauche {
+    .acces-discord .gauche {
         margin-top: 10px;
         position: relative;
         width: auto;
@@ -756,9 +770,12 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
+
+
 }
+
 @media (min-width: 0px) and (max-width: 1000px){
-	.flex-container {
+    .flex-container {
         margin-top: 24px;
         display: block;
     }
@@ -791,3 +808,242 @@ footer {
         margin-left: 32px;
     }
 }
+
+@media screen and (max-width: 1100px) {
+    .container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .acces-discord .gauche {
+        width: 100%;
+        text-align: center;
+    }
+    .discord .gauche img {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;
+    }
+    .acces-discord .droite {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    .acces-discord {
+        padding-bottom: 32px; 
+    }
+    .acces-discord .bouton {
+        text-align: center;
+    }
+    .footer-menu .droite {
+        position: relative;
+        width: auto;
+        margin-top: 36px;
+        margin-left: 37px;
+    }
+
+    .total-bas-footer .droite {
+        margin-left: 212px;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+    .total-bas-footer .droite {
+        margin-left: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .bas-footer {
+        height: 160px;
+    }
+}
+@media screen and (max-width: 950px) {
+    .mobileButton {
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .navbar_menu a{
+        display: none
+    }
+    .navbar .mon_wallet {
+        display: none;
+    }
+    .header .gauche {
+        width: 100%;
+    }
+    .menuSkylord .menu a {
+        display: none;
+    }
+    .footer-menu .droite {
+        margin-left: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .footer-menu .droite .menu {
+        margin-left: 0px;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    .footer-menu {
+        height: 192px;
+    }
+    .footer-menu .gauche {
+        width: 100%;
+    }
+    .footer-menu a {
+        display:flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-menu {
+        height: 288px;
+    }
+}
+
+.baguette-js--openNav {
+    outline: 0;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 25px;
+    opacity: 0.8;
+  }
+  
+  .baguette-js--openNav:hover {
+    opacity: 1;
+  }
+  
+  .baguette-navOpen {
+    overflow: hidden !important;
+  }
+  
+  body.baguette-navOpen #baguette-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  body.baguette-navOpen #baguette-mobileNav {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    transform: translate(0);
+  }
+  #baguette-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: var(--classic-transition);
+    -o-transition: var(--classic-transition);
+    transition: var(--classic-transition);
+    opacity: 0;
+    visibility: hidden;
+  }
+  #baguette-mobileNav {
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+    -webkit-transform: translate(-330px);
+    -ms-transform: translate(-330px);
+    transform: translate(-330px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    background: #181827;
+    box-shadow: 6px 0px 14px -5px #000;
+    -webkit-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+    max-width: 100%;
+    height: 100%;
+    z-index: 99999999;
+  }
+  .baguette-navHeader {
+    text-align: center;
+    padding: var(--spacing);
+    background-color: #FFD97D;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #24253A;
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  
+  .baguette-js--openNav:hover, .baguette-js--closeNav {
+    cursor: pointer;
+  }
+  #baguette-mobileNav .baguette-navHeader button {
+    border: none;
+    background: 0 0;
+    outline: 0;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    -webkit-transition: var(--classic-transition);
+    -o-transition: var(--classic-transition);
+    transition: var(--classic-transition);
+  }
+  #baguette-mobileNav .baguette-navHeader button i {
+    color: #fff;
+    -webkit-transition: var(--classic-transition);
+    -o-transition: var(--classic-transition);
+    transition: var(--classic-transition);
+  }
+  #baguette-mobileNav .baguette-navHeader button:hover i {
+    color: rgba(238, 238, 238, 0.5);
+  }
+  #baguette-mobileNav .baguette-navLinks a {
+    display: block;
+    border-bottom: 0.5px solid #fff;
+    padding: calc(var(--spacing) / 1.5) var(--spacing);
+    font-weight: 500;
+    color: #fff;
+    font-size: 16px;
+    opacity: 1;
+    -webkit-transition: var(--classic-transition);
+    -o-transition: var(--classic-transition);
+    transition: var(--classic-transition);
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    
+  }
+  #baguette-mobileNav .baguette-navLinks a:hover {
+    opacity: 1;
+  }
+  #baguette-mobileNav .baguette-navLinks a.active {
+    font-weight: 600;
+    opacity: 1;
+  }
+  #baguette-mobileNav .baguette-navLinks a[data-id='boutique'] {
+    display: none;
+  }
+  body.baguette-navOpen #baguette-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  body.baguette-navOpen #baguette-mobileNav {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    transform: translate(0);
+  }
