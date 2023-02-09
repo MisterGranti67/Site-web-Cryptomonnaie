@@ -5,6 +5,13 @@ async function changer_crypto(pseudo, code, id, nombre) {
     var json_groupe_allumer = 'https://apiv1.skylord.fr/api/rig/changercrypto?pseudo=' + pseudo + '&code=' + code + '&id=' + id + '&crypto=' + nombre;
     const api_groupe_allumer = await fetch(json_groupe_allumer);
     const data_groupe_allumer = await api_groupe_allumer.json();
+    if (data_groupe_allumer["Resultat"] == "01"){
+        document.getElementById("resultat").style.color = '#CEFF33';
+        document.getElementById("resultat").textContent = "Vous avez bien changé la crypto-monnaie que le rig mine !";
+    } else if (data_groupe_allumer["Resultat"] == "42"){
+        document.getElementById("resultat").style.color = '#FF6133';
+        document.getElementById("resultat").textContent = "Vous devez allumer votre rig.";
+    }
 
     rigs(pseudo,code,id);
 
@@ -17,11 +24,23 @@ async function transfert_crypto(pseudo, code, id, nombre) {
     var json_groupe_allumer = 'https://apiv1.skylord.fr/api/rig/transfert?pseudo=' + pseudo + '&code=' + code + '&id=' + id + '&crypto=' + nombre;
     const api_groupe_allumer = await fetch(json_groupe_allumer);
     const data_groupe_allumer = await api_groupe_allumer.json();
-    
+    if (data_groupe_allumer["Resultat"] == "01"){
+        document.getElementById("resultat").style.color = '#CEFF33';
+        document.getElementById("resultat").textContent = "Vous avez bien transféré" + nombre + " cryptos !";
+    } else if (data_groupe_allumer["Resultat"] == "42"){
+        document.getElementById("resultat").style.color = '#FF6133';
+        document.getElementById("resultat").textContent = "Vous devez allumer votre rig.";
+    }
     rigs(pseudo,code,id);
 
 }
-
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
 
 async function rigs(pseudo, code, id) {
     var json_rig = 'https://apiv1.skylord.fr/api/rig/all?pseudo=' + pseudo + '&code=' + code + '&id=' + id;
@@ -61,9 +80,8 @@ async function rigs(pseudo, code, id) {
             document.getElementById("allumer").classList.add("eteindre");
             document.getElementById("allumer").textContent = "Éteindre";
         }
-        
+        $('#tableau_crypto').html('');
         if (data_rig["etat"] == "true") {
-            $('#tableau_crypto').html('');
             const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
             const data = await api_binance.json();
             var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
@@ -94,7 +112,9 @@ async function rigs(pseudo, code, id) {
                     
                 }
             }
-            
+        } else {
+            document.getElementById("resultat").style.color = '#FF6133';
+            document.getElementById("resultat").textContent = "Vous devez allumer votre rig pour accéder aux fonctionnalités.";
         }
         document.getElementById("numero").textContent = "RIG N°"+id;
         document.getElementById("chargement").style.display = 'none';
@@ -112,6 +132,7 @@ async function ajouter_au_technicien(pseudo, code, idrig, idcarte) {
     const data_technicien_acces = await api_technicien_acces.json();
     if (data_technicien_acces["Acces"] == "True"){
         rigs(pseudo,code,idrig);
+        document.getElementById("resultat").textContent = "";
         if (data_technicien_acces["Resultat"] == "01"){
             document.getElementById("resultat").style.color = '#CEFF33';
             document.getElementById("resultat").textContent = "La carte graphique " + idcarte + " a bien été ajouté au technicien informatique !";

@@ -41,7 +41,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 var json_rigs_allumer = 'https://apiv1.skylord.fr/api/rig/simple/action?pseudo=' + pseudo + '&code=' + code + '&id=' + id;
                 const api_rigs_allumer = await fetch(json_rigs_allumer);
                 const data_rigs_allumer = await api_rigs_allumer.json();
-
+                document.getElementById("resultat").textContent = "";
                 rigs(pseudo,code,id);
 
                 document.getElementById("chargement").style.display = 'none';
