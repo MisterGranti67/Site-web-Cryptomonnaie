@@ -1,9 +1,10 @@
 <?php 
 session_start();
+
 if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
-$session_pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:''; 
-$session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
-$session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
+    $session_pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:''; 
+    $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
+    $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -53,6 +54,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     <tr class="thead">
                                         <th scope="col">Identifiant</th>
                                         <th scope="col">Durée de réparation</th>
+                                        <th scope="col">Dégradation</th>
                                         <th scope="col">Récupérer</th>
                                     </tr>
                                 </thead>
@@ -61,7 +63,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 </tbody>
                             </table>
                         </div>
-                        <!-- <img src="../img/energie/crypto_rig_all.png" class="rig"> -->
                     </div>
                 </div>
             </div>
@@ -90,6 +91,8 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
     <?php include '../utils/footer.php'; ?>
 
 </html>
-<?php } else {
-header("Location: /index.php");
-}?>
+<?php 
+    } else {
+        header("Location: /index.php");
+    }
+?>
