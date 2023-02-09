@@ -70,6 +70,8 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             Éteindre
                         </div>
 
+                            <a class="retour" href="https://crypto.skylord.fr/panel/energie.php">Retour</a>
+
                         <div class="informations">
                             <h1>Carte mère</h1>
                             <div class="spearation"></div>
