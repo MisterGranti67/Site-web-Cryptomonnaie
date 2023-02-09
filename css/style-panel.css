@@ -860,6 +860,11 @@ footer {
         height: 160px;
     }
 }
+.mobileButton {
+    display: none;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 @media screen and (max-width: 950px) {
     .mobileButton {
         display: block;
