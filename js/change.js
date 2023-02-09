@@ -235,8 +235,6 @@ function updateCoinProperties(change,high,low,volume) {
     $("#selectedHigh").text(high+"$");
 
     $("#selectedLow").text(low+"$");
-    $("#selectedVolume").text(volume+"$");
-
 }
 function timeConverter(UNIX_timestamp) {
     var a = new Date(UNIX_timestamp * 1000);
