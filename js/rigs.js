@@ -122,6 +122,7 @@ async function rigs(pseudo, code, id) {
         document.getElementById("footer").style.display = 'block';
     } else {
         document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+        document.location.href="https://crypto.skylord.fr/deconnexion.php";
     }
 }
 
@@ -158,6 +159,7 @@ async function ajouter_au_technicien(pseudo, code, idrig, idcarte) {
             document.getElementById("resultat").textContent = "Vous devez d'abord éteindre votre rig.";
         }
     } else {
-        document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+        document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>";
+        document.location.href="https://crypto.skylord.fr/deconnexion.php"; 
     }
 }

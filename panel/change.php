@@ -273,9 +273,11 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 document.getElementById("footer").style.display = 'block';
                             } else {
                                 document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                                document.location.href="https://crypto.skylord.fr/deconnexion.php";
                             }
                         } else {
                             document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                            document.location.href="https://crypto.skylord.fr/deconnexion.php";
                         }
                     }
                 }
@@ -325,9 +327,11 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     document.getElementById("footer").style.display = 'block';
                                 } else {
                                     document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                                    document.location.href="https://crypto.skylord.fr/deconnexion.php";
                                 }
                             } else {
                                 document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                                document.location.href="https://crypto.skylord.fr/deconnexion.php";
                             }
                         }
                     }
@@ -364,6 +368,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                     $("#buyTotal").val('');
                 } else {
                     document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                    document.location.href="https://crypto.skylord.fr/deconnexion.php";
                 }
 
             }
@@ -396,6 +401,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                     $("#sellTotal").val('');
                 } else {
                     document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                    document.location.href="https://crypto.skylord.fr/deconnexion.php";
                 }
 
             }

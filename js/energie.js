@@ -186,5 +186,6 @@ async function energie(pseudo, code) {
         document.getElementById("footer").style.display = 'block';
     } else {
         document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+        document.location.href="https://crypto.skylord.fr/deconnexion.php";
     }
 }

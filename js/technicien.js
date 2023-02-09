@@ -31,6 +31,7 @@ async function technicien(pseudo, code) {
         }
     } else {
         document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+        document.location.href="https://crypto.skylord.fr/deconnexion.php";
     }
 }
 
@@ -64,6 +65,7 @@ async function technicien_listcg(pseudo, code, id) {
         document.getElementById("footer").style.display = 'block';
     } else {
         document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+        document.location.href="https://crypto.skylord.fr/deconnexion.php";
     }
 }
 
@@ -89,5 +91,6 @@ async function deplacer_technicien(pseudo, code, idcarte, idrig) {
         }
     } else {
         document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+        document.location.href="https://crypto.skylord.fr/deconnexion.php";
     }
 }
