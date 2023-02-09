@@ -128,6 +128,9 @@ async function ajouter_au_technicien(pseudo, code, idrig, idcarte) {
         } else if (data_technicien_acces["Resultat"] == "26"){
             document.getElementById("resultat").style.color = '#FF6133';
             document.getElementById("resultat").textContent = "Vous n'avez plus de place disponible au technicien informatique.";
+        } else if (data_technicien_acces["Resultat"] == "27"){
+            document.getElementById("resultat").style.color = '#FF6133';
+            document.getElementById("resultat").textContent = "Vous devez avoir un abonnement premium pour faire cela.";
         }
     } else {
         document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 

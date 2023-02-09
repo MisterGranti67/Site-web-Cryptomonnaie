@@ -43,7 +43,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 <div class="container">
                     <div class="zone">
                         <h1>Votre production d'énergie</h1>
-                        <h2 style="color: red" id="message"></h2>
+                        <h2 style="color: #FF6133" id="message"></h2>
                         <div class="zone_eolienne">
                             <div class="zone_eolienne_images">
                                 <div class="zone_container">

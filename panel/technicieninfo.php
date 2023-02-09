@@ -44,9 +44,10 @@ if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
             <?php include '../utils/header.php'; ?>
             <div class="rigs_content">
                 <div class="container">
-                    <div class="zone">
+                    <div class="zone" style="height: 620px;">
                         <h1 id="numero">Technicien informatique</h1>
                         <p id="resultat" style="text-align: center;color: #FF6133"></p>
+                        <p id="resultat2" style="text-align: center;color: #FF6133"></p>
 
                         <div class="tableau_crypto">
                             <table>

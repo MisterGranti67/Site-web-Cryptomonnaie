@@ -306,11 +306,11 @@ body {
     font-size: 9px;
 }
 .tableau_crypto .perte {
-    color: red;
+    color: #FF6133;
 }
 
 .tableau_crypto .gain {
-    color: green;
+    color: #CEFF33;
 }
 
 .tableau_crypto a {
