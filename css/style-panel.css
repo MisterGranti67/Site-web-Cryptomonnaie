@@ -756,6 +756,47 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .footer-menu .droite {
+        position: relative;
+        width: 100%;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .footer-menu .droite .menu {
+        margin-left: 69px;
+        opacity: 1;
+        display: flex;
+        position: relative;
+        top: 0px;
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-menu .gauche {
+        width: 128px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer-menu {
+        height: 160px;
+    }
+
+
+}
+@media (min-width: 0px) and (max-width: 630px){
+    #footer .droite .menu {
+        flex-direction: column;
+    }
+    .footer-menu .droite .menu li {
+        margin-left: -28px;
+    }
+    .footer-menu {
+        height: 250px;
+    }
 }
 @media (min-width: 0px) and (max-width: 1000px){
 	.flex-container {
