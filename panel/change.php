@@ -65,9 +65,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                                 <td data-label="Valeur">
                                                     <h1>{{product.price}} $</h1>
                                                 </td>
-                                                <td data-label="Volume">
-                                                    <h1>{{product.price}} $</h1>
-                                                </td>
                                                 <td  v-if= "product.change[0]!='-'" data-label="Variation sur 24h">
                                                     <h1 style="color:#30ff67;">{{product.change}} %<h1>
                                                 </td>

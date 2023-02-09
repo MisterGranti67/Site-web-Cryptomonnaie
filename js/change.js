@@ -180,14 +180,12 @@ function setPrice(coinTag,id) {
     $.getJSON("https://api.binance.com/api/v1/ticker/24hr?symbol="  + coinTag  + 'USDT', function(data){
         coins.products[id].price = parseFloat(data.lastPrice).toFixed(4);
             
-        coins.products[id].volume = 
-        Number("" + parseFloat(data['volume']).toFixed(0)).toLocaleString();
         coins.products[id].change = 
             data.priceChangePercent;
         }).done(function() {
 
         setUpTradePrice();
-        updateCoinProperties(coins.products[selectedCoin].change,coins.products[selectedCoin].high,coins.products[selectedCoin].low,coins.products[selectedCoin].volume);
+        updateCoinProperties(coins.products[selectedCoin].change,coins.products[selectedCoin].high,coins.products[selectedCoin].low);
 
     })
 
@@ -225,11 +223,11 @@ function getPriceChart(coinTag,totalHours,hourIncrement) {
 
         }).done(function() {
             createChart(xLabels,yLabels)
-            updateCoinProperties(coins.products[selectedCoin].change,coins.products[selectedCoin].high,coins.products[selectedCoin].low,coins.products[selectedCoin].volume);
+            updateCoinProperties(coins.products[selectedCoin].change,coins.products[selectedCoin].high,coins.products[selectedCoin].low);
     })
 }
 
-function updateCoinProperties(change,high,low,volume) {
+function updateCoinProperties(change,high,low) {
     if(change>0) $("#selectedChange").text("+"+change+"%");
     else $("#selectedChange").text(change+"%");
     $("#selectedHigh").text(high+"$");
@@ -262,42 +260,6 @@ function getAchat(coinTag) {
 
 }
 
-// function buyCoin() {
-//     if( isNaN($("#buyAmount").val())||$("#buyAmount").val()<0) {
-//         alert("Bon de commande non valide (dépasse le portefeuille ou n'est pas un numéro)");
-//         return;
-//     }
-//     wallet -= coins.products[selectedCoin].price * $("#buyAmount").val();
-//     coins.products[selectedCoin].wallet += parseFloat($("#buyAmount").val());
-//     setUpAmountOptions();  
-//     createTransaction(coins.products[selectedCoin].name + '(' + coins.products[selectedCoin].tag + ')',coins.products[selectedCoin].price,$("#buyAmount").val(), getCurrentTime(),'buy');
-
-//     $("#buyAmount").val("");
-//     $("#buyTotal").val("0.0000$");
-
-//     // chart.options.title.text = (coins.products[selectedCoin].tag +"dans le wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD dans le wallet: " + wallet.toFixed(4));
-
-//     chart.update();
-
-// }
-
-// function sellCoin() {
-//     if( isNaN($("#sellAmount").val())||(coins.products[selectedCoin].wallet - $("#sellAmount").val())<0 || $("#sellAmount").val()<0 ) {
-//         alert("Bon de commande non valide (dépasse le portefeuille ou n'est pas un numéro)");
-//         return;
-//     }
-//     wallet += coins.products[selectedCoin].price * $("#sellAmount").val();
-//     coins.products[selectedCoin].wallet-= $("#sellAmount").val(); 
-//     setUpAmountOptions(); 
-//     createTransaction(coins.products[selectedCoin].name + '(' + coins.products[selectedCoin].tag + ')',coins.products[selectedCoin].price,$("#sellAmount").val(), getCurrentTime(),'sell');
-
-//     $("#sellAmount").val("");
-//     $("#sellTotal").val("0.0000$");
-
-//     // chart.options.title.text = (coins.products[selectedCoin].tag +"dans le wallet: " + coins.products[selectedCoin].wallet.toFixed(4) + "    " + "USD dans le wallet: " + wallet.toFixed(4));
-
-//     chart.update();
-// }
 function getActuelCrypto_Tag() {
     return coins.products[selectedCoin].tag
 }
