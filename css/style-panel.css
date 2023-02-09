@@ -785,3 +785,9 @@ footer {
         display: none;
     }
 }
+@media (min-width: 0px) and (max-width: 500px){
+    .informations .details {
+        height: 144px;
+        margin-left: 32px;
+    }
+}

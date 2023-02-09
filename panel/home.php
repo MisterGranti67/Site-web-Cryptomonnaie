@@ -174,7 +174,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                             <th scope="col"> </th>
                                         </tr>
                                     </thead>
-                                    <tbody id="tableau_crypto home">
+                                    <tbody id="tableau_crypto" class="home">
                                         
                                     </tbody>
                                 </table>
