@@ -40,7 +40,6 @@ async function technicien_listcg(pseudo, code, id) {
     const api_technicien_acces = await fetch(json_technicien_acces);
     const data_technicien_acces = await api_technicien_acces.json();
     if (data_technicien_acces["Acces"] == "True"){
-        console.log(data_technicien_acces["mvp+"])
         var json_technicien = 'https://apiv1.skylord.fr/api/rig/nombrecg?pseudo=' + pseudo + '&code=' + code;
         const api_technicien = await fetch(json_technicien);
         const data_technicien = await api_technicien.json();

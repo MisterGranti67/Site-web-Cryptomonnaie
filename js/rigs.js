@@ -61,36 +61,38 @@ async function rigs(pseudo, code, id) {
             document.getElementById("allumer").classList.add("eteindre");
             document.getElementById("allumer").textContent = "Éteindre";
         }
-
-        const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
-        const data = await api_binance.json();
-        var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
-        $('#tableau_crypto').html('');
-        for (let i = 2000; i > 0; i--) {
-            if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
-                const nom_crypto = data[i].symbol.split('USDT');
-                const crypto_mine = data_rig["crypto_mine"][0]["id"].split('USDT');
-                
-                var variation = "perte";
-                if (data[i].priceChangePercent > 0) {
-                    variation = "gain";
-                }
-                nbCrypto = 0
-                for (let j = 0; j < 9; j++) {
-                    if (nom_crypto[0] == data_rig["cryptos"][j]["id"]){
-                        nbCrypto = j
-                        valeur_crypto = data_rig["cryptos"][j]["nombre"]*data[i].lastPrice
+        
+        if (data_rig["etat"] == "true") {
+            $('#tableau_crypto').html('');
+            const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
+            const data = await api_binance.json();
+            var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
+            for (let i = 2000; i > 0; i--) {
+                if ((data[i].symbol == "BTCUSDT") || (data[i].symbol == "ETHUSDT") || (data[i].symbol == "SHIBUSDT") || (data[i].symbol == "LTCUSDT") || (data[i].symbol == "DOGEUSDT") || (data[i].symbol == "XRPUSDT") || (data[i].symbol == "DOTUSDT") || (data[i].symbol == "BNBUSDT") || (data[i].symbol == "ADAUSDT")){
+                    const nom_crypto = data[i].symbol.split('USDT');
+                    const crypto_mine = data_rig["crypto_mine"][0]["id"].split('USDT');
+                    
+                    var variation = "perte";
+                    if (data[i].priceChangePercent > 0) {
+                        variation = "gain";
                     }
+                    nbCrypto = 0
+                    for (let j = 0; j < 9; j++) {
+                        if (nom_crypto[0] == data_rig["cryptos"][j]["id"]){
+                            nbCrypto = j
+                            valeur_crypto = data_rig["cryptos"][j]["nombre"]*data[i].lastPrice
+                        }
+                    }
+                    var nom_crypto_img = nom_crypto[0].toLowerCase();
+                    var valeur_crypto = valeur_crypto.toString().split('.');
+                    if (nom_crypto.toString() != crypto_mine.toString()){
+                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_rig["cryptos"][nbCrypto]["nombre"] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Changer la crypto de minage\" onclick=\"changer_crypto('"+ pseudo + "','"+ code + "', " + id + "," + (nbCrypto+1) + ")\"><a href=\"#\">Changer</a> </td><td data-label=\"Transférer sur votre wallet\" onclick=\"transfert_crypto('"+ pseudo + "','"+ code + "', " + id + ", " + (nbCrypto+1) + ")\"><a href=\"#\">Transférer</a></td></tr>"
+                    } else {
+                        var tableau_crypto = "<tr class=\"crypto_mine\"><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_rig["cryptos"][nbCrypto]["nombre"] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Changer la crypto de minage\" onclick=\"changer_crypto('"+ pseudo + "','"+ code + "', " + id + "," + (nbCrypto+1) + ")\"><a href=\"#\">Changer</a> </td><td data-label=\"Transférer sur votre wallet\" onclick=\"transfert_crypto('"+ pseudo + "','"+ code + "', " + id + ", " + (nbCrypto+1) + ")\"><a href=\"#\">Transférer</a></td></tr>"
+                    }
+                    $(tableau_crypto).prependTo("#tableau_crypto");
+                    
                 }
-                var nom_crypto_img = nom_crypto[0].toLowerCase();
-                var valeur_crypto = valeur_crypto.toString().split('.');
-                if (nom_crypto.toString() != crypto_mine.toString()){
-                    var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_rig["cryptos"][nbCrypto]["nombre"] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Changer la crypto de minage\" onclick=\"changer_crypto('"+ pseudo + "','"+ code + "', " + id + "," + (nbCrypto+1) + ")\"><a href=\"#\">Changer</a> </td><td data-label=\"Transférer sur votre wallet\" onclick=\"transfert_crypto('"+ pseudo + "','"+ code + "', " + id + ", " + (nbCrypto+1) + ")\"><a href=\"#\">Transférer</a></td></tr>"
-                } else {
-                    var tableau_crypto = "<tr class=\"crypto_mine\"><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_rig["cryptos"][nbCrypto]["nombre"] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Changer la crypto de minage\" onclick=\"changer_crypto('"+ pseudo + "','"+ code + "', " + id + "," + (nbCrypto+1) + ")\"><a href=\"#\">Changer</a> </td><td data-label=\"Transférer sur votre wallet\" onclick=\"transfert_crypto('"+ pseudo + "','"+ code + "', " + id + ", " + (nbCrypto+1) + ")\"><a href=\"#\">Transférer</a></td></tr>"
-                }
-                $(tableau_crypto).prependTo("#tableau_crypto");
-                
             }
             
         }
@@ -110,7 +112,6 @@ async function ajouter_au_technicien(pseudo, code, idrig, idcarte) {
     const data_technicien_acces = await api_technicien_acces.json();
     if (data_technicien_acces["Acces"] == "True"){
         rigs(pseudo,code,idrig);
-        console.log(data_technicien_acces);
         if (data_technicien_acces["Resultat"] == "01"){
             document.getElementById("resultat").style.color = '#CEFF33';
             document.getElementById("resultat").textContent = "La carte graphique " + idcarte + " a bien été ajouté au technicien informatique !";
@@ -131,6 +132,9 @@ async function ajouter_au_technicien(pseudo, code, idrig, idcarte) {
         } else if (data_technicien_acces["Resultat"] == "27"){
             document.getElementById("resultat").style.color = '#FF6133';
             document.getElementById("resultat").textContent = "Vous devez avoir un abonnement premium pour faire cela.";
+        } else if (data_technicien_acces["Resultat"] == "25"){
+            document.getElementById("resultat").style.color = '#FF6133';
+            document.getElementById("resultat").textContent = "Vous devez d'abord éteindre votre rig.";
         }
     } else {
         document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
