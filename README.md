@@ -8,6 +8,7 @@
         ₿ WebSite for the Minecraft Skylord Cryptomonnaie ₿
       </h1>
       <p>Ce site web est pour Skylord afin de créer une interface de visualisation par API du système de cryptomonnaie depuis les serveurs Minecraft de Skylord</p>
+      <p>Accès : <a href="https://crypto.skylord.fr">crypto.skylord.fr</a>
 </p>
 
 ## Sommaires
