@@ -13,8 +13,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
         <link href="../css/style-panel.css" rel="stylesheet">
         <link href="../css/style-energie.css" rel="stylesheet">
         <link href="../css/style-change.css" rel="stylesheet">
-        <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'> -->
-        <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     </head>
     <body>
@@ -55,7 +53,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                             <tr>
                                                 <th class="coinCell" scope="col"><input  placeholder="Coin" class="form-control" size="10" type="text" v-model="search"></input></th>  
                                                 <th scope="col">Valeur</th>
-                                                <th scope="col">Volume</th>
                                                 <th scope="col">Variation sur 24h</th>
                                             </tr>
                                         </thead>
@@ -66,9 +63,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                                     <h1>{{product.tag}}</h1>
                                                 </td>
                                                 <td data-label="Valeur">
-                                                    <h1>{{product.price}} $</h1>
-                                                </td>
-                                                <td data-label="Volume">
                                                     <h1>{{product.price}} $</h1>
                                                 </td>
                                                 <td  v-if= "product.change[0]!='-'" data-label="Variation sur 24h">
@@ -173,22 +167,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         
                     </div>
                 </div>
-                <!-- <div class="container">
-                    <div class="tableau_crypto">
-                        <table>
-                            <thead>
-                                <tr class="thead">
-                                    <th scope="col">Nom</th>
-                                    <th scope="col">Montant</th>
-                                    <th scope="col">Valeur</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tableau_crypto">
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div> -->
             </div>
         </div>
     </body>
@@ -273,9 +251,11 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 document.getElementById("footer").style.display = 'block';
                             } else {
                                 document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                                document.location.href="https://crypto.skylord.fr/deconnexion.php";
                             }
                         } else {
                             document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                            document.location.href="https://crypto.skylord.fr/deconnexion.php";
                         }
                     }
                 }
@@ -325,9 +305,11 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     document.getElementById("footer").style.display = 'block';
                                 } else {
                                     document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                                    document.location.href="https://crypto.skylord.fr/deconnexion.php";
                                 }
                             } else {
                                 document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                                document.location.href="https://crypto.skylord.fr/deconnexion.php";
                             }
                         }
                     }
@@ -364,6 +346,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                     $("#buyTotal").val('');
                 } else {
                     document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                    document.location.href="https://crypto.skylord.fr/deconnexion.php";
                 }
 
             }
@@ -396,6 +379,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                     $("#sellTotal").val('');
                 } else {
                     document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+                    document.location.href="https://crypto.skylord.fr/deconnexion.php";
                 }
 
             }

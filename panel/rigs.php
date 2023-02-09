@@ -41,7 +41,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 var json_rigs_allumer = 'https://apiv1.skylord.fr/api/rig/simple/action?pseudo=' + pseudo + '&code=' + code + '&id=' + id;
                 const api_rigs_allumer = await fetch(json_rigs_allumer);
                 const data_rigs_allumer = await api_rigs_allumer.json();
-
+                document.getElementById("resultat").textContent = "";
                 rigs(pseudo,code,id);
 
                 document.getElementById("chargement").style.display = 'none';
@@ -64,10 +64,13 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 <div class="container">
                     <div class="zone">
                         <h1 id="numero">RIG N°0</h1>
+                        <p id="resultat" style="text-align: center;color: #FF6133"></p>
 
                         <div onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>')" class="eteindre" id="allumer">
                             Éteindre
                         </div>
+
+                            <a class="retour" href="https://crypto.skylord.fr/panel/energie.php">Retour</a>
 
                         <div class="informations">
                             <h1>Carte mère</h1>

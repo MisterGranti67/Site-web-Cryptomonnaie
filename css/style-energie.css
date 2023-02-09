@@ -306,3 +306,9 @@ body {
 	left: 0px;
 	top: 0px;
 }
+
+@media (min-width: 0px) and (max-width: 1100px){
+	.zone {
+		overflow: auto;
+	}
+}

@@ -1,9 +1,10 @@
 <?php 
 session_start();
+
 if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
-$session_pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:''; 
-$session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
-$session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
+    $session_pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:''; 
+    $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
+    $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,11 +24,10 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 var mon_code='<?php echo $session_code; ?>'
                 const queryString = window.location.search;
                 const urlParams = new URLSearchParams(queryString);
-                const id = urlParams.get('id');
 
                 if (mon_pseudo != '') {
                     if (mon_code != '') {
-                        technicien(mon_pseudo,mon_code,id);
+                        technicien(mon_pseudo,mon_code);
                     }
                 } 
             });
@@ -44,8 +44,10 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
             <?php include '../utils/header.php'; ?>
             <div class="rigs_content">
                 <div class="container">
-                    <div class="zone">
+                    <div class="zone" style="height: 620px;">
                         <h1 id="numero">Technicien informatique</h1>
+                        <p id="resultat" style="text-align: center;color: #FF6133"></p>
+                        <p id="resultat2" style="text-align: center;color: #FF6133"></p>
 
                         <div class="tableau_crypto">
                             <table>
@@ -53,6 +55,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     <tr class="thead">
                                         <th scope="col">Identifiant</th>
                                         <th scope="col">Durée de réparation</th>
+                                        <th scope="col">Dégradation</th>
                                         <th scope="col">Récupérer</th>
                                     </tr>
                                 </thead>
@@ -61,7 +64,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 </tbody>
                             </table>
                         </div>
-                        <!-- <img src="../img/energie/crypto_rig_all.png" class="rig"> -->
                     </div>
                 </div>
             </div>
@@ -90,6 +92,8 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
     <?php include '../utils/footer.php'; ?>
 
 </html>
-<?php } else {
-header("Location: /index.php");
-}?>
+<?php 
+    } else {
+        header("Location: /index.php");
+    }
+?>

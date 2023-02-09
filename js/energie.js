@@ -87,6 +87,9 @@ async function energie(pseudo, code) {
             if (data_rigs["rigs"][i]["etat"] == "false") {
                 var rt = document.getElementById(String("rt"+numb));
                 var ri = document.getElementById(String("ri"+numb));
+                if (data_rigs["rigs"][i]["id"] != "Aucun"){
+                    $(String("#rl"+numb)).attr("href", "rigs.php?id="+data_rigs["rigs"][i]["id"]);
+                }
                 rt.textContent = "OFF";
                 rt.classList.add("off");
                 ri.classList.add("off");
@@ -183,5 +186,6 @@ async function energie(pseudo, code) {
         document.getElementById("footer").style.display = 'block';
     } else {
         document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+        document.location.href="https://crypto.skylord.fr/deconnexion.php";
     }
 }
