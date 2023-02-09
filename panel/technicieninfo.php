@@ -24,11 +24,10 @@ if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
                 var mon_code='<?php echo $session_code; ?>'
                 const queryString = window.location.search;
                 const urlParams = new URLSearchParams(queryString);
-                const id = urlParams.get('id');
 
                 if (mon_pseudo != '') {
                     if (mon_code != '') {
-                        technicien(mon_pseudo,mon_code,id);
+                        technicien(mon_pseudo,mon_code);
                     }
                 } 
             });
@@ -47,6 +46,7 @@ if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
                 <div class="container">
                     <div class="zone">
                         <h1 id="numero">Technicien informatique</h1>
+                        <p id="resultat" style="text-align: center;color: #FF6133"></p>
 
                         <div class="tableau_crypto">
                             <table>

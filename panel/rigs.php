@@ -64,6 +64,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 <div class="container">
                     <div class="zone">
                         <h1 id="numero">RIG N°0</h1>
+                        <p id="resultat" style="text-align: center;color: #FF6133"></p>
 
                         <div onclick="Allumer_rig('<?php echo $session_pseudo; ?>','<?php echo $session_code; ?>')" class="eteindre" id="allumer">
                             Éteindre

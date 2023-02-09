@@ -35,15 +35,15 @@ async function rigs(pseudo, code, id) {
                 if (nombre < 20){
                     var etat = "<span style=\"color:#11FF00;margin-left: 37px\">" + nombre + "%</span>"
                 } else {
-                    var etat = "<span style=\"color:#0A9200;margin-left: 37px\">" + nombre + "%</span><span class=\"reparation\">🔨</span>"
+                    var etat = "<span style=\"color:#0A9200;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
                 }
             } else {
                 if (nombre > 90){
-                    var etat = "<span style=\"color:#990000;margin-left: 37px\">" + nombre + "%</span><span class=\"reparation\">🔨</span>"
+                    var etat = "<span style=\"color:#990000;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
                 } else if (nombre > 70) {
-                    var etat = "<span style=\"color:#FF3300;margin-left: 37px\">" + nombre + "%</span><span class=\"reparation\">🔨</span>"
+                    var etat = "<span style=\"color:#FF3300;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
                 } else {
-                    var etat = "<span style=\"color:#FF8E00;margin-left: 37px\">" + nombre + "%</span><span class=\"reparation\">🔨</span>"
+                    var etat = "<span style=\"color:#FF8E00;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
                 }
             }
             $('#list-cartegraphique').append('<p><span>'+ data_rig["cartes_graphique"][i]["type"] + '</span>' + etat + '</p>')
@@ -60,7 +60,6 @@ async function rigs(pseudo, code, id) {
             document.getElementById("allumer").classList.remove("allumer");
             document.getElementById("allumer").classList.add("eteindre");
             document.getElementById("allumer").textContent = "Éteindre";
-            
         }
 
         const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
@@ -99,6 +98,37 @@ async function rigs(pseudo, code, id) {
         document.getElementById("chargement").style.display = 'none';
         document.getElementById("non_chargement").style.display = 'block';
         document.getElementById("footer").style.display = 'block';
+    } else {
+        document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
+    }
+}
+
+
+async function ajouter_au_technicien(pseudo, code, idrig, idcarte) {
+    var json_technicien_acces = 'https://apiv1.skylord.fr/api/technicien/ajouter?pseudo=' + pseudo + '&code=' + code + '&id=' + idcarte + '&origine=' + idrig;
+    const api_technicien_acces = await fetch(json_technicien_acces);
+    const data_technicien_acces = await api_technicien_acces.json();
+    if (data_technicien_acces["Acces"] == "True"){
+        rigs(pseudo,code,idrig);
+        console.log(data_technicien_acces);
+        if (data_technicien_acces["Resultat"] == "01"){
+            document.getElementById("resultat").style.color = '#CEFF33';
+            document.getElementById("resultat").textContent = "La carte graphique " + idcarte + " a bien été ajouté au technicien informatique !";
+        } else if (data_technicien_acces["Resultat"] == "14"){
+            document.getElementById("resultat").style.color = '#FF6133';
+            document.getElementById("resultat").textContent = "Vous n'avez pas assez d'argent.";
+
+        } else if (data_technicien_acces["Resultat"] == "29"){
+            document.getElementById("resultat").style.color = '#FF6133';
+            document.getElementById("resultat").textContent = "Cette carte graphique n'est pas dans la liste des cartes graphiques de votre rig.";
+
+        } else if (data_technicien_acces["Resultat"] == "28"){
+            document.getElementById("resultat").style.color = '#FF6133';
+            document.getElementById("resultat").textContent = "Vous n'êtes pas le propriétaire de ce rig.";
+        } else if (data_technicien_acces["Resultat"] == "26"){
+            document.getElementById("resultat").style.color = '#FF6133';
+            document.getElementById("resultat").textContent = "Vous n'avez plus de place disponible au technicien informatique.";
+        }
     } else {
         document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
     }
