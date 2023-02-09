@@ -21,15 +21,16 @@
 
 ## Prérequis
 ### PHP
-//
+Recommandé : V8.0.27
+<a href="https://windows.php.net/download#php-8.0">https://windows.php.net/download#php-8.0</a>
 ### HTML
-//
+Recommandé : LATEST
+
 ### CSS
-//
-### MySQL
-//
+Recommandé : LATEST
+
 ### JavaScript
-//
+Recommandé : LATEST
 
 ## Fonctionnement
 ### Page d'authentification 
