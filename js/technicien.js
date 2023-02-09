@@ -35,17 +35,22 @@ async function technicien_listcg(pseudo, code, id) {
 
         console.log(data_technicien);
         $('.tableau_crypto').html('<table><thead><tr class="thead"><th scope="col">Identifiant</th><th scope="col">Nombre de carte graphique</th><th scope="col">Déplacer dans ce rig</th></tr></thead><tbody id="tableau_crypto"></tbody></table>');
-        for (let i = 0; i < data_technicien["rigs"].length; i++) {
-            if (data_technicien["rigs"][i]["etat"] == "false") {
-                if (data_technicien["rigs"][i]["max"] > data_technicien["rigs"][i]["cartes"]) {
-                    var tableau_crypto = "<tr class=\"crypto_mine\"><td data-label=\"Identifiant\"><h1> "+ data_technicien["rigs"][i]["id"] +" </h1></td><td data-label=\"Nombre de carte graphique\"><h1>"+ data_technicien["rigs"][i]["cartes"] +"/"+ data_technicien["rigs"][i]["max"] +"</h1></td><td data-label=\"Déplacer dans ce rig\" onclick=\"deplacer_technicien('"+ pseudo + "','"+ code + "'," + id +", " + data_technicien["rigs"][i]["id"] + ")\"><a href=\"#\">Déplacer</a></td></tr>"
+        if (data_technicien["rigs"].length > 0){
+            for (let i = 0; i < data_technicien["rigs"].length; i++) {
+                if (data_technicien["rigs"][i]["etat"] == "false") {
+                    if (data_technicien["rigs"][i]["max"] > data_technicien["rigs"][i]["cartes"]) {
+                        var tableau_crypto = "<tr class=\"crypto_mine\"><td data-label=\"Identifiant\"><h1> "+ data_technicien["rigs"][i]["id"] +" </h1></td><td data-label=\"Nombre de carte graphique\"><h1>"+ data_technicien["rigs"][i]["cartes"] +"/"+ data_technicien["rigs"][i]["max"] +"</h1></td><td data-label=\"Déplacer dans ce rig\" onclick=\"deplacer_technicien('"+ pseudo + "','"+ code + "'," + id +", " + data_technicien["rigs"][i]["id"] + ")\"><a href=\"#\">Déplacer</a></td></tr>"
+                    } else {
+                        var tableau_crypto = "<tr class=\"crypto_mine\"><td data-label=\"Identifiant\"><h1> "+ data_technicien["rigs"][i]["id"] +" </h1></td><td data-label=\"Nombre de carte graphique\"><h1 style=\"color: red\">"+ data_technicien["rigs"][i]["cartes"] +"/"+ data_technicien["rigs"][i]["max"] +"</h1></td><td data-label=\"Déplacer dans ce rig\">Impossible</td></tr>"
+                    }
                 } else {
-                    var tableau_crypto = "<tr class=\"crypto_mine\"><td data-label=\"Identifiant\"><h1> "+ data_technicien["rigs"][i]["id"] +" </h1></td><td data-label=\"Nombre de carte graphique\"><h1 style=\"color: red\">"+ data_technicien["rigs"][i]["cartes"] +"/"+ data_technicien["rigs"][i]["max"] +"</h1></td><td data-label=\"Déplacer dans ce rig\">Impossible</td></tr>"
+                    var tableau_crypto = "<tr class=\"crypto_mine\"><td data-label=\"Identifiant\"><h1> "+ data_technicien["rigs"][i]["id"] +" </h1></td><td data-label=\"Nombre de carte graphique\">Vous devez éteindre ce rig</td><td data-label=\"Déplacer dans ce rig\">Impossible</td></tr>"
                 }
-            } else {
-                var tableau_crypto = "<tr class=\"crypto_mine\"><td data-label=\"Identifiant\"><h1> "+ data_technicien["rigs"][i]["id"] +" </h1></td><td data-label=\"Nombre de carte graphique\">Vous devez éteindre ce rig</td><td data-label=\"Déplacer dans ce rig\">Impossible</td></tr>"
+                $(tableau_crypto).prependTo("#tableau_crypto");
             }
-            $(tableau_crypto).prependTo("#tableau_crypto");
+        } else {
+            document.getElementById("resultat").style.color = '#CEFF33';
+            document.getElementById("resultat").textContent = "Vous n'avez aucune carte graphique en réparation.";
         }
         
         document.getElementById("numero").textContent = "Technicien informatique";
