@@ -209,6 +209,11 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         const api_rig = await fetch(json_rig);
                         const data_rig = await api_rig.json();
                         if (data_rig["Acces"] == "True"){
+                            var json_money = 'https://apiv1.skylord.fr/api/money?pseudo=' + pseudo;
+                            const api_money = await fetch(json_money);
+                            const data_money = await api_money.json();
+                            addWallet(data_money["Format"]);
+                            
                             var pseudo = 'https://apiv1.skylord.fr/api/crypto?pseudo=' + pseudo + '&code=' + code;
                             const api_crypto = await fetch(pseudo);
                             const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
@@ -272,7 +277,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 var json_money = 'https://apiv1.skylord.fr/api/money?pseudo=' + pseudo;
                                 const api_money = await fetch(json_money);
                                 const data_money = await api_money.json();
-                                addWallet(data_money["Format"])
+                                addWallet(data_money["Format"]);
 
                                 var pseudo = 'https://apiv1.skylord.fr/api/crypto?pseudo=' + pseudo + '&code=' + code;
                                 const api_crypto = await fetch(pseudo);
