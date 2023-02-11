@@ -34,7 +34,9 @@ if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) {
                             $_SESSION['pseudo'] = $pseudo;
                             $_SESSION['code'] = $code;
                             header("Location: /panel/home.php");
-                        }else{
+                        }else if ($result->Resultat === "99") {
+                            $message = "Votre compte est bloqué jusqu'à votre prochaine connexion sur Skylord (raison : Vous êtes déconnecté depuis au moins 2 jours)";
+                        } else {
                             $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
                         }
                     }
