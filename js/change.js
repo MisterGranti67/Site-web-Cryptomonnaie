@@ -53,16 +53,6 @@ var coins = new Vue( {
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png'
             },
             {
-                id:3,
-                name:'Litecoin',
-                tag:"LTC",
-                volume: 0,
-                change:'+5%',
-                wallet: 0,
-                price: 0,
-                icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/2.png'
-            },
-            {
                 id:2,
                 name:'Binance Coin',
                 tag:"BNB",
@@ -72,35 +62,15 @@ var coins = new Vue( {
                 price: 0,
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png'
             },
-                {
-                id:8,
-                name:'Shiba',
-                tag:"SHIB",
-                volume: 0,
-                change:'+5%',
-                wallet: 0,
-                price: 0,
-                icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png'
-            },
             {
-                id:6,
-                name:'Dogecoin',
-                tag:"DOGE",
+                id:3,
+                name:'Litecoin',
+                tag:"LTC",
                 volume: 0,
                 change:'+5%',
                 wallet: 0,
                 price: 0,
-                icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/74.png'
-            },
-            {
-                id:5,
-                name:'Ripple',
-                tag:"XRP",
-                volume: 0,
-                change:'+5%',
-                wallet: 0,
-                price: 0,
-                icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/52.png'
+                icon: 'https://s2.coinmarketcap.com/static/img/coins/16x16/2.png'
             },
             {
                 id:4,
@@ -113,6 +83,26 @@ var coins = new Vue( {
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png'
             },
             {
+                id:5,
+                name:'Ripple',
+                tag:"XRP",
+                volume: 0,
+                change:'+5%',
+                wallet: 0,
+                price: 0,
+                icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/52.png'
+            },
+            {
+                id:6,
+                name:'Dogecoin',
+                tag:"DOGE",
+                volume: 0,
+                change:'+5%',
+                wallet: 0,
+                price: 0,
+                icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/74.png'
+            },
+            {
                 id:7,
                 name:'Polkadot',
                 tag:"DOT",
@@ -122,6 +112,16 @@ var coins = new Vue( {
                 price: 0,
                 icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/6636.png' 
             },
+            {
+                id:8,
+                name:'Shiba',
+                tag:"SHIB",
+                volume: 0,
+                change:'+5%',
+                wallet: 0,
+                price: 0,
+                icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png'
+            }
         ],
         search:"",
         curCoin:1
@@ -289,7 +289,9 @@ function setUpAmountOptions() {
 
         $("#sellOptionFour").val( (coins.products[selectedCoin].wallet ) );  
 }
-
+function addWallet(nombre) {
+    wallet = nombre
+}
 function setUpTradePrice() {
     $("#buyPrice").val(coins.products[selectedCoin].price+"$");
     $("#sellPrice").val(coins.products[selectedCoin].price+"$"+" +"+taxe+"%");
