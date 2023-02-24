@@ -307,7 +307,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         var valeur_crypto = valeur_crypto.toString().split('.');
                                         var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img class=\"img\" src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td></tr>"
                                         $(tableau_crypto).prependTo("#tableau_crypto");
-                                        setWallet(i,data_crypto[nom_crypto[0]]);
+                                        setWallet((8-i),data_crypto[nom_crypto[0]]);
                                     }
                                     document.getElementById("chargement").style.display = 'none';
                                     document.getElementById("non_chargement").style.display = 'block';

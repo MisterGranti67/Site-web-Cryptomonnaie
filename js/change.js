@@ -281,7 +281,7 @@ function setUpAmountOptions() {
 
         $("#buyOptionFour").val( ((wallet)/ coins.products[selectedCoin].price)); 
 
-    $("#sellOptionOne").val( (coins.products[selectedCoin].wallet) + selectedCoin);   
+    $("#sellOptionOne").val( (coins.products[selectedCoin].wallet *.25));   
 
     $("#sellOptionTwo").val( (coins.products[selectedCoin].wallet *.50));    
 
