@@ -484,7 +484,7 @@ p {
     padding: 10px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 0px) {
     .exchange .container {
         max-width: 540px;
     }
