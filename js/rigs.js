@@ -54,15 +54,15 @@ async function rigs(pseudo, code, id) {
                 if (nombre < 20){
                     var etat = "<span style=\"color:#11FF00;margin-left: 37px\">" + nombre + "%</span>"
                 } else {
-                    var etat = "<span style=\"color:#0A9200;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
+                    var etat = "<span style=\"color:#0A9200;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" style=\"text-decoration: none\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
                 }
             } else {
                 if (nombre > 90){
-                    var etat = "<span style=\"color:#990000;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
+                    var etat = "<span style=\"color:#990000;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" style=\"text-decoration: none\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
                 } else if (nombre > 70) {
-                    var etat = "<span style=\"color:#FF3300;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
+                    var etat = "<span style=\"color:#FF3300;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" style=\"text-decoration: none\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
                 } else {
-                    var etat = "<span style=\"color:#FF8E00;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
+                    var etat = "<span style=\"color:#FF8E00;margin-left: 37px\">" + nombre + "%</span><a href=\"#\" style=\"text-decoration: none\" onclick=\"ajouter_au_technicien('"+ pseudo + "','"+ code + "', " + id + ", " + data_rig["cartes_graphique"][i]["id"] + ")\"><span class=\"reparation\">🔨</span></a>"
                 }
             }
             $('#list-cartegraphique').append('<p><span>'+ data_rig["cartes_graphique"][i]["type"] + '</span>' + etat + '</p>')
