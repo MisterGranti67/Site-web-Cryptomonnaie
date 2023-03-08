@@ -225,9 +225,11 @@ body {
     height: 516px;
     background-color: #24253A;
     border-radius: 10px;
-    overflow: hidden;
 }
-
+#les_notifications {
+    height: 100%;
+    overflow: auto;
+}
 .content .mon_solde h1 {
     color: #fff;
     font-family: 'Roboto';
