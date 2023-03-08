@@ -5,7 +5,7 @@
         <div class="navbar_menu">
             <a class="item lien" href="../panel/change.php">Exchange</a>
             <a class="item lien" href="../panel/energie.php">Production d'énergie et Rigs</a>
-            <a class="item lien" href="../panel/technicieninfo.php">Technicien informatique (Fonctionnalité Premium)</a>
+            <a class="item lien" href="../panel/technicieninfo.php">Technicien informatique (Abonnement)</a>
         </div>
         <?php if ((isset($_SESSION['pseudo'])) && (isset($_SESSION['code']))) { ?>
             <a class="item mon_wallet deconnexion" href="https://crypto.skylord.fr/deconnexion.php">Déconnexion</a>
@@ -26,7 +26,7 @@
     <div class="baguette-navLinks">
         <a class="link" href="../panel/change.php">Exchange</a>
         <a class="link" href="../panel/energie.php">Production d'énergie et Rigs</a>
-        <a class="link" href="../panel/technicieninfo.php">Technicien informatique (Fonctionnalité Premium)</a>
+        <a class="link" href="../panel/technicieninfo.php">Technicien informatique (Abonnement)</a>
         <a class="link" href="../panel/home.php"><i class="fa-solid fa-wallet"></i> Mon Wallet</a>
         <a class="link" href="https://crypto.skylord.fr/deconnexion.php"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</a>
     </div>

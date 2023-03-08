@@ -6,7 +6,7 @@ async function technicien(pseudo, code) {
         var json_technicien = 'https://apiv1.skylord.fr/api/technicien/check?pseudo=' + pseudo + '&code=' + code;
         const api_technicien = await fetch(json_technicien);
         const data_technicien = await api_technicien.json();
-        if (data_technicien["premium"] == "1"){
+        if (data_technicien["abonnement"] == "1"){
             var json_technicien = 'https://apiv1.skylord.fr/api/technicien/recup?pseudo=' + pseudo + '&code=' + code;
             const api_technicien = await fetch(json_technicien);
             const data_technicien = await api_technicien.json();

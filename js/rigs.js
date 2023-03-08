@@ -153,7 +153,7 @@ async function ajouter_au_technicien(pseudo, code, idrig, idcarte) {
             document.getElementById("resultat").textContent = "Vous n'avez plus de place disponible au technicien informatique.";
         } else if (data_technicien_acces["Resultat"] == "27"){
             document.getElementById("resultat").style.color = '#FF6133';
-            document.getElementById("resultat").textContent = "Vous devez avoir un abonnement premium pour faire cela.";
+            document.getElementById("resultat").textContent = "Vous devez avoir un abonnement pour faire cela.";
         } else if (data_technicien_acces["Resultat"] == "25"){
             document.getElementById("resultat").style.color = '#FF6133';
             document.getElementById("resultat").textContent = "Vous devez d'abord éteindre votre rig.";
