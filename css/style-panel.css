@@ -225,7 +225,7 @@ body {
     height: 516px;
     background-color: #24253A;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .content .mon_solde h1 {
