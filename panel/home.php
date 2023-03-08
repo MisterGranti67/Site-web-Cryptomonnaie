@@ -23,11 +23,15 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                 if (mon_pseudo != '') {
                     if (mon_code != '') {
                         var pseudo = 'https://apiv1.skylord.fr/api/crypto?pseudo=' + mon_pseudo + '&code=' + mon_code;
+                        var notifications = 'https://apiv1.skylord.fr/api/joueur/notifications?pseudo=' + mon_pseudo + '&code=' + mon_code;
                         const api_crypto = await fetch(pseudo);
+                        const api_notifications = await fetch(notifications);
                         const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
 
                         const data = await api_binance.json();
                         const data_crypto = await api_crypto.json();
+                        const data_notifications = await api_notifications.json();
+
 
                         var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
                         var baseToNumber7Days = { BTC: "1", ETH: "279", LTC: "2", SHIB: "11939", DOGE: "5", XRP: "44", DOT: "12171", BNB: "825", ADA: "975"}
@@ -57,6 +61,9 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             document.getElementById("info_connexion").textContent = data_crypto["Date_heure"];
                             var valeur_img = "https://minotar.net/avatar/" + mon_pseudo;
                             $("#info_avatar").attr('src', valeur_img);
+                            for (let i = 0; i < data_notifications["notifications"].length; i++) {
+                                $('#les_notifications').append('<div class="notification_recu"><a href="">'+ data_rig["notifications"][i] + '</a></div>')
+                            }
                             document.getElementById("chargement").style.display = 'none';
                             document.getElementById("non_chargement").style.display = 'block';
                             document.getElementById("footer").style.display = 'block';
@@ -75,11 +82,14 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                     if (mon_pseudo != '') {
                         if (mon_code != '') {
                             var pseudo = 'https://apiv1.skylord.fr/api/crypto?pseudo=' + mon_pseudo + '&code=' + mon_code;
+                            var notifications = 'https://apiv1.skylord.fr/api/joueur/notifications?pseudo=' + mon_pseudo + '&code=' + mon_code;
                             const api_crypto = await fetch(pseudo);
+                            const api_notifications = await fetch(notifications);
                             const api_binance = await fetch('https://api.binance.com/api/v1/ticker/24hr');
 
                             const data = await api_binance.json();
                             const data_crypto = await api_crypto.json();
+                            const data_notifications = await api_notifications.json();
 
                             var baseToText = { BTC: "Bitcoin", ETH: "Ethereum", LTC: "LiteCoin", SHIB: "Shiba", DOGE: "DogeCoin", XRP: "Ripple", DOT: "Polkadot", BNB: "BinanceCoin", ADA: "Cardano" };
                             var baseToNumber7Days = { BTC: "1", ETH: "279", LTC: "2", SHIB: "11939", DOGE: "5", XRP: "44", DOT: "12171", BNB: "825", ADA: "975"}
@@ -110,6 +120,9 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 document.getElementById("info_connexion").textContent = data_crypto["Date_heure"];
                                 var valeur_img = "https://minotar.net/avatar/" + mon_pseudo;
                                 $("#info_avatar").attr('src', valeur_img);
+                                for (let i = 0; i < data_notifications["notifications"].length; i++) {
+                                    $('#les_notifications').append('<div class="notification_recu"><a href="">'+ data_rig["notifications"][i] + '</a></div>')
+                                }
                             } else {
                                 document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
                                 document.location.href="https://crypto.skylord.fr/deconnexion.php";
@@ -182,46 +195,8 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                         </div>
                         <div class="flex-items notification">
                             <h1>Les dernières notifications</h1>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
+                            <div id="les_notifications">
                             </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            <div class="notification_recu">
-                                <a href="">2023-01-18 - Votre groupe électrogène #1 n'a plus d'essence</a>
-                            </div>
-                            
                         </div>
                     </div>
                 </div>
