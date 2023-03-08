@@ -221,7 +221,7 @@ body {
 }
 
 .content .notification {
-    width: 274px;
+    width: 350px;
     height: 516px;
     background-color: #24253A;
     border-radius: 10px;
@@ -283,6 +283,7 @@ body {
 .notification .notification_recu {
     margin-bottom: 12px;
     margin-left: 16px;
+    margin-right: 16px;
 }
 
 .tableau_crypto {

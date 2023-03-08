@@ -61,6 +61,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             document.getElementById("info_connexion").textContent = data_crypto["Date_heure"];
                             var valeur_img = "https://minotar.net/avatar/" + mon_pseudo;
                             $("#info_avatar").attr('src', valeur_img);
+                            $('#les_notifications').html('');
                             for (let i = 0; i < data_notifications["notifications"].length; i++) {
                                 $('#les_notifications').append('<div class="notification_recu"><a href="">'+ data_notifications["notifications"][i] + '</a></div>')
                             }
@@ -120,6 +121,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 document.getElementById("info_connexion").textContent = data_crypto["Date_heure"];
                                 var valeur_img = "https://minotar.net/avatar/" + mon_pseudo;
                                 $("#info_avatar").attr('src', valeur_img);
+                                $('#les_notifications').html('');
                                 for (let i = 0; i < data_notifications["notifications"].length; i++) {
                                     $('#les_notifications').append('<div class="notification_recu"><a href="">'+ data_notifications["notifications"][i] + '</a></div>')
                                 }
