@@ -62,7 +62,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                             var valeur_img = "https://minotar.net/avatar/" + mon_pseudo;
                             $("#info_avatar").attr('src', valeur_img);
                             for (let i = 0; i < data_notifications["notifications"].length; i++) {
-                                $('#les_notifications').append('<div class="notification_recu"><a href="">'+ data_rig["notifications"][i] + '</a></div>')
+                                $('#les_notifications').append('<div class="notification_recu"><a href="">'+ data_notifications["notifications"][i] + '</a></div>')
                             }
                             document.getElementById("chargement").style.display = 'none';
                             document.getElementById("non_chargement").style.display = 'block';
@@ -121,7 +121,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                 var valeur_img = "https://minotar.net/avatar/" + mon_pseudo;
                                 $("#info_avatar").attr('src', valeur_img);
                                 for (let i = 0; i < data_notifications["notifications"].length; i++) {
-                                    $('#les_notifications').append('<div class="notification_recu"><a href="">'+ data_rig["notifications"][i] + '</a></div>')
+                                    $('#les_notifications').append('<div class="notification_recu"><a href="">'+ data_notifications["notifications"][i] + '</a></div>')
                                 }
                             } else {
                                 document.body.innerHTML = "<p>ERREUR, Vous n'êtes plus connecté.</p>"; 
