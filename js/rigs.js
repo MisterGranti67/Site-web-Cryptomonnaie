@@ -26,7 +26,7 @@ async function transfert_crypto(pseudo, code, id, nombre) {
     const data_groupe_allumer = await api_groupe_allumer.json();
     if (data_groupe_allumer["Resultat"] == "01"){
         document.getElementById("resultat").style.color = '#CEFF33';
-        document.getElementById("resultat").textContent = "Vous avez bien transféré" + nombre + " cryptos !";
+        document.getElementById("resultat").textContent = "Le transfert s'est réalisé avec succès !";
     } else if (data_groupe_allumer["Resultat"] == "42"){
         document.getElementById("resultat").style.color = '#FF6133';
         document.getElementById("resultat").textContent = "Vous devez allumer votre rig.";
