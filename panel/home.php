@@ -50,7 +50,7 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                     var nom_crypto_img = nom_crypto[0].toLowerCase();
                                     var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
                                     var valeur_crypto = valeur_crypto.toString().split('.');
-                                    var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\"Les 7 derniers jours\"><img src=\"https://www.coingecko.com/coins/" + baseToNumber7Days[nom_crypto[0]] + "/sparkline.svg\" style=\"width:96px\" /></td><td data-label=\" \"><a href=\"https://crypto.skylord.fr/panel/change.php\">Trader</a></td></tr>"
+                                    var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"https://crypto.skylord.fr/panel/change.php\">Trader</a></td></tr>"
                                     $(tableau_crypto).prependTo("#tableau_crypto");
                                     
                                 }
@@ -110,7 +110,8 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                         var nom_crypto_img = nom_crypto[0].toLowerCase();
                                         var valeur_crypto = data_crypto[nom_crypto[0]]*data[i].lastPrice
                                         var valeur_crypto = valeur_crypto.toString().split('.');
-                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\"Les 7 derniers jours\"><img src=\"https://www.coingecko.com/coins/" + baseToNumber7Days[nom_crypto[0]] + "/sparkline\" style=\"width:96px\" /></td><td data-label=\" \"><a href=\"https://crypto.skylord.fr/panel/change.php\">Trader</a></td></tr>"
+                                        // <td data-label=\"Les 7 derniers jours\"><img src=\"https://www.coingecko.com/coins/" + baseToNumber7Days[nom_crypto[0]] + "/sparkline\" style=\"width:96px\" /></td>
+                                        var tableau_crypto = "<tr><td data-label=\"Nom\" class=\"nom\"><img src=\"../img/crypto/" + nom_crypto_img + "logo.png\"> <h1>" + nom_crypto[0] +"</h1><h2>" + baseToText[nom_crypto[0]] + "</h2></td><td data-label=\"Montant\"><h1>" + data_crypto[nom_crypto[0]] + "</h1></td><td data-label=\"Valeur\"><h1>≈" + valeur_crypto[0] + " $</h1></td><td data-label=\"Variation sur 24h\"><h1 class=\" " + variation + " \"> " + data[i].priceChangePercent + "%<h1></td><td data-label=\" \"><a href=\"https://crypto.skylord.fr/panel/change.php\">Trader</a></td></tr>"
                                         $(tableau_crypto).prependTo("#tableau_crypto");
                                         
                                     }
@@ -185,7 +186,6 @@ $session_code=(isset($_SESSION['code']))?$_SESSION['code']:'';
                                             <th scope="col">Montant</th>
                                             <th scope="col">Valeur</th>
                                             <th scope="col">Variation sur 24h</th>
-                                            <th scape="col">Les 7 derniers jours</th>
                                             <th scope="col"> </th>
                                         </tr>
                                     </thead>
