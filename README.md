@@ -11,14 +11,6 @@
       <p>Accès : <a href="https://crypto.skylord.fr">crypto.skylord.fr</a>
 </p>
 
-## Sommaires
-
-<ul> 
-    <li>I. Prérequis</li>
-    <li>II. Fonctionnement</li>
-    <li>III. Auteurs</li>
-</ul>
-
 ## Prérequis
 ### PHP
 Recommandé : V8.0.27
